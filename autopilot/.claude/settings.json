@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(./runs/**)",
+      "Read(./prompts/**)"
+    ],
+    "deny": [
+      "Bash",
+      "Write",
+      "Edit",
+      "NotebookEdit",
+      "WebFetch",
+      "WebSearch",
+      "Task",
+      "Read(./secrets/**)",
+      "Read(./state.json)",
+      "Read(./config.json)",
+      "Read(./profiles/**)"
+    ],
+    "defaultMode": "dontAsk"
+  }
+}

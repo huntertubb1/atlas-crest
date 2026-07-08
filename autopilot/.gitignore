@@ -1,0 +1,11 @@
+# Live state, credentials, browser profiles, and run material never leave
+# the laptop.
+state.json
+config.json
+secrets/
+profiles/
+runs/
+logs/
+venv/
+__pycache__/
+*.pyc
