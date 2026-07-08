@@ -1,0 +1,4 @@
+playwright>=1.44
+google-auth>=2.29
+google-auth-oauthlib>=1.2
+google-api-python-client>=2.126

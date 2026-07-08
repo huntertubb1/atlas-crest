@@ -1,0 +1,18 @@
+{
+  "delivery": "gmail",
+  "digest_to": "hunter@atlascrestllc.com",
+  "synced_folder": "",
+
+  "ausum_cdp_url": "http://127.0.0.1:9222",
+  "ausum_base_url": "https://davies.surepalc.insurity.com",
+  "max_detail_visits": 20,
+
+  "outlook_url": "https://outlook.office.com/mail/",
+  "outlook_profile_dir": "profiles/outlook",
+  "outlook_max_messages": 40,
+
+  "claude_cli": "claude",
+  "claude_max_calls_per_run": 6,
+  "claude_call_timeout_s": 180,
+  "run_deadline_minutes": 20
+}
