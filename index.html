@@ -1,315 +1,588 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Atlas Crest LLC — Premium Audits &amp; Insurance Inspections, Delivered Through a Managed Field Network</title>
-<meta name="description" content="Atlas Crest LLC is a Florida insurance field services firm. Premium audits, risk assessments and loss-control surveys, and residential and commercial property inspections for carriers, MGAs, vendor networks, and businesses — handled directly on the Florida Gulf Coast and through a managed network of vetted independent inspectors, with every file QA'd centrally before delivery.">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<title>Atlas Crest LLC — Insurance Services on the Records Side of Risk</title>
+<meta name="description" content="Insurance services on the records side of risk — premium audits, field inspections, and subcontractor certificate compliance. Onsite and remote. Based in Florida.">
+<link rel="icon" type="image/png" href="/assets/atlas-crest-shield.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css?v=1">
+<style>
+/* ── Home page ─────────────────────────────────────────────────── */
+.wrap { max-width: 1280px; margin: 0 auto; }
+.rule-b { border-bottom: 1px solid var(--color-divider); }
+
+.sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 26px; }
+.sec-head h2 { font-size: 15px; letter-spacing: .14em; text-transform: uppercase; margin: 0; }
+.sec-head .rule { flex: 1; height: 1px; background: var(--color-divider); }
+
+/* hero */
+.hero-grid { display: grid; grid-template-columns: 1.32fr 1fr; gap: 64px; align-items: start; }
+.hero-eyebrow { margin-bottom: 22px; }
+.hero-title { font-size: 62px; line-height: 1.02; letter-spacing: -.02em; margin: 0 0 26px; max-width: 15ch; }
+.hero-lead { max-width: 52ch; margin-bottom: 32px; }
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-ctas .btn { padding: 13px 24px; font-size: 15px; }
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 52px; border-top: 1px solid var(--color-divider); }
+.stat { padding: 18px 20px 0; }
+.stat:first-child { padding-left: 0; }
+.stat:last-child { padding-right: 0; }
+.stat + .stat { border-left: 0; }
+.stat:not(:last-child) { border-right: 1px solid var(--color-divider); }
+.stat-num { font: 600 30px var(--font-heading); color: var(--color-accent-700); }
+.stat-cap { font-size: 12px; color: var(--color-muted); line-height: 1.4; }
+.hero-figure { aspect-ratio: 4 / 5; }
+.ph-kicker {
+  font: 600 12px var(--font-heading); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 6px;
+}
+.hero-figure .ph-cap { max-width: 24ch; line-height: 1.45; font-size: 11.5px; }
+
+/* three ways in */
+.sec-doors { padding: 60px var(--pad-x); }
+.doors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.ac-door {
+  text-decoration: none; color: inherit; padding: 28px;
+  display: flex; flex-direction: column; gap: 14px; min-height: 290px;
+  transition: background .16s;
+}
+.ac-door:hover { background: color-mix(in srgb, var(--color-accent) 7%, transparent); }
+.ac-door:hover .ac-doorlink { color: var(--color-accent-700); }
+.door-num { font: 600 34px var(--font-heading); color: color-mix(in srgb, var(--color-text) 22%, transparent); line-height: 1; }
+.ac-door h3 { font-size: 26px; margin: 0; }
+.ac-door p { font-size: 13.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 72%, transparent); margin: 0; flex: 1; }
+.ac-doorlink {
+  font: 600 13px var(--font-heading); letter-spacing: .08em;
+  text-transform: uppercase; color: var(--color-accent);
+}
+
+/* the finding we see most (dark) */
+.sec-finding { padding: 72px var(--pad-x); }
+.finding-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start; }
+.finding-grid h2 { font-size: 44px; line-height: 1.06; margin: 0 0 22px; max-width: 20ch; }
+.finding-grid .body-p {
+  font-size: 15.5px; line-height: 1.62;
+  color: color-mix(in srgb, var(--ac-field-ink) 82%, transparent); margin: 0 0 16px;
+}
+.finding-grid .body-p:last-of-type { margin-bottom: 26px; }
+.sec-finding .btn-secondary { padding: 12px 22px; font-size: 14px; }
+.fig-frame { padding: 26px; }
+.fig-frame figcaption {
+  margin: 0 0 18px; color: color-mix(in srgb, var(--ac-field-ink) 60%, transparent);
+  font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+}
+.fig-table { width: 100%; border-collapse: collapse; color: var(--ac-field-ink); }
+.fig-table th {
+  font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+  text-align: left; padding: 0 0 10px;
+  color: color-mix(in srgb, var(--ac-field-ink) 62%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--ac-field-ink) 26%, transparent);
+}
+.fig-table th.num, .fig-table td.num { text-align: right; }
+.fig-table td {
+  padding: 12px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--ac-field-ink) 15%, transparent);
+}
+.fig-table td.small { font-size: 13px; }
+.fig-hot { color: var(--color-accent-400); }
+.fig-rows { display: none; flex-direction: column; }
+.fig-row {
+  display: flex; justify-content: space-between; padding: 9px 0; font-size: 13px;
+  border-bottom: 1px solid color-mix(in srgb, var(--ac-field-ink) 15%, transparent);
+}
+.fig-row:last-child { border-bottom: 0; }
+.fig-row .lab { color: color-mix(in srgb, var(--ac-field-ink) 70%, transparent); }
+.fig-total {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-top: 22px; padding-top: 16px;
+  border-top: 1px solid color-mix(in srgb, var(--ac-field-ink) 26%, transparent);
+}
+.fig-total .lab { font-size: 12.5px; color: color-mix(in srgb, var(--ac-field-ink) 70%, transparent); }
+.fig-total .amt { font: 600 30px var(--font-heading); }
+
+/* certificate tracking tabs */
+.sec-tracking { padding: 66px var(--pad-x); }
+.sec-tracking .ac-lead { max-width: 60ch; margin-bottom: 32px; }
+.sec-tracking .sec-head { margin-bottom: 8px; }
+.tabstrip {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--color-divider); border: 1px solid var(--color-divider);
+}
+.tabstrip button {
+  display: flex; flex-direction: column; gap: 8px; align-items: flex-start; text-align: left;
+  cursor: pointer; font-family: var(--font-heading); font-weight: 600;
+  padding: 18px 20px; border: 0; border-radius: 0;
+  background: var(--color-bg); color: var(--color-text); transition: background .16s;
+}
+.tabstrip button:not(.is-selected):hover { background: color-mix(in srgb, var(--color-accent) 7%, var(--color-bg)); }
+.tabstrip button.is-selected { background: var(--color-accent); color: var(--color-bg); }
+.tabstrip .t-num { font-size: 12px; letter-spacing: .12em; }
+.tabstrip button:not(.is-selected) .t-num { color: var(--color-caption); }
+.tabstrip .t-title { font-size: 19px; line-height: 1.1; }
+.tabpanel-frame { margin-top: 26px; padding: 30px 32px; }
+.tabpanel { display: grid; grid-template-columns: 1.1fr 1fr; gap: 44px; align-items: start; }
+.tabpanel .ac-eyebrow { margin-bottom: 12px; }
+.tabpanel .t-body { font-size: 16.5px; line-height: 1.6; margin: 0; max-width: 46ch; }
+.tabpanel ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
+.tabpanel li {
+  font-size: 13.5px; line-height: 1.5; padding: 12px 0;
+  border-bottom: 1px solid var(--color-divider); display: flex; gap: 12px;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+}
+.tabpanel li .plus { color: var(--color-accent); font-family: var(--font-heading); }
+
+/* service lines */
+.sec-services { padding: 66px var(--pad-x); }
+.sec-services .sec-head { margin-bottom: 30px; }
+.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.svc { padding: 24px; display: flex; flex-direction: column; gap: 10px; min-height: 200px; }
+.card-kicker {
+  font: 600 10px var(--font-heading); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--color-caption);
+}
+.card-title { font-size: 20px; margin: 0; line-height: 1.15; }
+.card-body {
+  font-size: 13px; line-height: 1.55; margin: 0; flex: 1;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+}
+.svc-tint {
+  gap: 12px; text-decoration: none; color: inherit;
+  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+}
+.svc-tint:hover .ac-doorlink { color: var(--color-accent-700); }
+
+/* contact */
+.sec-contact { padding: 70px var(--pad-x); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 64px; }
+.contact-grid .ac-eyebrow { margin-bottom: 20px; }
+.contact-h2 { font-size: 40px; line-height: 1.06; margin: 0 0 20px; max-width: 18ch; }
+.contact-grid .ac-lead { max-width: 44ch; margin-bottom: 30px; }
+.crows { display: grid; gap: 0; border-top: 1px solid var(--color-divider); }
+.crow {
+  display: flex; justify-content: space-between; padding: 14px 0;
+  border-bottom: 1px solid var(--color-divider); font-size: 13.5px;
+}
+.intake { padding: 30px; display: flex; flex-direction: column; gap: 18px; }
+.form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.aud-seg { display: flex; width: 100%; }
+.aud-seg label { flex: 1; justify-content: center; }
+.intake textarea.input { min-height: 104px; }
+.intake .btn-primary { padding: 13px; font-size: 15px; }
+.form-note { font-size: 11.5px; color: var(--color-caption); margin: 0; }
+.opt { color: #a0a0a4; }
+
+/* ── responsive ────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .sec-head h2 { font-size: 13px; }
+  .sec-head { margin-bottom: 18px; }
+
+  .hero-grid { grid-template-columns: 1fr; gap: 26px; }
+  .hero-eyebrow { margin-bottom: 14px; }
+  .hero-title { font-size: 38px; line-height: 1.03; margin: 0 0 16px; }
+  .hero-lead { font-size: 15px; margin-bottom: 22px; }
+  .hero-ctas { flex-direction: column; gap: 10px; }
+  .hero-ctas .btn { width: 100%; padding: 14px; }
+  .hero-figure { display: none; }
+  .stat-row { grid-template-columns: 1fr 1fr; margin-top: 26px; }
+  .stat { padding: 16px 14px 0 0; }
+  .stat:nth-child(3) { display: none; }
+  .stat:nth-child(2) { border-right: 0; padding-right: 0; padding-left: 14px; }
+  .stat-num { font-size: 26px; }
+  .stat-cap { font-size: 11.5px; }
+
+  .sec-doors, .sec-tracking, .sec-services, .sec-contact { padding: 30px 20px; }
+  .doors { grid-template-columns: 1fr; gap: 16px; }
+  .ac-door { min-height: 0; padding: 20px; gap: 8px; }
+  .door-num { font-size: 24px; }
+  .ac-door h3 { font-size: 22px; }
+  .ac-door p { font-size: 13px; }
+  .ac-doorlink { font-size: 12px; }
+
+  .sec-finding { padding: 34px 20px; }
+  .finding-grid { grid-template-columns: 1fr; gap: 24px; }
+  .finding-grid h2 { font-size: 32px; margin-bottom: 14px; }
+  .finding-grid .body-p { font-size: 14.5px; }
+  .fig-frame { padding: 20px; }
+  .fig-frame figcaption { margin-bottom: 14px; font-size: 10px; }
+  .fig-table { display: none; }
+  .fig-rows { display: flex; }
+  .fig-total { margin-top: 16px; padding-top: 14px; }
+  .fig-total .lab { font-size: 11.5px; }
+  .fig-total .amt { font-size: 24px; }
+
+  .tabstrip { grid-template-columns: 1fr; }
+  .tabstrip button { flex-direction: row; align-items: baseline; gap: 12px; padding: 14px 16px; }
+  .tabstrip .t-num { font-size: 11px; }
+  .tabstrip .t-title { font-size: 17px; }
+  .tabpanel-frame { margin-top: 20px; padding: 20px; }
+  .tabpanel { grid-template-columns: 1fr; gap: 18px; }
+  .tabpanel .t-body { font-size: 14.5px; }
+
+  .svc-grid { grid-template-columns: 1fr; gap: 16px; }
+  .svc { min-height: 0; }
+
+  .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+  .contact-h2 { font-size: 28px; line-height: 1.08; margin-bottom: 12px; }
+  .form-2col { grid-template-columns: 1fr; }
+  .aud-seg { flex-direction: column; }
+  .aud-seg label { justify-content: flex-start; padding: 12px 14px; }
+  .aud-seg label + label { border-left: 0; border-top: 1px solid var(--color-divider); }
+  .intake { padding: 20px; }
+}
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="brand">
-      <img src="/assets/atlas_crest_shield.jpg" alt="Atlas Crest shield">
-      <span class="brand-text">
-        <span class="brand-name">Atlas Crest</span>
-        <span class="brand-tag">Insurance Services</span>
-      </span>
-    </a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
-    <label for="nav-toggle" class="nav-burger"><span></span><span></span><span></span></label>
-    <nav class="primary">
-      <a href="/" class="active">Home</a>
-      <a href="/field-services.html">Field Services</a>
-      <a href="/coverage.html">Coverage</a>
-      <a href="/network.html">Join Our Network</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html" class="nav-cta">Contact</a>
-    </nav>
-  </div>
+<header class="ac-header">
+  <a href="/" class="ac-brand">
+    <span class="ac-brand-tile"><img src="/assets/atlas-crest-shield.png" alt="Atlas Crest shield"></span>
+    <span>
+      <span class="ac-brand-name" style="display:block">ATLAS CREST</span>
+      <span class="ac-brand-tag" style="display:block">Insurance Services</span>
+    </span>
+  </a>
+  <nav class="ac-nav" aria-label="Primary">
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/network.html">Inspector Network</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  <button class="ac-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="ac-drawer" aria-label="Mobile">
+    <a href="/" aria-current="page">Home</a>
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/network.html">Inspector Network</a>
+    <a href="/about.html">About</a>
+    <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  </nav>
 </header>
 
-<section class="hero">
-  <div class="container hero-grid">
+<main>
+
+<!-- ── Hero ─────────────────────────────────────────────────────── -->
+<section class="ac-hero rule-b">
+  <div class="wrap hero-grid">
     <div>
-      <div class="meta">Atlas Crest LLC · Florida</div>
-      <h1>Field work that comes back complete the first time.</h1>
-      <p class="lede">
-        Premium audits, risk assessments and loss-control surveys, and
-        property inspections for carriers, MGAs, and vendor networks
-        &mdash; handled directly along
-        the Florida Gulf Coast, and through a managed network of vetted
-        independent inspectors beyond it. Every file crosses our own QA desk
-        before it reaches yours.
-      </p>
-      <a href="/field-services.html" class="btn btn-primary">What we handle</a>
-      <a href="/network.html" class="btn btn-secondary">Join our network</a>
-    </div>
-    <div class="hero-mark">
-      <img src="/assets/atlas_crest_logo.jpg" alt="Atlas Crest LLC logo">
-    </div>
-  </div>
-</section>
-
-<div class="contact-bar">
-  <div class="container contact-bar-inner">
-    <div class="cb-item">
-      <span class="cb-label">Headquartered</span>
-      <span>Florida &mdash; serving clients nationwide</span>
-    </div>
-    <div class="cb-item">
-      <span class="cb-label">General inquiries</span>
-      <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
-    </div>
-    <div class="cb-item">
-      <span class="cb-label">Response</span>
-      <span>Same business day on active matters</span>
-    </div>
-  </div>
-</div>
-
-<section>
-  <div class="container">
-    <div class="section-eyebrow">How we work</div>
-    <h2 class="section-title">One firm to assign. A network to deliver.</h2>
-    <p class="section-lede" style="max-width: 68ch;">
-      Field work is limited by how many people can be in how many places.
-      Our answer is a managed network: Atlas Crest takes the assignment,
-      dispatches it to a vetted, background-checked independent inspector,
-      and holds every report to one standard &mdash; ours.
-    </p>
-    <p style="max-width: 68ch;">
-      You deal with one firm. One point of contact, one reporting standard,
-      one invoice &mdash; whether the file was worked by us or by the
-      network. Scheduling and insured contact run from our office, and no
-      report goes back to a client until it has been reviewed at our desk.
-    </p>
-    <p style="max-width: 68ch;">
-      We'll always tell you plainly what's ours and what's the network's.
-      On the Florida Gulf Coast, the person at the door is usually us. In
-      the territories we're building, it's our network &mdash; working our
-      checklist, reviewed by our QA.
-    </p>
-    <p class="mt-2">
-      <a href="/field-services.html" class="btn btn-primary">How assignments run</a>
-    </p>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="container">
-    <div class="section-eyebrow">What we do</div>
-    <h2 class="section-title">Our service lines.</h2>
-    <p class="section-lede">
-      Audits and inspections for the insurance industry &mdash; one firm to
-      assign, one standard on every file.
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <div class="card-eyebrow">For carriers &amp; vendors</div>
-        <h3>Premium Audit Services</h3>
-        <p>
-          Workers' compensation, general liability, and specialty commercial
-          lines. We verify payroll, sales, and unit exposures against what a
-          policy actually rates on, then return a clean file to the carrier.
-        </p>
-        <p class="mt-1"><a href="/field-services.html#audits">How we audit &rarr;</a></p>
+      <p class="ac-eyebrow hero-eyebrow">Atlas Crest LLC · Florida</p>
+      <h1 class="hero-title">Risk gets priced in the records.</h1>
+      <p class="ac-lead hero-lead">We are an insurance services firm that works the evidence side of risk. Payroll, class codes, certificates, and the condition of the building itself — the details that decide what a policy is worth and what an audit will find.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary blueprint" href="/contact.html">Discuss an assignment<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+        <a class="btn btn-secondary" href="/network.html">Join the inspector network</a>
       </div>
-      <div class="card">
-        <div class="card-eyebrow">For carriers, vendors &amp; businesses</div>
-        <h3>Risk Assessments &amp; Loss Control</h3>
-        <p>
-          Onsite fire, life-safety, and hazard surveys &mdash; assigned by
-          carriers or commissioned directly by a business. We document how a
-          risk is protected and managed, then hand back photo-supported
-          findings and practical recommendations that help prevent claims.
-        </p>
-        <p class="mt-1"><a href="/field-services.html#loss-control">Explore risk surveys &rarr;</a></p>
-      </div>
-      <div class="card">
-        <div class="card-eyebrow">For carriers &amp; vendors</div>
-        <h3>Commercial Property Inspections</h3>
-        <p>
-          Property and underwriting inspections &mdash; COPE data,
-          replacement-cost detail, occupancy, and condition &mdash;
-          documented cleanly for the underwriting file.
-        </p>
-        <p class="mt-1"><a href="/field-services.html#property">See inspection types &rarr;</a></p>
-      </div>
-      <div class="card">
-        <div class="card-eyebrow">For carriers &amp; vendors</div>
-        <h3>Residential Underwriting Inspections</h3>
-        <p>
-          Route-based exterior surveys of insured homes &mdash; a defined
-          photo set, a consistent observation checklist, and app-based
-          reporting, delivered at volume through managed routes.
-        </p>
-        <p class="mt-1"><a href="/field-services.html#residential">How routes run &rarr;</a></p>
-      </div>
-      <div class="card">
-        <div class="card-eyebrow">How we deliver</div>
-        <h3>Managed Network, Central QA</h3>
-        <p>
-          Field work by vetted, background-checked independent inspectors.
-          Dispatch, standards, scheduling, and file review stay with Atlas
-          Crest &mdash; every report is QA'd before it ships.
-        </p>
-        <p class="mt-1"><a href="/network.html">Inspector? Join the network &rarr;</a></p>
-      </div>
-      <div class="card">
-        <div class="card-eyebrow">Coverage</div>
-        <h3>Field Capacity, Where You Need It</h3>
-        <p>
-          Onsite across the Florida Gulf Coast, remote nationwide, and a
-          growing network of vetted independent inspectors and auditors for
-          vendor partners who need coverage in more places.
-        </p>
-        <p class="mt-1"><a href="/coverage.html">See coverage &rarr;</a></p>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-num">Both sides</div>
+          <div class="stat-cap">of the file — we audit for carriers and prepare for the insured</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">Onsite &amp; remote</div>
+          <div class="stat-cap">attended where the file needs eyes on the risk, remote where it does not</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">WC · GL</div>
+          <div class="stat-cap">and specialty commercial lines, audited and inspected</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-eyebrow">Why us</div>
-    <h2 class="section-title">We know why files get sent back.</h2>
-    <p class="section-lede">
-      We work these files for a living &mdash; which means we know exactly
-      what a reviewer looks for, because it's what we look for.
-    </p>
-    <div class="two-col">
+    <div class="blueprint ac-placeholder hero-figure">
       <div>
-        <h3>A file that doesn't bounce</h3>
-        <p>
-          Most kicked-back reports fail on the same few things: figures that
-          don't tie to source records, photos that don't support the
-          findings, special instructions that weren't followed as written.
-          Those are exactly the checks every file clears before it leaves us
-          &mdash; whoever worked it.
-        </p>
-        <ul class="checks">
-          <li>Figures tied to source records, not taken at face value</li>
-          <li>Photos and documentation to the client's standard</li>
-          <li>Findings written so the next reader doesn't need to call</li>
+        <div class="ph-kicker">Image placeholder</div>
+        <div class="ph-cap">Duotone photograph — field work: a commercial site, clipboard, or roof survey</div>
+      </div>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </div>
+  </div>
+</section>
+
+<!-- ── Three ways in ────────────────────────────────────────────── -->
+<section class="sec-doors rule-b">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Three ways in</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="doors">
+      <a class="ac-door blueprint" id="carriers" href="/field-services.html">
+        <div class="door-num">01</div>
+        <h3>Carriers &amp; MGAs</h3>
+        <p>Premium audits, loss control surveys, and commercial property inspections — verified against what the policy actually rates on, returned as a file your underwriter can close.</p>
+        <span class="ac-doorlink">Field services →</span>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </a>
+      <a class="ac-door blueprint" id="business" href="/business-services.html">
+        <div class="door-num">02</div>
+        <h3>Businesses</h3>
+        <p>Subcontractor certificates collected, verified, and chased before they lapse — plus audit preparation, so the premium you are charged reflects the work you actually did.</p>
+        <span class="ac-doorlink">Business services →</span>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </a>
+      <a class="ac-door blueprint" id="network" href="/network.html">
+        <div class="door-num">03</div>
+        <h3>Independent inspectors</h3>
+        <p>We are building a vetted network to cover assignments beyond our own reach. If you carry your own E&amp;O and know inspection work, we would like your details on file.</p>
+        <span class="ac-doorlink">Join the network →</span>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── The finding we see most ──────────────────────────────────── -->
+<section class="ac-field-section on-dark sec-finding">
+  <div class="wrap finding-grid">
+    <div>
+      <p class="ac-eyebrow" style="margin-bottom:20px">The finding we see most</p>
+      <h2>An uninsured sub becomes your payroll.</h2>
+      <p class="body-p">You asked for a certificate. You got one. Then the policy lapsed mid-job, or it never covered the trade the work fell under. Nobody was watching the dates.</p>
+      <p class="body-p">At audit, every dollar you cannot document gets reclassified to your payroll at your rate. We have sat in the auditor's chair and written that charge. Now we work the other side of it.</p>
+      <a class="btn btn-secondary" href="#tracking">How certificate tracking works</a>
+    </div>
+    <figure class="blueprint fig-frame">
+      <figcaption>Illustrative example — fictional figures, not a client file</figcaption>
+      <table class="fig-table">
+        <thead>
+          <tr>
+            <th>Paid to sub</th>
+            <th>Certificate</th>
+            <th class="num">Rated as</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>$48,000</td><td class="small">Current, trade matches</td><td class="num small">Subcontracted</td></tr>
+          <tr><td>$31,500</td><td class="small">Expired mid-job</td><td class="num small fig-hot">Your payroll · 5403</td></tr>
+          <tr><td>$18,000</td><td class="small">None produced</td><td class="num small fig-hot">Your payroll · 5403</td></tr>
+        </tbody>
+      </table>
+      <div class="fig-rows">
+        <div class="fig-row"><span>$48,000</span><span class="lab">Subcontracted</span></div>
+        <div class="fig-row"><span>$31,500</span><span class="fig-hot">Your payroll · 5403</span></div>
+        <div class="fig-row"><span>$18,000</span><span class="fig-hot">Your payroll · 5403</span></div>
+      </div>
+      <div class="fig-total">
+        <span class="lab">Additional premium assessed at audit</span>
+        <span class="amt">$6,138</span>
+      </div>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </figure>
+  </div>
+</section>
+
+<!-- ── Certificate tracking, step by step ───────────────────────── -->
+<section id="tracking" class="sec-tracking rule-b">
+  <div class="wrap" data-tabs>
+    <div class="sec-head">
+      <h2>Certificate tracking, step by step</h2>
+      <div class="rule"></div>
+    </div>
+    <p class="ac-lead">Documents are read and filed within minutes of arriving. Every open item carries a follow-up date, and nothing closes until the file is complete.</p>
+    <div class="tabstrip" role="tablist" aria-label="Certificate tracking steps">
+      <button type="button" role="tab" id="track-tab-0" aria-controls="track-panel-0" data-tab="0">
+        <span class="t-num">01</span>
+        <span class="t-title">Collect</span>
+      </button>
+      <button type="button" role="tab" id="track-tab-1" aria-controls="track-panel-1" data-tab="1">
+        <span class="t-num">02</span>
+        <span class="t-title">Verify</span>
+      </button>
+      <button type="button" role="tab" id="track-tab-2" aria-controls="track-panel-2" data-tab="2">
+        <span class="t-num">03</span>
+        <span class="t-title">Chase</span>
+      </button>
+      <button type="button" role="tab" id="track-tab-3" aria-controls="track-panel-3" data-tab="3">
+        <span class="t-num">04</span>
+        <span class="t-title">Hand over</span>
+      </button>
+    </div>
+    <div class="blueprint tabpanel-frame">
+      <div class="tabpanel" role="tabpanel" id="track-panel-0" aria-labelledby="track-tab-0" data-tab-panel="0">
+        <div>
+          <p class="ac-eyebrow">Step one — collect</p>
+          <p class="t-body">We take your vendor list and go after every certificate on it directly, so your team is not the one sending reminder emails.</p>
+        </div>
+        <ul>
+          <li><span class="plus">+</span>Requests sent to each sub and their agent</li>
+          <li><span class="plus">+</span>Existing files inventoried against what you paid out</li>
+          <li><span class="plus">+</span>Missing documents logged with an owner and a date</li>
         </ul>
       </div>
-      <div>
-        <h3>Nothing waits on a desk</h3>
-        <p>
-          We run our own back office on software we built for it. Documents
-          are read and filed within minutes of arriving, every open item
-          carries a follow-up date, and nothing closes until the file is
-          complete. The judgment calls &mdash; how a class applies, whether
-          a finding is worth flagging &mdash; stay with a person who knows
-          the difference.
-        </p>
-        <ul class="checks">
-          <li>Insured contact goes out the day we're assigned</li>
-          <li>Every follow-up tracked &mdash; nothing gets forgotten</li>
-          <li>A person approves anything that takes judgment</li>
+      <div class="tabpanel" role="tabpanel" id="track-panel-1" aria-labelledby="track-tab-1" data-tab-panel="1" hidden>
+        <div>
+          <p class="ac-eyebrow">Step two — verify</p>
+          <p class="t-body">A certificate on file is not the same as a certificate that holds up. We check what an auditor checks.</p>
+        </div>
+        <ul>
+          <li><span class="plus">+</span>Policy term covers the period the work was performed</li>
+          <li><span class="plus">+</span>Coverage matches the trade, not just the name</li>
+          <li><span class="plus">+</span>Exclusions and endorsements read, not skimmed</li>
         </ul>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="container two-col">
-    <div>
-      <div class="section-eyebrow">Coverage</div>
-      <h2>Florida-based. Nationally available.</h2>
-      <p>
-        Onsite audits and inspections across the Florida Gulf Coast &mdash;
-        Tampa, St. Petersburg, Sarasota, Bradenton, Fort Myers, Naples, Port
-        Charlotte, and the inland counties between them.
-      </p>
-      <p>
-        Beyond the driving radius, assignments are covered through
-        scheduled travel and an inspector network we recruit toward client
-        demand, territory by territory &mdash; with every network file
-        reviewed at our desk before it goes back.
-      </p>
-      <p class="mt-2"><a href="/coverage.html" class="btn btn-secondary">Coverage &amp; capacity</a>
-      <a href="/network.html" class="btn btn-secondary">Join our inspector network</a></p>
-    </div>
-    <div>
-      <ul class="checks">
-        <li>Florida Gulf Coast onsite audits and inspections</li>
-        <li>Nationwide remote &amp; virtual audits</li>
-        <li>Workers' compensation, general liability, and specialty lines</li>
-        <li>Risk assessments, COPE, and fire &amp; life-safety surveys</li>
-        <li>Residential inspection routes through the managed network</li>
-        <li>Every network file QA'd centrally before delivery</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-eyebrow">Why Atlas Crest</div>
-    <h2 class="section-title">A firm built on doing it right.</h2>
-    <p class="section-lede">
-      Four ideas shape every file we touch.
-    </p>
-    <div class="values">
-      <div class="value"><h3>Integrity</h3><p>We tell the truth about what we find, every time.</p></div>
-      <div class="value"><h3>Quality</h3><p>We take the time to get it right the first time.</p></div>
-      <div class="value"><h3>Transparency</h3><p>We explain what we're doing in plain language.</p></div>
-      <div class="value"><h3>Service</h3><p>We respond quickly and treat every client with respect.</p></div>
-    </div>
-    <p class="mt-4"><a href="/about.html">More about Atlas Crest &rarr;</a></p>
-  </div>
-</section>
-
-<div class="contact-block">
-  <div class="container">
-    <h2>Tell us what you need handled.</h2>
-    <p style="max-width: 56ch; margin: 0 auto 8px;">
-      Whether it's a single assignment or a territory that keeps going
-      uncovered, we'd be glad to hear from you. Most inquiries get a
-      response the same business day.
-    </p>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="label">General</div>
-        <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
+      <div class="tabpanel" role="tabpanel" id="track-panel-2" aria-labelledby="track-tab-2" data-tab-panel="2" hidden>
+        <div>
+          <p class="ac-eyebrow">Step three — chase</p>
+          <p class="t-body">Renewals are pursued before the lapse, not discovered after it. Nothing sits waiting on a desk.</p>
+        </div>
+        <ul>
+          <li><span class="plus">+</span>Expiry dates tracked with advance follow-up</li>
+          <li><span class="plus">+</span>Cancellations caught and escalated same day</li>
+          <li><span class="plus">+</span>Gaps flagged while you can still fix them</li>
+        </ul>
       </div>
-      <div class="contact-card">
-        <div class="label">Active matters</div>
-        <a href="mailto:hunter@atlascrestllc.com">hunter@atlascrestllc.com</a>
+      <div class="tabpanel" role="tabpanel" id="track-panel-3" aria-labelledby="track-tab-3" data-tab-panel="3" hidden>
+        <div>
+          <p class="ac-eyebrow">Step four — hand over</p>
+          <p class="t-body">When the audit is scheduled you hand over one complete file instead of assembling it under a deadline.</p>
+        </div>
+        <ul>
+          <li><span class="plus">+</span>Certificates indexed to the payments they cover</li>
+          <li><span class="plus">+</span>Payroll split by class code</li>
+          <li><span class="plus">+</span>Officer exclusions and waivers documented</li>
+        </ul>
+      </div>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </div>
+  </div>
+</section>
+
+<!-- ── Service lines ────────────────────────────────────────────── -->
+<section class="sec-services rule-b">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Service lines</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="svc-grid">
+      <div class="blueprint svc">
+        <span class="card-kicker">Businesses</span>
+        <h4 class="card-title">COI &amp; subcontractor compliance</h4>
+        <p class="card-body">Limits, dates, endorsements, waivers — collected, checked against the trade, and renewed before they lapse. Current status any time you ask.</p>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </div>
+      <div class="blueprint svc">
+        <span class="card-kicker">Businesses</span>
+        <h4 class="card-title">Premium audit preparation</h4>
+        <p class="card-body">Payroll split by class, subs matched to certificates, officer exclusions documented — assembled the way an auditor will actually ask for it.</p>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </div>
+      <div class="blueprint svc">
+        <span class="card-kicker">Carriers &amp; MGAs</span>
+        <h4 class="card-title">Premium audit services</h4>
+        <p class="card-body">Workers' compensation, general liability, and specialty commercial lines. Payroll, sales, and unit exposures verified against the rating basis.</p>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </div>
+      <div class="blueprint svc">
+        <span class="card-kicker">Carriers &amp; MGAs</span>
+        <h4 class="card-title">Loss control &amp; risk inspections</h4>
+        <p class="card-body">Onsite fire, life-safety, and hazard surveys documented with photographs, plus recommendations a policyholder can act on.</p>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </div>
+      <div class="blueprint svc">
+        <span class="card-kicker">Carriers &amp; MGAs</span>
+        <h4 class="card-title">Commercial property inspections</h4>
+        <p class="card-body">COPE data, replacement-cost detail, occupancy and condition — captured cleanly for the underwriting file.</p>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </div>
+      <a class="blueprint svc svc-tint" href="/coverage.html">
+        <span class="card-kicker">Coverage</span>
+        <h4 class="card-title">Onsite and remote</h4>
+        <p class="card-body">Some work has to be attended in person; the rest is records work, and records work has no territory. Where an assignment sits outside our reach, we place it with a vetted inspector and administer the file ourselves.</p>
+        <span class="ac-doorlink">See coverage →</span>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ──────────────────────────────────────────────────── -->
+<section id="contact" class="sec-contact rule-b">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="ac-eyebrow">Contact</p>
+      <h2 class="contact-h2">Tell us what needs handling.</h2>
+      <p class="ac-lead">An audit file, a stack of certificates nobody has looked at, or a territory you need covered. Send the details and we will tell you plainly whether we are the right firm for it.</p>
+      <div class="crows">
+        <div class="crow"><span class="text-muted">General</span><a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a></div>
+        <div class="crow"><span class="text-muted">Phone</span><a href="tel:+18634446700">(863) 444-6700</a></div>
+        <div class="crow"><span class="text-muted">Based</span><span>Florida</span></div>
       </div>
     </div>
-    <p class="mt-2">
-      <a href="/contact.html" class="btn btn-primary">Contact us</a>
-    </p>
+    <form class="blueprint intake" action="https://formsubmit.co/office@atlascrestllc.com" method="POST" data-aud-form>
+      <input type="hidden" name="_subject" value="Website inquiry — atlascrestllc.com">
+      <input type="hidden" name="_next" value="https://atlascrestllc.com/thanks.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="field">
+        <label id="aud-label">I am contacting you as</label>
+        <div class="ac-seg aud-seg" role="radiogroup" aria-labelledby="aud-label">
+          <label><input type="radio" name="audience" value="0" checked>Carrier or MGA</label>
+          <label><input type="radio" name="audience" value="1">A business</label>
+          <label><input type="radio" name="audience" value="2">An inspector</label>
+        </div>
+      </div>
+      <div class="form-2col">
+        <div class="field"><label for="f-name">Name</label><input class="input" id="f-name" name="name" autocomplete="name" placeholder="Full name" required></div>
+        <div class="field"><label for="f-company">Company</label><input class="input" id="f-company" name="company" autocomplete="organization" placeholder="Organization"></div>
+      </div>
+      <div class="form-2col">
+        <div class="field"><label for="f-email">Email</label><input class="input" id="f-email" type="email" name="email" autocomplete="email" placeholder="you@company.com" required></div>
+        <div class="field"><label for="f-phone">Phone <span class="opt">(optional)</span></label><input class="input" id="f-phone" type="tel" name="phone" autocomplete="tel" placeholder="(000) 000-0000"></div>
+      </div>
+      <div class="field">
+        <label for="f-message" data-aud-swap data-aud-0="Lines and volume you need covered" data-aud-1="What you need handled" data-aud-2="Your experience and territory">Lines and volume you need covered</label>
+        <textarea class="input" id="f-message" name="message" required data-aud-placeholder data-aud-0="e.g. WC and GL premium audits, 20–30 per month, Florida" data-aud-1="e.g. 14 active subs, audit scheduled in October" data-aud-2="e.g. 6 years property and loss control, your territory, E&amp;O current" placeholder="e.g. WC and GL premium audits, 20–30 per month, Florida"></textarea>
+      </div>
+      <button class="btn btn-primary blueprint" type="submit"><span data-aud-swap data-aud-0="Send inquiry" data-aud-1="Request a review" data-aud-2="Apply to the network">Send inquiry</span><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></button>
+      <p class="form-note">We use what you send only to answer you. Nothing is shared.</p>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </form>
   </div>
-</div>
+</section>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+</main>
+
+<footer class="ac-footer">
+  <div class="ac-footer-grid">
     <div>
-      <span class="footer-brand">Atlas Crest LLC</span>
-      &nbsp;·&nbsp; Florida
+      <div class="ac-footer-brand">ATLAS CREST LLC</div>
+      <p class="ac-footer-blurb">Insurance services on the records side of risk — premium audits, field inspections, and subcontractor compliance. Onsite and remote.</p>
     </div>
-    <div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For carriers</div>
+      <a href="/field-services.html#audits">Premium audits</a>
+      <a href="/field-services.html#loss-control">Loss control surveys</a>
+      <a href="/field-services.html#property">Property inspections</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For businesses</div>
+      <a href="/business-services.html#coi">Certificate tracking</a>
+      <a href="/business-services.html#audit-prep">Audit preparation</a>
+      <a href="/coverage.html">Coverage area</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">Firm</div>
+      <a href="/about.html">About</a>
+      <a href="/network.html">Join the network</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="ac-footer-legal">
+    <span>Atlas Crest LLC · Florida</span>
+    <div class="ac-footer-legal-links">
       <a href="/privacy.html">Privacy</a>
-      &nbsp;·&nbsp;
       <a href="/terms.html">Terms</a>
-      &nbsp;·&nbsp;
       <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
-      &nbsp;·&nbsp; &copy; 2026 Atlas Crest LLC
+      <span>© 2026 Atlas Crest LLC</span>
     </div>
   </div>
 </footer>
 
+<script src="/js/site.js"></script>
 </body>
 </html>

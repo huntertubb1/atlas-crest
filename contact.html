@@ -1,178 +1,256 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — Atlas Crest LLC</title>
-<meta name="description" content="Contact Atlas Crest LLC about premium audit and inspection assignments, territory coverage, or joining our independent inspector network. Florida-based, serving clients nationwide. Most inquiries answered the same business day.">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="description" content="Tell us what needs handling — an audit assignment, subcontractor certificates, or a territory you need covered. Atlas Crest LLC, Florida. Onsite and remote.">
+<link rel="icon" type="image/png" href="/assets/atlas-crest-shield.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css?v=1">
+<style>
+/* ── Contact page ───────────────────────────────────────────────── */
+.contact-wrap { max-width: 1280px; margin: 0 auto; }
+
+.contact-hero { padding: 66px var(--pad-x) 62px; border-bottom: 1px solid var(--color-divider); }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.05fr;
+  gap: 64px; align-items: start;
+}
+.contact-hero .ac-eyebrow { margin-bottom: 20px; }
+.contact-hero h1 {
+  font-size: 52px; line-height: 1.04; letter-spacing: -.02em;
+  margin: 0 0 22px; max-width: 16ch;
+}
+.contact-lead { max-width: 46ch; margin-bottom: 32px; }
+
+/* contact detail rows */
+.contact-rows { border-top: 1px solid var(--color-divider); }
+.ac-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 15px 0; border-bottom: 1px solid var(--color-divider);
+  font-size: 13.5px;
+}
+.ac-row > span:first-child { color: var(--color-muted); }
+
+/* expectations panel */
+.contact-expect {
+  margin-top: 34px; padding: 24px 26px;
+  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+}
+.contact-expect-head {
+  font: 600 11px var(--font-heading); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--color-accent-700);
+  margin-bottom: 14px;
+}
+.contact-expect-body { display: grid; gap: 14px; }
+.contact-expect-body p {
+  font-size: 13.5px; line-height: 1.5;
+  color: color-mix(in srgb, var(--color-text) 80%, transparent);
+}
+
+/* intake form */
+.contact-form { padding: 32px; display: flex; flex-direction: column; gap: 18px; }
+.contact-seg { display: flex; width: 100%; }
+.contact-seg label { flex: 1; justify-content: center; padding: 11px 8px; }
+.contact-two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contact-form textarea.input { min-height: 120px; }
+.contact-when { display: flex; gap: 20px; padding-top: 4px; flex-wrap: wrap; }
+.contact-submit { padding: 14px; font-size: 15px; }
+.contact-fineprint { font-size: 11.5px; color: var(--color-caption); margin: 0; }
+.field-optional { color: #a0a0a4; }
+
+/* ── responsive ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .contact-hero { padding: 30px 20px 28px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+  .contact-hero h1 { font-size: 34px; margin-bottom: 16px; }
+  .contact-lead { font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
+  .contact-expect { margin-top: 28px; padding: 20px; }
+  .contact-form { padding: 22px 18px; gap: 14px; }
+  .contact-seg { flex-direction: column; }
+  .contact-seg label { justify-content: flex-start; text-align: left; }
+  .contact-seg label + label { border-left: 0; border-top: 1px solid var(--color-divider); }
+  .contact-two { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="brand">
-      <img src="/assets/atlas_crest_shield.jpg" alt="Atlas Crest shield">
-      <span class="brand-text">
-        <span class="brand-name">Atlas Crest</span>
-        <span class="brand-tag">Insurance Services</span>
-      </span>
-    </a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
-    <label for="nav-toggle" class="nav-burger"><span></span><span></span><span></span></label>
-    <nav class="primary">
-      <a href="/">Home</a>
-      <a href="/field-services.html">Field Services</a>
-      <a href="/coverage.html">Coverage</a>
-      <a href="/network.html">Join Our Network</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html" class="nav-cta active">Contact</a>
-    </nav>
-  </div>
+<header class="ac-header">
+  <a href="/" class="ac-brand">
+    <span class="ac-brand-tile"><img src="/assets/atlas-crest-shield.png" alt="Atlas Crest shield"></span>
+    <span>
+      <span class="ac-brand-name" style="display:block">ATLAS CREST</span>
+      <span class="ac-brand-tag" style="display:block">Insurance Services</span>
+    </span>
+  </a>
+  <nav class="ac-nav" aria-label="Primary">
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/network.html">Inspector Network</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  <button class="ac-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="ac-drawer" aria-label="Mobile">
+    <a href="/">Home</a>
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/network.html">Inspector Network</a>
+    <a href="/about.html">About</a>
+    <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  </nav>
 </header>
 
-<section class="page-hero">
-  <div class="container">
-    <div class="meta">Contact</div>
-    <h1>How to reach us.</h1>
-    <p class="lede">
-      Email is the fastest way to get a response. Choose the address that
-      best matches what you're reaching out about.
-    </p>
-  </div>
-</section>
+<main>
+  <section class="contact-hero">
+    <div class="contact-wrap contact-grid">
 
-<section>
-  <div class="container">
-    <div class="two-col">
       <div>
-        <div class="section-eyebrow">General inquiries</div>
-        <h2>Office</h2>
-        <p>
-          New business, carrier and MGA inquiries, inspection vendor
-          onboarding, territory and coverage questions, inspectors looking
-          to join the network, referrals, or anything that isn't about an
-          active file.
-        </p>
-        <p><a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a></p>
+        <p class="ac-eyebrow">Contact</p>
+        <h1>Tell us what needs handling.</h1>
+        <p class="ac-lead contact-lead">An audit assignment, a stack of certificates nobody has looked at, or a territory you need covered. Send the details and we will tell you plainly whether we are the right firm for it.</p>
+
+        <div class="contact-rows">
+          <div class="ac-row"><span>General</span><a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a></div>
+          <div class="ac-row"><span>Phone</span><a href="tel:+18634446700">(863) 444-6700</a></div>
+          <div class="ac-row"><span>Based</span><span>Florida</span></div>
+          <div class="ac-row"><span>Serving</span><span>Onsite and remote</span></div>
+        </div>
+
+        <div class="blueprint contact-expect">
+          <div class="contact-expect-head">What you can expect</div>
+          <div class="contact-expect-body">
+            <p>A straight answer on whether the work is a fit, and a scope and timeline agreed in writing before anything starts.</p>
+            <p>The person who replies is the person who will handle the file.</p>
+          </div>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
       </div>
-      <div>
-        <div class="section-eyebrow">Active audits</div>
-        <h2>Scheduling &amp; correspondence</h2>
-        <p>
-          Records, scheduling, appointment confirmations, and the daily
-          back-and-forth on an open audit. Comes straight to the auditor
-          handling your file.
-        </p>
-        <p><a href="mailto:hunter@atlascrestllc.com">hunter@atlascrestllc.com</a></p>
-      </div>
+
+      <form class="blueprint contact-form" data-aud-form action="https://formsubmit.co/office@atlascrestllc.com" method="POST">
+        <input type="hidden" name="_subject" value="Website inquiry — atlascrestllc.com">
+        <input type="hidden" name="_next" value="https://atlascrestllc.com/thanks.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="field">
+          <label id="contact-aud-label">I am contacting you as</label>
+          <div class="ac-seg contact-seg" role="radiogroup" aria-labelledby="contact-aud-label">
+            <label><input type="radio" name="audience" value="0" checked>Carrier or MGA</label>
+            <label><input type="radio" name="audience" value="1">A business</label>
+            <label><input type="radio" name="audience" value="2">An inspector</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label data-aud-swap data-aud-0="What you need covered" data-aud-1="What is going on" data-aud-2="Lines you work">What you need covered</label>
+          <div class="ac-chips" data-chip-set="0">
+            <label class="ac-chip"><input type="checkbox" name="needs" value="Premium audits">Premium audits</label>
+            <label class="ac-chip"><input type="checkbox" name="needs" value="Loss control">Loss control</label>
+            <label class="ac-chip"><input type="checkbox" name="needs" value="Property / COPE">Property / COPE</label>
+            <label class="ac-chip"><input type="checkbox" name="needs" value="Overflow capacity">Overflow capacity</label>
+          </div>
+          <div class="ac-chips" data-chip-set="1" hidden>
+            <label class="ac-chip"><input type="checkbox" name="needs" value="Subcontractor certificates">Subcontractor certificates</label>
+            <label class="ac-chip"><input type="checkbox" name="needs" value="Audit is scheduled">Audit is scheduled</label>
+            <label class="ac-chip"><input type="checkbox" name="needs" value="Audit came back wrong">Audit came back wrong</label>
+            <label class="ac-chip"><input type="checkbox" name="needs" value="Not sure yet">Not sure yet</label>
+          </div>
+          <div class="ac-chips" data-chip-set="2" hidden>
+            <label class="ac-chip"><input type="checkbox" name="needs" value="Premium audit">Premium audit</label>
+            <label class="ac-chip"><input type="checkbox" name="needs" value="Loss control">Loss control</label>
+            <label class="ac-chip"><input type="checkbox" name="needs" value="Property / COPE">Property / COPE</label>
+            <label class="ac-chip"><input type="checkbox" name="needs" value="Virtual audit">Virtual audit</label>
+          </div>
+        </div>
+
+        <div class="contact-two">
+          <div class="field">
+            <label for="contact-name">Name</label>
+            <input class="input" id="contact-name" name="name" autocomplete="name" placeholder="Full name" required>
+          </div>
+          <div class="field">
+            <label for="contact-company">Company</label>
+            <input class="input" id="contact-company" name="company" autocomplete="organization" placeholder="Organization">
+          </div>
+        </div>
+        <div class="contact-two">
+          <div class="field">
+            <label for="contact-email">Email</label>
+            <input class="input" id="contact-email" type="email" name="email" autocomplete="email" placeholder="you@company.com" required>
+          </div>
+          <div class="field">
+            <label for="contact-phone">Phone <span class="field-optional">(optional)</span></label>
+            <input class="input" id="contact-phone" type="tel" name="phone" autocomplete="tel" placeholder="(000) 000-0000">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="contact-message" data-aud-swap data-aud-0="Lines, volume, and territory" data-aud-1="What needs handling" data-aud-2="Your experience and territory">Lines, volume, and territory</label>
+          <textarea class="input" id="contact-message" name="message" data-aud-placeholder data-aud-0="e.g. WC and GL audits, 20–30 per month, and the territory" data-aud-1="e.g. 14 active subs, no tracking in place, audit due in October" data-aud-2="e.g. 6 years property and loss control, your territory, E&amp;O current" placeholder="e.g. WC and GL audits, 20–30 per month, and the territory"></textarea>
+        </div>
+
+        <div class="field">
+          <label id="contact-when-label">How soon</label>
+          <div class="contact-when" role="radiogroup" aria-labelledby="contact-when-label">
+            <label class="radio"><input type="radio" name="how_soon" value="This week"><span class="dot"></span>This week</label>
+            <label class="radio"><input type="radio" name="how_soon" value="This month"><span class="dot"></span>This month</label>
+            <label class="radio"><input type="radio" name="how_soon" value="Just exploring"><span class="dot"></span>Just exploring</label>
+          </div>
+        </div>
+
+        <button class="btn btn-primary blueprint contact-submit" type="submit"><span data-aud-swap data-aud-0="Send inquiry" data-aud-1="Request a review" data-aud-2="Apply to the network">Send inquiry</span><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></button>
+        <p class="contact-fineprint">We use what you send only to answer you. Nothing is shared.</p>
+
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </form>
+
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<section class="alt">
-  <div class="container">
-    <div class="section-eyebrow">Ask a question / request a quote</div>
-    <h2 class="section-title">Tell us what you need &mdash; we'll get right back.</h2>
-    <p class="section-lede" style="max-width: 62ch;">
-      A question, a quote, or a territory that keeps going uncovered &mdash;
-      drop it here and it lands straight in our inbox. Most inquiries get a
-      response the same business day.
-    </p>
-
-    <form class="inquiry-form" action="https://formsubmit.co/office@atlascrestllc.com" method="POST">
-      <input type="hidden" name="_subject" value="Website inquiry — atlascrestllc.com">
-      <input type="hidden" name="_next" value="https://atlascrestllc.com/thanks.html">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-      <div class="form-grid">
-        <label>Your name *
-          <input type="text" name="name" required autocomplete="name">
-        </label>
-        <label>Business name
-          <input type="text" name="business" autocomplete="organization">
-        </label>
-        <label>Email *
-          <input type="email" name="email" required autocomplete="email">
-        </label>
-        <label>Phone
-          <input type="tel" name="phone" autocomplete="tel">
-        </label>
-      </div>
-      <label>What do you need help with?
-        <select name="interest">
-          <option>Premium audit assignment (carrier / vendor)</option>
-          <option>Inspection or loss-control assignment</option>
-          <option>Risk assessment for my business</option>
-          <option>Residential inspection program / routes</option>
-          <option>Territory coverage inquiry</option>
-          <option>Independent inspector &mdash; join the network</option>
-          <option>Something else</option>
-        </select>
-      </label>
-      <label>Tell us about it *
-        <textarea name="message" rows="5" required placeholder="What territory needs covering? What's the volume and turnaround? Or where are you based and when are you available? A sentence or two is plenty."></textarea>
-      </label>
-      <p><button type="submit" class="btn btn-primary">Send it</button></p>
-      <p class="form-note">Goes straight to office@atlascrestllc.com. No newsletters, no spam &mdash; just an answer.</p>
-    </form>
-
-    <hr class="divider">
-
-    <div class="two-col">
-      <div>
-        <div class="section-eyebrow">Where we work</div>
-        <h2>Service area</h2>
-        <p>
-          Atlas Crest LLC is headquartered in Florida. Onsite audits and
-          inspections cover the Florida Gulf Coast &mdash; Tampa, St.
-          Petersburg, Sarasota, Fort Myers, Naples, Port Charlotte, and the
-          inland counties between them.
-        </p>
-        <p>
-          Remote and virtual audits are handled nationwide, and coverage
-          beyond our home territory is available through scheduled travel
-          and our inspector network &mdash; tell us where you need
-          coverage.
-        </p>
-        <p class="mt-1"><a href="/coverage.html">Full coverage details &rarr;</a></p>
-      </div>
-      <div>
-        <div class="section-eyebrow">Response time</div>
-        <h2>When you'll hear back</h2>
-        <p>
-          We monitor email throughout the business day. Replies on active
-          audits typically go out within a few hours.
-        </p>
-        <p>
-          For physical audits, appointments are set on a schedule that
-          works for the insured, with time to gather records.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
+<footer class="ac-footer">
+  <div class="ac-footer-grid">
     <div>
-      <span class="footer-brand">Atlas Crest LLC</span>
-      &nbsp;·&nbsp; Florida
+      <div class="ac-footer-brand">ATLAS CREST LLC</div>
+      <p class="ac-footer-blurb">Insurance services on the records side of risk — premium audits, field inspections, and subcontractor compliance. Onsite and remote.</p>
     </div>
-    <div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For carriers</div>
+      <a href="/field-services.html#audits">Premium audits</a>
+      <a href="/field-services.html#loss-control">Loss control surveys</a>
+      <a href="/field-services.html#property">Property inspections</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For businesses</div>
+      <a href="/business-services.html#coi">Certificate tracking</a>
+      <a href="/business-services.html#audit-prep">Audit preparation</a>
+      <a href="/coverage.html">Coverage area</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">Firm</div>
+      <a href="/about.html">About</a>
+      <a href="/network.html">Join the network</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="ac-footer-legal">
+    <span>Atlas Crest LLC · Florida</span>
+    <div class="ac-footer-legal-links">
       <a href="/privacy.html">Privacy</a>
-      &nbsp;·&nbsp;
       <a href="/terms.html">Terms</a>
-      &nbsp;·&nbsp;
       <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
-      &nbsp;·&nbsp; &copy; 2026 Atlas Crest LLC
+      <span>© 2026 Atlas Crest LLC</span>
     </div>
   </div>
 </footer>
 
+<script src="/js/site.js"></script>
 </body>
 </html>

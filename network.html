@@ -3,241 +3,334 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Join Our Network — Independent Inspectors &amp; Auditors — Atlas Crest LLC</title>
-<meta name="description" content="Atlas Crest LLC is building a vetted network of independent insurance inspectors and premium auditors. We hold the client relationships, dispatch the work, QA every file, and pay a flat fee per completed report — you do the field work.">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<title>Inspector Network — Atlas Crest LLC</title>
+<meta name="description" content="Atlas Crest LLC is building a vetted network of independent inspectors and premium auditors. You attend the site and write the file — we handle the client relationship, the scheduling, the review, and the invoicing.">
+<link rel="icon" type="image/png" href="/assets/atlas-crest-shield.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css?v=1">
+<style>
+/* ── Inspector Network page ─────────────────────────────────────── */
+.nw-wrap { max-width: 1280px; margin: 0 auto; }
+
+/* small-caps panel heads inside framed blocks */
+.nw-head {
+  font: 600 11px var(--font-heading);
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+
+/* list rows */
+.ac-li {
+  font-size: 13.5px; line-height: 1.5; padding: 11px 0;
+  border-bottom: 1px solid var(--color-divider);
+  display: flex; gap: 12px;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+}
+.ac-li:last-child { border-bottom: 0; }
+.ac-plus { color: var(--color-accent); font-family: var(--font-heading); }
+
+/* tags (squared, per system) */
+.tag {
+  display: inline-flex; align-items: center;
+  font-size: 11px; letter-spacing: .02em; padding: 3px 10px;
+  border-radius: 0;
+}
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* hero */
+.nw-hero {
+  display: grid; grid-template-columns: 1.25fr 1fr; gap: 64px;
+  padding: 66px var(--pad-x) 58px; align-items: end;
+  border-bottom: 1px solid var(--color-divider);
+}
+.nw-hero h1 {
+  font-size: 56px; line-height: 1.03; letter-spacing: -.02em;
+  margin: 0 0 22px; max-width: 18ch;
+}
+.nw-hero .ac-eyebrow { margin-bottom: 20px; }
+.nw-seeking {
+  padding: 24px 26px;
+  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+}
+.nw-seeking .nw-head { margin-bottom: 10px; }
+.nw-seeking-tags { display: flex; gap: 7px; flex-wrap: wrap; }
+
+/* facing framed lists */
+.nw-lists {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
+  padding: 60px var(--pad-x);
+  border-bottom: 1px solid var(--color-divider);
+  align-items: start;
+}
+.nw-lists .blueprint { padding: 28px 30px; }
+.nw-lists .nw-head { margin-bottom: 6px; }
+
+/* dark four-step band */
+.nw-steps-band { padding: 60px var(--pad-x); }
+.nw-steps-band .ac-eyebrow { margin-bottom: 30px; }
+.nw-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.nw-step { padding: 0 28px; border-right: 1px solid color-mix(in srgb, var(--ac-field-ink) 22%, transparent); }
+.nw-step:first-child { padding-left: 0; }
+.nw-step:last-child { padding-right: 0; border-right: 0; }
+.nw-step-num {
+  font: 600 12px var(--font-heading);
+  letter-spacing: .12em; color: var(--color-accent-400);
+  margin-bottom: 8px;
+}
+.nw-step-title { font: 600 24px var(--font-heading); margin-bottom: 6px; }
+.nw-step p {
+  font-size: 13px; line-height: 1.5; margin: 0;
+  color: color-mix(in srgb, var(--ac-field-ink) 76%, transparent);
+}
+
+/* apply section */
+.nw-apply {
+  display: grid; grid-template-columns: 1fr 1.05fr; gap: 64px;
+  padding: 64px var(--pad-x);
+  border-bottom: 1px solid var(--color-divider);
+}
+.nw-apply .ac-eyebrow { margin-bottom: 20px; }
+.nw-apply h2 { font-size: 38px; line-height: 1.06; margin: 0 0 20px; max-width: 18ch; }
+.nw-apply .ac-lead { max-width: 44ch; margin-bottom: 26px; }
+.nw-facts { display: grid; border-top: 1px solid var(--color-divider); }
+.nw-fact {
+  display: flex; justify-content: space-between; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid var(--color-divider);
+  font-size: 13.5px;
+}
+.nw-fact > span:first-child { color: var(--color-muted); }
+
+.nw-form { padding: 30px; display: flex; flex-direction: column; gap: 18px; }
+.nw-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.nw-radios { display: flex; gap: 20px; padding-top: 4px; flex-wrap: wrap; }
+.nw-form .btn-primary { padding: 13px; font-size: 15px; }
+
+/* ── responsive ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nw-hero { grid-template-columns: 1fr; gap: 24px; padding: 30px var(--pad-x); align-items: start; }
+  .nw-hero h1 { font-size: 36px; margin-bottom: 16px; }
+  .nw-hero .ac-eyebrow { margin-bottom: 14px; }
+  .nw-lists { grid-template-columns: 1fr; gap: 26px; padding: 26px var(--pad-x); }
+  .nw-steps-band { padding: 28px var(--pad-x); }
+  .nw-steps-band .ac-eyebrow { margin-bottom: 16px; }
+  .nw-steps { grid-template-columns: 1fr; gap: 16px; }
+  .nw-step { display: flex; gap: 12px; padding: 0; border-right: 0; }
+  .nw-step-num { padding-top: 5px; margin-bottom: 0; }
+  .nw-step-title { font-size: 20px; margin-bottom: 2px; }
+  .nw-step p { font-size: 12.5px; }
+  .nw-apply { grid-template-columns: 1fr; gap: 32px; padding: 28px var(--pad-x); }
+  .nw-apply h2 { font-size: 26px; margin-bottom: 16px; }
+  .nw-form { padding: 22px 20px; gap: 14px; }
+  .nw-form-row { grid-template-columns: 1fr; gap: 14px; }
+}
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="brand">
-      <img src="/assets/atlas_crest_shield.jpg" alt="Atlas Crest shield">
-      <span class="brand-text">
-        <span class="brand-name">Atlas Crest</span>
-        <span class="brand-tag">Insurance Services</span>
-      </span>
-    </a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
-    <label for="nav-toggle" class="nav-burger"><span></span><span></span><span></span></label>
-    <nav class="primary">
-      <a href="/">Home</a>
-      <a href="/field-services.html">Field Services</a>
-      <a href="/coverage.html">Coverage</a>
-      <a href="/network.html" class="active">Join Our Network</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html" class="nav-cta">Contact</a>
-    </nav>
-  </div>
+<header class="ac-header">
+  <a href="/" class="ac-brand">
+    <span class="ac-brand-tile"><img src="/assets/atlas-crest-shield.png" alt="Atlas Crest shield"></span>
+    <span>
+      <span class="ac-brand-name" style="display:block">ATLAS CREST</span>
+      <span class="ac-brand-tag" style="display:block">Insurance Services</span>
+    </span>
+  </a>
+  <nav class="ac-nav" aria-label="Primary">
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/network.html" aria-current="page">Inspector Network</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  <button class="ac-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="ac-drawer" aria-label="Mobile">
+    <a href="/">Home</a>
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/network.html" aria-current="page">Inspector Network</a>
+    <a href="/about.html">About</a>
+    <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  </nav>
 </header>
 
-<section class="page-hero">
-  <div class="container">
-    <div class="meta">Join Our Network</div>
-    <h1>Field work, without the business development.</h1>
-    <p class="lede">
-      We're building a vetted bench of independent inspectors and auditors.
-      Atlas Crest holds the client relationships, dispatches the assignments,
-      reviews every file, and handles getting you paid &mdash; you do the
-      field work, and the work comes to you.
-    </p>
-  </div>
-</section>
+<main>
 
-<section>
-  <div class="container">
-    <div class="section-eyebrow">The work</div>
-    <h2 class="section-title">What you'd actually be doing.</h2>
-    <div class="two-col mt-4">
-      <div>
-        <h3>Residential insurance inspections</h3>
-        <p>
-          Exterior surveys of insured homes for carrier underwriting: a
-          defined photo set, a short list of observations, an app-based
-          report. Each stop is quick, and the work pays as a route &mdash;
-          many inspections in a day in a compact area. No insurance
-          background needed to start; what matters is showing up and
-          following the checklist exactly.
-        </p>
-      </div>
-      <div>
-        <h3>Commercial inspections &amp; audit fieldwork</h3>
-        <p>
-          Commercial property and loss-control surveys, and premium audit
-          field work for experienced auditors. More per report, more
-          judgment involved, and a higher documentation standard. We bring
-          network members into this side as the volume and their track
-          record support it.
-        </p>
-      </div>
+<!-- hero + currently seeking -->
+<div class="nw-wrap">
+  <section class="nw-hero">
+    <div>
+      <p class="ac-eyebrow">For independent inspectors &amp; auditors</p>
+      <h1>Assignments, without the chasing.</h1>
+      <p class="ac-lead" style="max-width:54ch">We are building a vetted network to cover work beyond our own territory. You attend the site and write the file. We handle the client relationship, the scheduling, the review, and the invoicing.</p>
     </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="container">
-    <div class="section-eyebrow">Why work with us</div>
-    <h2 class="section-title">The deal, plainly.</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>The work finds you</h3>
-        <p>
-          We hold the client relationships and take the assignments. You
-          never market yourself, chase a vendor manager, or wonder where the
-          next file comes from &mdash; assignments arrive dispatched, with
-          the address, the scope, and the due date.
-        </p>
+    <div class="blueprint nw-seeking">
+      <div class="nw-head">Currently seeking</div>
+      <div class="nw-seeking-tags">
+        <span class="tag tag-accent">Premium audit</span>
+        <span class="tag tag-accent">Loss control</span>
+        <span class="tag tag-accent">Property / COPE</span>
+        <span class="tag tag-outline">Southeast US</span>
+        <span class="tag tag-outline">Gulf states</span>
+        <span class="tag tag-outline">Statewide Florida</span>
       </div>
-      <div class="card">
-        <h3>Clear standards, no guesswork</h3>
-        <p>
-          Every assignment comes with the exact checklist and photo standard
-          the client grades against. You always know what a complete report
-          looks like before you leave the driveway.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Your file is reviewed before it ships</h3>
-        <p>
-          We QA every report before it goes to the client. Problems get
-          caught while they're still fixable, your acceptance rate stays
-          clean, and you're never the one explaining a kicked-back file to a
-          carrier.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Paid without chasing</h3>
-        <p>
-          A flat fee per completed report, paid by Atlas Crest on a regular
-          schedule. No invoicing carriers, no collections, no net-60
-          mystery.
-        </p>
-      </div>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="container">
-    <div class="section-eyebrow">How it works</div>
-    <h2 class="section-title">From first email to steady routes.</h2>
-    <ol class="steps">
-      <li>
-        <h3>Introduce yourself</h3>
-        <p>
-          Tell us where you're based, what your availability looks like, and
-          any relevant experience &mdash; though for residential work, none
-          is required. A reliable vehicle and a smartphone with a decent
-          camera are the actual prerequisites.
-        </p>
-      </li>
-      <li>
-        <h3>Background check &amp; credentialing</h3>
-        <p>
-          The carriers and platforms we serve require a background check
-          before a first assignment. We set it up &mdash; it's quick and
-          we walk you through it &mdash; and get you credentialed on the
-          systems the work runs through.
-        </p>
-      </li>
-      <li>
-        <h3>First files, closely reviewed</h3>
-        <p>
-          You start with a small batch. We go through your first reports
-          with you in detail &mdash; what passed, what we fixed, and why
-          &mdash; until your files come through QA untouched.
-        </p>
-      </li>
-      <li>
-        <h3>Steady routes</h3>
-        <p>
-          As your quality holds, your volume grows. Dense, efficient routes
-          in your area, dispatched on a predictable rhythm.
-        </p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="container">
-    <div class="section-eyebrow">Fit</div>
-    <h2 class="section-title">Who we're looking for, and where.</h2>
-    <div class="two-col mt-4">
-      <div>
-        <h3>What we look for</h3>
-        <ul class="checks">
-          <li>Reliable &mdash; routes run on schedule, every time</li>
-          <li>Detail-oriented &mdash; follows a checklist exactly</li>
-          <li>Professional and comfortable at a stranger's door</li>
-          <li>Smartphone with a good camera and a dependable vehicle</li>
-          <li>Able to pass a background check</li>
-          <li>Insurance or inspection experience helps, but isn't required for residential</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Where we're building first</h3>
-        <ul class="checks">
-          <li>Florida Gulf Coast &mdash; our home territory</li>
-          <li>Dallas&ndash;Fort Worth metro</li>
-          <li>Oklahoma City metro</li>
-        </ul>
-        <p class="mt-2">
-          Somewhere else? Introduce yourself anyway. We recruit toward
-          client demand, and demand moves &mdash; knowing who's available in
-          a territory is often what lets us say yes to the work there.
-        </p>
-      </div>
+  <!-- facing framed lists -->
+  <section class="nw-lists">
+    <div class="blueprint">
+      <div class="nw-head">What we ask of you</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Demonstrated experience in the line you are applying for</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Your own general liability and E&amp;O coverage, current</div>
+      <div class="ac-li"><span class="ac-plus">+</span>A camera, a measuring tool, and a reliable vehicle</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Files written to our scope and photo standard</div>
+      <div class="ac-li"><span class="ac-plus">+</span>A prompt yes or no when an assignment is offered</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Direct, professional contact with the insured</div>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
     </div>
-    <p class="mt-4" style="color: var(--ink2); max-width: 68ch;">
-      Straight talk, because we'd rather set expectations right: we're a
-      growing firm, and volume in a new territory builds over time rather
-      than arriving all at once. This works best as flexible, additional
-      income first &mdash; and grows from there with the territory.
-    </p>
-  </div>
-</section>
-
-<div class="contact-block">
-  <div class="container">
-    <h2>Interested? Introduce yourself.</h2>
-    <p style="max-width: 56ch; margin: 0 auto 8px;">
-      A few lines about where you are and when you're available is plenty to
-      start the conversation. Most inquiries get a response the same
-      business day.
-    </p>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="label">Network inquiries</div>
-        <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
-      </div>
+    <div class="blueprint">
+      <div class="nw-head">What you get from us</div>
+      <div class="ac-li"><span class="ac-plus">+</span>A per-assignment fee agreed before you accept</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Scope, contacts, and prior file supplied up front</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Scheduling and client questions handled by us</div>
+      <div class="ac-li"><span class="ac-plus">+</span>A review pass before anything goes to the carrier</div>
+      <div class="ac-li"><span class="ac-plus">+</span>No exclusivity — work our assignments alongside your own</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Paid on our terms, not the carrier's</div>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
     </div>
-    <p class="mt-2">
-      <a href="/contact.html" class="btn btn-primary">Contact us</a>
-    </p>
-  </div>
+  </section>
 </div>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <span class="footer-brand">Atlas Crest LLC</span>
-      &nbsp;·&nbsp; Florida
+<!-- dark four-step band (full-bleed) -->
+<section class="ac-field-section on-dark">
+  <div class="nw-wrap nw-steps-band">
+    <p class="ac-eyebrow">How it works</p>
+    <div class="nw-steps">
+      <div class="nw-step">
+        <div class="nw-step-num">01</div>
+        <div>
+          <div class="nw-step-title">Apply</div>
+          <p>Send your lines, territory, and credentials. We review and talk.</p>
+        </div>
+      </div>
+      <div class="nw-step">
+        <div class="nw-step-num">02</div>
+        <div>
+          <div class="nw-step-title">Onboard</div>
+          <p>Coverage verified, fee schedule agreed, scope and templates issued.</p>
+        </div>
+      </div>
+      <div class="nw-step">
+        <div class="nw-step-num">03</div>
+        <div>
+          <div class="nw-step-title">Accept work</div>
+          <p>Assignments come to you with the fee stated. Accept what fits your week.</p>
+        </div>
+      </div>
+      <div class="nw-step">
+        <div class="nw-step-num">04</div>
+        <div>
+          <div class="nw-step-title">Get paid</div>
+          <p>Submit the file, we review and deliver it, and you invoice us directly.</p>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- apply -->
+<div class="nw-wrap">
+  <section class="nw-apply">
     <div>
+      <p class="ac-eyebrow">Apply</p>
+      <h2>Put your details on file.</h2>
+      <p class="ac-lead">We add inspectors as territory demand appears, so applying early matters more than applying at the right moment. We read every application and reply to all of them.</p>
+      <div class="nw-facts">
+        <div class="nw-fact"><span>Applications</span><a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a></div>
+        <div class="nw-fact"><span>Engagement</span><span>Independent contractor, 1099</span></div>
+      </div>
+    </div>
+    <form class="blueprint nw-form" action="https://formsubmit.co/office@atlascrestllc.com" method="POST">
+      <input type="hidden" name="_subject" value="Inspector network application — atlascrestllc.com">
+      <input type="hidden" name="_next" value="https://atlascrestllc.com/thanks.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <fieldset class="field" style="border:0;padding:0;margin:0">
+        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Lines you work</legend>
+        <div class="ac-chips">
+          <label class="ac-chip"><input type="checkbox" name="lines" value="Premium audit">Premium audit</label>
+          <label class="ac-chip"><input type="checkbox" name="lines" value="Loss control">Loss control</label>
+          <label class="ac-chip"><input type="checkbox" name="lines" value="Property / COPE">Property / COPE</label>
+          <label class="ac-chip"><input type="checkbox" name="lines" value="Virtual audit">Virtual audit</label>
+        </div>
+      </fieldset>
+      <div class="nw-form-row">
+        <div class="field"><label for="nw-name">Name</label><input class="input" id="nw-name" name="name" type="text" placeholder="Full name" autocomplete="name"></div>
+        <div class="field"><label for="nw-email">Email</label><input class="input" id="nw-email" name="email" type="email" placeholder="you@example.com" autocomplete="email"></div>
+      </div>
+      <div class="nw-form-row">
+        <div class="field"><label for="nw-territory">Territory</label><input class="input" id="nw-territory" name="territory" type="text" placeholder="Counties or metro areas"></div>
+        <div class="field"><label for="nw-years">Years in the field</label><input class="input" id="nw-years" name="years_in_field" type="text" inputmode="numeric" placeholder="e.g. 6"></div>
+      </div>
+      <fieldset class="field" style="border:0;padding:0;margin:0">
+        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">E&amp;O coverage</legend>
+        <div class="nw-radios">
+          <label class="radio"><input type="radio" name="eo_coverage" value="Current"><span class="dot"></span>Current</label>
+          <label class="radio"><input type="radio" name="eo_coverage" value="Lapsed"><span class="dot"></span>Lapsed</label>
+          <label class="radio"><input type="radio" name="eo_coverage" value="None yet"><span class="dot"></span>None yet</label>
+        </div>
+      </fieldset>
+      <div class="field"><label for="nw-exp">Experience, briefly</label><textarea class="input" id="nw-exp" name="experience" style="min-height:96px" placeholder="Carriers or vendors you have worked for, and the file types you are strongest in"></textarea></div>
+      <button class="btn btn-primary blueprint" type="submit">Apply to the network<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></button>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </form>
+  </section>
+</div>
+
+</main>
+
+<footer class="ac-footer">
+  <div class="ac-footer-grid">
+    <div>
+      <div class="ac-footer-brand">ATLAS CREST LLC</div>
+      <p class="ac-footer-blurb">Insurance services on the records side of risk — premium audits, field inspections, and subcontractor compliance. Onsite and remote.</p>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For carriers</div>
+      <a href="/field-services.html#audits">Premium audits</a>
+      <a href="/field-services.html#loss-control">Loss control surveys</a>
+      <a href="/field-services.html#property">Property inspections</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For businesses</div>
+      <a href="/business-services.html#coi">Certificate tracking</a>
+      <a href="/business-services.html#audit-prep">Audit preparation</a>
+      <a href="/coverage.html">Coverage area</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">Firm</div>
+      <a href="/about.html">About</a>
+      <a href="/network.html">Join the network</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="ac-footer-legal">
+    <span>Atlas Crest LLC · Florida</span>
+    <div class="ac-footer-legal-links">
       <a href="/privacy.html">Privacy</a>
-      &nbsp;·&nbsp;
       <a href="/terms.html">Terms</a>
-      &nbsp;·&nbsp;
       <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
-      &nbsp;·&nbsp; &copy; 2026 Atlas Crest LLC
+      <span>© 2026 Atlas Crest LLC</span>
     </div>
   </div>
 </footer>
 
+<script src="/js/site.js"></script>
 </body>
 </html>

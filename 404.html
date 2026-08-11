@@ -4,62 +4,74 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found — Atlas Crest LLC</title>
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="/assets/atlas-crest-shield.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css?v=1">
+<style>
+.nf-hero { padding: 96px var(--pad-x) 110px; text-align: center; }
+.nf-hero .inner { max-width: 620px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.nf-hero h1 { font-size: 52px; }
+.nf-hero p { font-size: 16px; line-height: 1.62; color: color-mix(in srgb, var(--color-text) 78%, transparent); max-width: 44ch; }
+.nf-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+@media (max-width: 900px) { .nf-hero { padding: 56px 20px 64px; } .nf-hero h1 { font-size: 34px; } }
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="brand">
-      <img src="/assets/atlas_crest_shield.jpg" alt="Atlas Crest shield">
-      <span class="brand-text">
-        <span class="brand-name">Atlas Crest</span>
-        <span class="brand-tag">Insurance Services</span>
-      </span>
-    </a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
-    <label for="nav-toggle" class="nav-burger"><span></span><span></span><span></span></label>
-    <nav class="primary">
-      <a href="/">Home</a>
-      <a href="/field-services.html">Field Services</a>
-      <a href="/coverage.html">Coverage</a>
-      <a href="/network.html">Join Our Network</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html" class="nav-cta">Contact</a>
-    </nav>
-  </div>
+<header class="ac-header">
+  <a href="/" class="ac-brand">
+    <span class="ac-brand-tile"><img src="/assets/atlas-crest-shield.png" alt="Atlas Crest shield"></span>
+    <span>
+      <span class="ac-brand-name" style="display:block">ATLAS CREST</span>
+      <span class="ac-brand-tag" style="display:block">Insurance Services</span>
+    </span>
+  </a>
+  <nav class="ac-nav" aria-label="Primary">
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/network.html">Inspector Network</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  <button class="ac-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="ac-drawer" aria-label="Mobile">
+    <a href="/">Home</a>
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/network.html">Inspector Network</a>
+    <a href="/about.html">About</a>
+    <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  </nav>
 </header>
 
-<section class="page-hero">
-  <div class="container text-center">
-    <div class="meta">404</div>
-    <h1>That page isn't here.</h1>
-    <p class="lede" style="margin: 0 auto 2em;">
-      The page you were looking for either moved or never existed.
-    </p>
-    <a href="/" class="btn btn-primary">Back to home</a>
+<section class="nf-hero">
+  <div class="inner">
+    <p class="ac-eyebrow">404</p>
+    <h1>That page isn't in the file.</h1>
+    <p>The address may have changed, or the page may have moved. Everything current is reachable from the navigation above.</p>
+    <div class="nf-actions">
+      <a class="btn btn-primary blueprint" href="/">Back to home<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+      <a class="btn btn-secondary" href="/contact.html">Contact us</a>
+    </div>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <span class="footer-brand">Atlas Crest LLC</span>
-      &nbsp;·&nbsp; Florida
-    </div>
-    <div>
+<footer class="ac-footer">
+  <div class="ac-footer-legal" style="border-top:1px solid var(--color-divider)">
+    <span>Atlas Crest LLC · Florida</span>
+    <div class="ac-footer-legal-links">
       <a href="/privacy.html">Privacy</a>
-      &nbsp;·&nbsp;
       <a href="/terms.html">Terms</a>
-      &nbsp;·&nbsp;
-      &copy; 2026 Atlas Crest LLC. All rights reserved.
+      <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
+      <span>© 2026 Atlas Crest LLC</span>
     </div>
   </div>
 </footer>
-
+<script src="/js/site.js"></script>
 </body>
 </html>

@@ -1,0 +1,302 @@
+/* Atlas Crest LLC — site stylesheet.
+   Ported from the Industry design-system handoff (design/_ds/industry/styles.css)
+   plus the shared nav/footer/component patterns used across the page designs.
+   Tokens first, then base, then components, then header/footer, then helpers. */
+
+:root {
+  --color-bg: #f2f2f3;
+  --color-surface: #e9e9ea;
+  --color-text: #1d1f20;
+  --color-accent: #5980a6;
+  --color-divider: color-mix(in srgb, #1d1f20 16%, transparent);
+
+  --color-accent-100: #eef6ff;
+  --color-accent-200: #d6ebff;
+  --color-accent-300: #b5d9fd;
+  --color-accent-400: #94bce3;
+  --color-accent-500: #749dc4;
+  --color-accent-600: #597ea3;
+  --color-accent-700: #416180;
+  --color-accent-800: #2c455d;
+  --color-accent-900: #1d2d3d;
+
+  --color-muted: #7a7a7d;
+  --color-caption: #8a8a8e;
+
+  --ac-field: #1d2d3d;      /* dark section background */
+  --ac-field-ink: #f2f2f3;  /* type on it */
+
+  --font-heading: "Barlow Condensed", system-ui, sans-serif;
+  --font-heading-weight: 600;
+  --font-body: "Barlow", system-ui, sans-serif;
+
+  --pad-x: 48px;
+}
+
+/* ── base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+p { margin: 0; }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+[hidden] { display: none !important; }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* ── blueprint frame — the system's signature ─────────────────────── */
+.blueprint {
+  position: relative;
+  border: 1px solid var(--color-divider);
+  border-radius: 0;
+}
+.blueprint.duotone { overflow: visible; }
+.blueprint > .corner {
+  position: absolute; width: 11px; height: 11px;
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+  pointer-events: none;
+}
+.on-dark .blueprint > .corner,
+.blueprint.on-dark > .corner {
+  color: color-mix(in srgb, var(--ac-field-ink) 55%, transparent);
+}
+.blueprint > .corner::before, .blueprint > .corner::after {
+  content: ""; position: absolute; background: currentColor;
+}
+.blueprint > .corner::before { left: 5px; top: 0; width: 1px; height: 100%; }
+.blueprint > .corner::after  { top: 5px; left: 0; width: 100%; height: 1px; }
+.blueprint > .corner.tl { top: -6px; left: -6px; }
+.blueprint > .corner.tr { top: -6px; right: -6px; }
+.blueprint > .corner.bl { bottom: -6px; left: -6px; }
+.blueprint > .corner.br { bottom: -6px; right: -6px; }
+
+/* dark sections use a lighter hairline */
+.on-dark .blueprint, .blueprint.on-dark {
+  border-color: color-mix(in srgb, var(--ac-field-ink) 22%, transparent);
+}
+
+/* ── duotone imagery ──────────────────────────────────────────────── */
+.duotone { position: relative; overflow: hidden; }
+.duotone img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
+.duotone::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: var(--color-accent); mix-blend-mode: color;
+}
+
+/* hatched placeholder for positions with no photograph yet */
+.ac-placeholder {
+  display: grid; place-items: center; text-align: center;
+  background:
+    repeating-linear-gradient(135deg,
+      color-mix(in srgb, var(--color-text) 7%, transparent) 0,
+      color-mix(in srgb, var(--color-text) 7%, transparent) 1px,
+      transparent 1px, transparent 9px);
+  color: var(--color-caption);
+  font-size: 12px; line-height: 1.5; padding: 20px;
+}
+
+/* ── buttons ──────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; line-height: 1.2; color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--color-divider); border-radius: 0;
+  padding: 11px 20px;
+}
+.btn-primary { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-bg); }
+.btn-primary:hover { background: var(--color-accent-600); }
+.btn-primary:active { background: var(--color-accent-700); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.on-dark .btn-secondary, .btn-secondary.on-dark {
+  color: var(--ac-field-ink);
+  border-color: color-mix(in srgb, var(--ac-field-ink) 45%, transparent);
+}
+.on-dark .btn-secondary:hover { background: color-mix(in srgb, var(--ac-field-ink) 10%, transparent); }
+
+/* ── forms ────────────────────────────────────────────────────────── */
+.field > label {
+  display: block; font-size: 12px; margin-bottom: 5px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.input {
+  width: 100%; min-height: 38px; padding: 8px 10px; font: inherit;
+  font-size: 14px; color: var(--color-text); caret-color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider); border-radius: 0;
+}
+.input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+textarea.input { min-height: 96px; resize: vertical; }
+
+.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+.radio input { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+.radio .dot {
+  width: 16px; height: 16px; flex: none; border-radius: 50%;
+  border: 1.5px solid var(--color-divider);
+}
+.radio:hover .dot { border-color: var(--color-accent); }
+.radio input:checked + .dot {
+  border-color: var(--color-accent); background: var(--color-accent);
+  box-shadow: inset 0 0 0 4px var(--color-bg);
+}
+.radio input:focus-visible + .dot { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+/* audience switcher — three exclusive options */
+.ac-seg { display: inline-flex; border: 1px solid var(--color-divider); }
+.ac-seg label {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; font-size: 13px; cursor: pointer;
+}
+.ac-seg label + label { border-left: 1px solid var(--color-divider); }
+.ac-seg label:has(input:checked) { background: var(--color-accent); color: var(--color-bg); }
+.ac-seg label:not(:has(input:checked)):hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.ac-seg label:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
+.ac-seg input { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+
+/* need / line-of-work chips — multi-select toggles (real checkboxes) */
+.ac-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.ac-chip {
+  display: inline-flex; align-items: center; cursor: pointer;
+  font-size: 12.5px; padding: 6px 12px;
+  border: 1px solid var(--color-divider); background: transparent;
+}
+.ac-chip input { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+.ac-chip:has(input:checked) {
+  background: var(--color-accent); border-color: var(--color-accent); color: var(--color-bg);
+}
+.ac-chip:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+/* ── shared text helpers ──────────────────────────────────────────── */
+.ac-eyebrow {
+  font: 600 10px/1 var(--font-heading);
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--color-accent-700); margin: 0;
+}
+.on-dark .ac-eyebrow { color: var(--color-accent-400); }
+.ac-lead {
+  font-size: 16px; line-height: 1.62;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent); margin: 0;
+}
+.text-muted { color: var(--color-muted); }
+
+/* dark full-bleed section */
+.ac-field-section { background: var(--ac-field); color: var(--ac-field-ink); }
+
+/* ── header ───────────────────────────────────────────────────────── */
+.ac-header {
+  display: flex; align-items: center; gap: 36px;
+  padding: 20px var(--pad-x);
+  border-bottom: 1px solid var(--color-divider);
+  position: relative;
+}
+.ac-brand {
+  display: flex; align-items: center; gap: 12px;
+  margin-right: auto; text-decoration: none; color: inherit;
+}
+.ac-brand-tile {
+  width: 34px; height: 38px; background: var(--ac-field);
+  display: grid; place-items: center; flex: none;
+}
+.ac-brand-tile img { width: 26px; height: auto; }
+.ac-brand-name { font: 600 17px var(--font-heading); letter-spacing: .02em; line-height: 1.1; }
+.ac-brand-tag {
+  font-size: 9.5px; letter-spacing: .15em; text-transform: uppercase;
+  color: var(--color-caption); line-height: 1.1;
+}
+.ac-nav { display: flex; gap: 26px; font-size: 13.5px; }
+.ac-nav a { text-decoration: none; color: inherit; }
+.ac-nav a:hover { color: var(--color-accent-700); }
+.ac-nav a[aria-current="page"] {
+  color: var(--color-accent);
+  border-bottom: 1.5px solid var(--color-accent); padding-bottom: 2px;
+}
+.ac-header .btn-primary { padding: 9px 18px; }
+
+.ac-burger {
+  display: none; flex-direction: column; gap: 4px; width: 20px;
+  background: none; border: 0; padding: 0; cursor: pointer;
+}
+.ac-burger span { height: 1.5px; background: var(--color-text); display: block; }
+
+/* mobile drawer */
+.ac-drawer {
+  display: none; flex-direction: column;
+  position: absolute; top: 100%; left: 0; right: 0; z-index: 40;
+  background: var(--color-bg); border-bottom: 1px solid var(--color-divider);
+  padding: 10px 20px 22px;
+}
+.ac-drawer a {
+  text-decoration: none; color: inherit; font-size: 15px;
+  padding: 11px 0; border-bottom: 1px solid color-mix(in srgb, #1d1f20 8%, transparent);
+}
+.ac-drawer a[aria-current="page"] { color: var(--color-accent); }
+.ac-drawer .btn-primary { margin-top: 16px; }
+body.nav-open .ac-drawer { display: flex; }
+
+/* ── footer ───────────────────────────────────────────────────────── */
+.ac-footer { border-top: 1px solid var(--color-divider); }
+.ac-footer-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;
+  padding: 44px var(--pad-x) 36px;
+}
+.ac-footer-brand { font: 600 15px var(--font-heading); letter-spacing: .1em; margin-bottom: 8px; }
+.ac-footer-blurb { font-size: 12.5px; line-height: 1.55; color: var(--color-muted); max-width: 34ch; }
+.ac-footer-col { display: flex; flex-direction: column; gap: 9px; font-size: 12.5px; }
+.ac-footer-head {
+  font: 600 10px var(--font-heading); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--color-caption);
+}
+.ac-footer-col a { color: inherit; text-decoration: none; }
+.ac-footer-col a:hover { color: var(--color-accent-700); }
+.ac-footer-legal {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  padding: 16px var(--pad-x) 26px;
+  font-size: 11.5px; color: var(--color-muted);
+  border-top: 1px solid var(--color-divider);
+}
+.ac-footer-legal-links { margin-left: auto; display: flex; gap: 18px; flex-wrap: wrap; }
+.ac-footer-legal a { color: inherit; }
+
+/* ── section scaffolding ──────────────────────────────────────────── */
+.ac-section { padding: 64px var(--pad-x); }
+.ac-section-tight { padding: 56px var(--pad-x); }
+.ac-hero { padding: 76px var(--pad-x) 64px; }
+
+/* ── responsive ───────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  :root { --pad-x: 20px; }
+  .ac-header { gap: 12px; padding: 14px 20px; }
+  .ac-nav, .ac-header > .btn-primary { display: none; }
+  .ac-burger { display: flex; }
+  .ac-brand-tile { width: 28px; height: 32px; }
+  .ac-brand-tile img { width: 21px; }
+  .ac-brand-name { font-size: 15px; }
+  .ac-brand-tag { font-size: 8.5px; letter-spacing: .14em; }
+
+  .ac-footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; padding: 26px 20px; }
+  .ac-footer-legal { padding: 14px 20px 22px; }
+  .ac-footer-legal-links { margin-left: 0; }
+
+  .ac-section, .ac-section-tight { padding: 32px 20px; }
+  .ac-hero { padding: 40px 20px 34px; }
+}

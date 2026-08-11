@@ -1,0 +1,101 @@
+<!-- Atlas Crest — canonical page chrome. NOT served; the header/footer blocks
+     below are copied verbatim into every page (static site, no includes).
+     Per page: set aria-current="page" on that page's link in BOTH the desktop
+     nav and the mobile drawer, and nowhere else. Contact has no nav link;
+     on contact.html no link gets aria-current. -->
+
+<!-- ══ HEAD template ══ (title/description per page)
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAGE TITLE — Atlas Crest LLC</title>
+<meta name="description" content="PAGE DESCRIPTION">
+<link rel="icon" type="image/png" href="/assets/atlas-crest-shield.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css?v=1">
+<style> page-specific styles here </style>
+</head>
+══ -->
+
+<!-- ══ HEADER — copy verbatim ══ -->
+<header class="ac-header">
+  <a href="/" class="ac-brand">
+    <span class="ac-brand-tile"><img src="/assets/atlas-crest-shield.png" alt="Atlas Crest shield"></span>
+    <span>
+      <span class="ac-brand-name" style="display:block">ATLAS CREST</span>
+      <span class="ac-brand-tag" style="display:block">Insurance Services</span>
+    </span>
+  </a>
+  <nav class="ac-nav" aria-label="Primary">
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/network.html">Inspector Network</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  <button class="ac-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="ac-drawer" aria-label="Mobile">
+    <a href="/">Home</a>
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/network.html">Inspector Network</a>
+    <a href="/about.html">About</a>
+    <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  </nav>
+</header>
+
+<!-- ══ FOOTER — copy verbatim ══ -->
+<footer class="ac-footer">
+  <div class="ac-footer-grid">
+    <div>
+      <div class="ac-footer-brand">ATLAS CREST LLC</div>
+      <p class="ac-footer-blurb">Insurance services on the records side of risk — premium audits, field inspections, and subcontractor compliance. Onsite and remote.</p>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For carriers</div>
+      <a href="/field-services.html#audits">Premium audits</a>
+      <a href="/field-services.html#loss-control">Loss control surveys</a>
+      <a href="/field-services.html#property">Property inspections</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For businesses</div>
+      <a href="/business-services.html#coi">Certificate tracking</a>
+      <a href="/business-services.html#audit-prep">Audit preparation</a>
+      <a href="/coverage.html">Coverage area</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">Firm</div>
+      <a href="/about.html">About</a>
+      <a href="/network.html">Join the network</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="ac-footer-legal">
+    <span>Atlas Crest LLC · Florida</span>
+    <div class="ac-footer-legal-links">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
+      <span>© 2026 Atlas Crest LLC</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ before </body> on every page ══
+<script src="/js/site.js"></script>
+══ -->
+
+<!-- ══ FORM wiring (contact/intake forms) ══
+<form action="https://formsubmit.co/office@atlascrestllc.com" method="POST">
+  <input type="hidden" name="_subject" value="Website inquiry — atlascrestllc.com">
+  <input type="hidden" name="_next" value="https://atlascrestllc.com/thanks.html">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+  ... visible fields, each with a real name attribute ...
+</form>
+Network page uses _subject value "Inspector network application — atlascrestllc.com".
+══ -->

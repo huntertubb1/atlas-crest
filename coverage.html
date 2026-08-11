@@ -1,238 +1,319 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Coverage &amp; Capacity — Atlas Crest LLC</title>
-<meta name="description" content="Where Atlas Crest LLC works: onsite audits and inspections across the Florida Gulf Coast, remote and virtual audits nationwide, and a managed independent inspector network growing toward client demand. Vendor credentials and network information.">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="description" content="Onsite and remote. Attended audits and inspections by arrangement, records work with no territory limit, and assignments placed with vetted independent inspectors and administered in-house by Atlas Crest LLC.">
+<link rel="icon" type="image/png" href="/assets/atlas-crest-shield.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css?v=1">
+<style>
+/* ── Coverage page ──────────────────────────────────────────────── */
+.cov-wrap { max-width: 1280px; margin: 0 auto; }
+
+/* hero */
+.cov-hero {
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px;
+  padding: 66px var(--pad-x) 56px; align-items: end;
+  border-bottom: 1px solid var(--color-divider);
+}
+.cov-hero .ac-eyebrow { margin-bottom: 20px; }
+.cov-hero h1 {
+  font-size: 56px; line-height: 1.03; letter-spacing: -.02em;
+  margin: 0 0 22px; max-width: 18ch;
+}
+.cov-hero-lead { max-width: 54ch; }
+.cov-summary { border-top: 1px solid var(--color-divider); }
+.cov-summary-row {
+  display: flex; justify-content: space-between; gap: 16px;
+  padding: 15px 0; border-bottom: 1px solid var(--color-divider);
+  font-size: 13.5px;
+}
+.cov-summary-row .k { color: var(--color-muted); }
+
+/* onsite / remote cards */
+.cov-cards {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
+  padding: 60px var(--pad-x); border-bottom: 1px solid var(--color-divider);
+  align-items: start;
+}
+.cov-card { padding: 30px 32px; }
+.cov-card-tag {
+  font: 600 11px var(--font-heading); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 10px;
+}
+.cov-card h2 { font-size: 30px; line-height: 1.08; margin: 0 0 14px; max-width: 20ch; }
+.cov-card-lead { margin-bottom: 20px; }
+.cov-card-lead-m {
+  display: none; font-size: 14px; line-height: 1.6;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent); margin: 0;
+}
+.ac-li {
+  font-size: 13.5px; line-height: 1.5; padding: 11px 0;
+  border-bottom: 1px solid var(--color-divider);
+  display: flex; gap: 12px;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+}
+.ac-li:last-of-type { border-bottom: 0; }
+.ac-plus { color: var(--color-accent); font-family: var(--font-heading); }
+
+/* dark band — records work */
+.cov-band { padding: 60px var(--pad-x); }
+.cov-band-grid {
+  display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px;
+  align-items: start;
+}
+.cov-band .ac-eyebrow { margin-bottom: 18px; }
+.cov-band h2 { font-size: 36px; line-height: 1.06; margin: 0 0 18px; max-width: 20ch; }
+.cov-band-lead {
+  font-size: 15.5px; line-height: 1.62; margin: 0;
+  color: color-mix(in srgb, var(--ac-field-ink) 82%, transparent);
+}
+.cov-band-card { padding: 26px 28px; }
+.cov-band-cols {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px;
+  color: color-mix(in srgb, var(--ac-field-ink) 84%, transparent);
+  font-size: 13.5px;
+}
+.cov-band-li {
+  padding: 11px 0; display: flex; gap: 10px;
+  border-bottom: 1px solid color-mix(in srgb, var(--ac-field-ink) 16%, transparent);
+}
+.cov-band-li:last-of-type { border-bottom: 0; }
+.cov-band-li .ac-plus { color: var(--color-accent-400); }
+
+/* capacity */
+.cov-cap {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
+  padding: 60px var(--pad-x); border-bottom: 1px solid var(--color-divider);
+  align-items: start;
+}
+.cov-cap h2 { font-size: 32px; line-height: 1.08; margin: 0 0 14px; max-width: 22ch; }
+.cov-cap-copy .ac-lead { max-width: 46ch; margin-bottom: 14px; }
+.cov-cap-copy .ac-lead:last-of-type { margin-bottom: 26px; }
+.cov-cap-mob {
+  display: none; font-size: 14.5px; line-height: 1.6;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent); margin: 0 0 18px;
+}
+.cov-cap-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.cov-cap-cta .btn { padding: 12px 22px; font-size: 14px; }
+.cov-net-card {
+  padding: 26px 28px;
+  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+}
+.cov-net-head {
+  font: 600 11px var(--font-heading); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 6px;
+}
+
+/* ── responsive ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .cov-desk-only { display: none; }
+
+  .cov-hero { grid-template-columns: 1fr; gap: 26px; padding: 30px 20px; }
+  .cov-hero .ac-eyebrow { margin-bottom: 14px; }
+  .cov-hero h1 { font-size: 36px; margin-bottom: 16px; }
+  .cov-hero-lead { font-size: 15px; line-height: 1.6; }
+  .cov-summary { display: none; }
+
+  .cov-cards { grid-template-columns: 1fr; gap: 20px; padding: 26px 20px; }
+  .cov-card { padding: 22px; }
+  .cov-card-tag { font-size: 10px; margin-bottom: 8px; }
+  .cov-card h2 { font-size: 24px; line-height: 1.1; margin-bottom: 10px; }
+  .cov-card-lead { display: none; }
+  .cov-card-lead-m { display: block; }
+  .cov-card-list { display: none; }
+
+  .cov-band { padding: 28px 20px; }
+  .cov-band-grid { grid-template-columns: 1fr; gap: 24px; }
+  .cov-band .ac-eyebrow { margin-bottom: 12px; }
+  .cov-band h2 { font-size: 28px; line-height: 1.08; margin-bottom: 14px; }
+  .cov-band-lead { font-size: 14.5px; line-height: 1.6; }
+  .cov-band-card { padding: 20px 22px; }
+  .cov-band-cols { grid-template-columns: 1fr; }
+  .cov-band-cols > div:first-child .cov-band-li:last-of-type {
+    border-bottom: 1px solid color-mix(in srgb, var(--ac-field-ink) 16%, transparent);
+  }
+
+  .cov-cap { grid-template-columns: 1fr; gap: 24px; padding: 28px 20px; }
+  .cov-cap h2 { font-size: 26px; line-height: 1.1; margin-bottom: 12px; }
+  .cov-cap-copy .ac-lead { display: none; }
+  .cov-cap-mob { display: block; }
+  .cov-cap-cta { flex-direction: column; align-items: stretch; gap: 10px; }
+  .cov-cap-cta .btn { padding: 14px; font-size: 15px; }
+  .cov-net-card { padding: 20px 22px; }
+}
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="brand">
-      <img src="/assets/atlas_crest_shield.jpg" alt="Atlas Crest shield">
-      <span class="brand-text">
-        <span class="brand-name">Atlas Crest</span>
-        <span class="brand-tag">Insurance Services</span>
-      </span>
-    </a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
-    <label for="nav-toggle" class="nav-burger"><span></span><span></span><span></span></label>
-    <nav class="primary">
-      <a href="/">Home</a>
-      <a href="/field-services.html">Field Services</a>
-      <a href="/coverage.html" class="active">Coverage</a>
-      <a href="/network.html">Join Our Network</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html" class="nav-cta">Contact</a>
-    </nav>
-  </div>
+<header class="ac-header">
+  <a href="/" class="ac-brand">
+    <span class="ac-brand-tile"><img src="/assets/atlas-crest-shield.png" alt="Atlas Crest shield"></span>
+    <span>
+      <span class="ac-brand-name" style="display:block">ATLAS CREST</span>
+      <span class="ac-brand-tag" style="display:block">Insurance Services</span>
+    </span>
+  </a>
+  <nav class="ac-nav" aria-label="Primary">
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html" aria-current="page">Coverage</a>
+    <a href="/network.html">Inspector Network</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  <button class="ac-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="ac-drawer" aria-label="Mobile">
+    <a href="/">Home</a>
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html" aria-current="page">Coverage</a>
+    <a href="/network.html">Inspector Network</a>
+    <a href="/about.html">About</a>
+    <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  </nav>
 </header>
 
-<section class="page-hero">
-  <div class="container">
-    <div class="meta">Coverage &amp; Capacity</div>
-    <h1>Where we work, and what we can take on.</h1>
-    <p class="lede">
-      Headquartered on the Florida Gulf Coast, with coverage available
-      nationwide &mdash; onsite in our home territory, and through scheduled
-      travel, remote handling, and our managed inspector network beyond it.
-      And a straight answer about capacity whenever you ask &mdash; we would
-      rather turn down an assignment than miss a due date on one.
-    </p>
-  </div>
-</section>
+<main>
 
-<section>
-  <div class="container">
-    <div class="section-eyebrow">Onsite</div>
-    <h2 class="section-title">Florida Gulf Coast.</h2>
-    <p class="section-lede" style="max-width: 68ch;">
-      Physical audits and inspections are handled directly by us across
-      west and southwest Florida, plus the inland counties between them.
-    </p>
-    <div class="two-col mt-4">
+  <!-- hero -->
+  <div class="cov-wrap">
+    <section class="cov-hero">
       <div>
-        <h3>Primary territory</h3>
-        <ul class="checks">
-          <li>Tampa &amp; St. Petersburg</li>
-          <li>Sarasota &amp; Bradenton</li>
-          <li>Port Charlotte &amp; Punta Gorda</li>
-          <li>Fort Myers &amp; Naples</li>
-          <li>Lakeland, Bartow &amp; the inland counties</li>
-          <li>Arcadia, DeSoto &amp; the surrounding rural corridor</li>
-        </ul>
+        <p class="ac-eyebrow">Coverage &amp; capacity</p>
+        <h1>Onsite and remote.</h1>
+        <p class="ac-lead cov-hero-lead">Some work has to be attended in person. The rest is records work, and records work has no territory.<span class="cov-desk-only"> Where an assignment sits outside our own reach, we place it with a vetted inspector and administer the file ourselves.</span></p>
       </div>
-      <div>
-        <h3>Extended reach</h3>
-        <p>
-          The primary territory is where we're based, not the limit of
-          where we work. We regularly schedule work beyond it &mdash; the
-          Florida Panhandle, the east coast, and out of state &mdash; when
-          the volume and timing support the trip.
-        </p>
-        <p>
-          If you have work outside these areas, ask. We'll take it
-          directly, route it through our network, or tell you plainly that
-          we're not the right fit.
-        </p>
+      <div class="cov-summary">
+        <div class="cov-summary-row"><span class="k">Onsite</span><span>Attended, by arrangement</span></div>
+        <div class="cov-summary-row"><span class="k">Network</span><span>Placed and administered by us</span></div>
+        <div class="cov-summary-row"><span class="k">Remote &amp; virtual</span><span>No territory limit</span></div>
+      </div>
+    </section>
+
+    <!-- onsite / remote -->
+    <section class="cov-cards">
+      <div class="blueprint cov-card">
+        <div class="cov-card-tag">Onsite</div>
+        <h2>Someone attends the site.</h2>
+        <p class="ac-lead cov-card-lead">Physical audits, loss control surveys, and property inspections where the file needs eyes on the risk &mdash; measured, photographed, and written up in person.</p>
+        <p class="cov-card-lead-m">Physical audits, loss control surveys, and property inspections &mdash; attended by us or by a vetted inspector, to one scope and one photo standard.</p>
+        <div class="cov-card-list">
+          <div class="ac-li"><span class="ac-plus">+</span>Attended by us where we are, by a vetted inspector where we are not</div>
+          <div class="ac-li"><span class="ac-plus">+</span>One scope and one photo standard, whoever attends</div>
+          <div class="ac-li"><span class="ac-plus">+</span>Reviewed here before the file leaves our office</div>
+        </div>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </div>
+      <div class="blueprint cov-card">
+        <div class="cov-card-tag">Remote</div>
+        <h2>The work happens in the records.</h2>
+        <p class="ac-lead cov-card-lead">Certificates arrive by email and payroll arrives as files. Virtual audits run over video with the same document requests as a site visit.</p>
+        <p class="cov-card-lead-m">Certificate tracking, audit preparation, and virtual or mail audits &mdash; none of it depends on where you are.</p>
+        <div class="cov-card-list">
+          <div class="ac-li"><span class="ac-plus">+</span>Certificate and subcontractor compliance</div>
+          <div class="ac-li"><span class="ac-plus">+</span>Premium audit preparation</div>
+          <div class="ac-li"><span class="ac-plus">+</span>Virtual and mail audits, disputed and reopened files</div>
+        </div>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </div>
+    </section>
+  </div>
+
+  <!-- records work — full-bleed dark band -->
+  <section class="ac-field-section on-dark">
+    <div class="cov-wrap cov-band">
+      <div class="cov-band-grid">
+        <div>
+          <p class="ac-eyebrow">Remote</p>
+          <h2>Records work has no territory.</h2>
+          <p class="cov-band-lead">Certificates arrive by email, payroll arrives as files, and virtual audits are conducted over video with the same document requests as a physical visit. None of it depends on where you are.</p>
+        </div>
+        <div class="blueprint cov-band-card">
+          <div class="cov-band-cols">
+            <div>
+              <div class="cov-band-li"><span class="ac-plus">+</span>Certificate &amp; subcontractor compliance</div>
+              <div class="cov-band-li"><span class="ac-plus">+</span>Premium audit preparation</div>
+              <div class="cov-band-li"><span class="ac-plus">+</span>Virtual premium audits</div>
+            </div>
+            <div>
+              <div class="cov-band-li"><span class="ac-plus">+</span>Mail audits</div>
+              <div class="cov-band-li"><span class="ac-plus">+</span>Disputed &amp; reopened audit review</div>
+              <div class="cov-band-li"><span class="ac-plus">+</span>Records-only exposure verification</div>
+            </div>
+          </div>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- capacity -->
+  <div class="cov-wrap">
+    <section class="cov-cap">
+      <div class="cov-cap-copy">
+        <h2>Capacity where you need it</h2>
+        <p class="ac-lead">For partners who need more places covered, we are building a network of vetted independent inspectors and auditors and administering the assignments ourselves.</p>
+        <p class="ac-lead">You deal with one firm, one file standard, and one point of contact regardless of who attends the site.</p>
+        <p class="cov-cap-mob">We place work with vetted independent inspectors and administer it ourselves &mdash; one firm, one file standard.</p>
+        <div class="cov-cap-cta">
+          <a class="btn btn-primary blueprint" href="/contact.html">Ask about a territory<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+          <a class="btn btn-secondary" href="/network.html"><span class="cov-desk-only">Inspector?&nbsp;</span>Join the network &rarr;</a>
+        </div>
+      </div>
+      <div class="blueprint cov-net-card">
+        <div class="cov-net-head">How a network assignment runs</div>
+        <div class="ac-li"><span class="ac-plus">+</span>We accept the assignment and confirm a date</div>
+        <div class="ac-li"><span class="ac-plus">+</span>A vetted inspector attends to our scope and photo standard</div>
+        <div class="ac-li"><span class="ac-plus">+</span>We review the file before it leaves our office</div>
+        <div class="ac-li"><span class="ac-plus">+</span>You receive one file, from us, in the format you asked for</div>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </div>
+    </section>
   </div>
-</section>
 
-<section class="alt">
-  <div class="container">
-    <div class="section-eyebrow">Remote</div>
-    <h2 class="section-title">Nationwide, without the travel.</h2>
-    <p class="section-lede">
-      A large share of this work no longer requires anyone to be in the
-      room. For those services, geography isn't a constraint.
-    </p>
-    <div class="grid">
-      <div class="card">
-        <h3>Virtual &amp; phone audits</h3>
-        <p>
-          Records reviewed remotely with a live interview, handled for
-          carriers and vendor networks in any state.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Mail &amp; flat-rated files</h3>
-        <p>
-          Low-exposure and flat-rated audits handled at volume without
-          onsite time.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Scheduling &amp; insured contact</h3>
-        <p>
-          First contact, records requests, and appointment handling run from
-          our office on every file &mdash; so field days stay field days.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Central QA &amp; file review</h3>
-        <p>
-          Every network report crosses our desk before it goes back to the
-          client &mdash; one standard, no matter who was onsite.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+</main>
 
-<section>
-  <div class="container">
-    <div class="section-eyebrow">Capacity</div>
-    <h2 class="section-title">Our inspector network.</h2>
-    <p class="section-lede" style="max-width: 68ch;">
-      Field work is limited by how many people can be in how many places.
-      We're building a vetted network of independent inspectors and auditors
-      so vendor partners can get coverage past our own driving radius.
-    </p>
-    <p style="max-width: 68ch;">
-      We'll always tell you what's ours and what's the network's. Every
-      person working under Atlas Crest is background-checked before an
-      assignment, works to the same reporting standard, and every file is
-      reviewed by us before it goes back to you.
-    </p>
-
-    <div class="two-col mt-4">
-      <div>
-        <h3>For vendor partners</h3>
-        <p>
-          If you have persistent coverage holes in a territory, tell us where.
-          Building toward known demand is far more useful than recruiting at
-          random, and we'd rather grow into your gaps than guess at them.
-        </p>
-        <p class="mt-2"><a href="/contact.html" class="btn btn-secondary">Talk about coverage</a></p>
-      </div>
-      <div>
-        <h3>For inspectors &amp; auditors</h3>
-        <p>
-          If you do premium audit or inspection work as an independent
-          contractor and you're interested in overflow assignments, we'd like
-          to hear from you &mdash; particularly outside Florida.
-        </p>
-        <p class="mt-2"><a href="/network.html" class="btn btn-secondary">How joining works</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="container">
-    <div class="section-eyebrow">Credentials</div>
-    <h2 class="section-title">The vendor-onboarding details.</h2>
-    <p class="section-lede">
-      The things a vendor manager checks before the first assignment, in one
-      place.
-    </p>
-    <div class="two-col">
-      <div>
-        <ul class="checks">
-          <li><b>Background check:</b> available on request</li>
-          <li><b>Systems:</b> experienced across carrier and vendor audit platforms</li>
-          <li><b>Documentation:</b> insurance certificates furnished on request</li>
-        </ul>
-      </div>
-      <div>
-        <ul class="checks">
-          <li><b>Instructions:</b> carrier-specific special instructions followed as written</li>
-          <li><b>Response:</b> same business day on active assignments</li>
-          <li><b>Paperwork:</b> W-9s, agreements, and vendor forms turned around quickly</li>
-        </ul>
-      </div>
-    </div>
-    <p class="mt-4" style="color: var(--ink2); max-width: 68ch;">
-      Need something else for your vendor packet &mdash; a specific form,
-      certificate, or agreement? Ask and we'll turn it around quickly.
-    </p>
-  </div>
-</section>
-
-<div class="contact-block">
-  <div class="container">
-    <h2>Tell us where you need coverage.</h2>
-    <p style="max-width: 56ch; margin: 0 auto 8px;">
-      Territory, volume, and turnaround expectations &mdash; and we'll give
-      you a straight answer about what we can take.
-    </p>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="label">Vendor &amp; coverage inquiries</div>
-        <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
-      </div>
-    </div>
-    <p class="mt-2">
-      <a href="/contact.html" class="btn btn-primary">Contact us</a>
-    </p>
-  </div>
-</div>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
+<footer class="ac-footer">
+  <div class="ac-footer-grid">
     <div>
-      <span class="footer-brand">Atlas Crest LLC</span>
-      &nbsp;·&nbsp; Florida
+      <div class="ac-footer-brand">ATLAS CREST LLC</div>
+      <p class="ac-footer-blurb">Insurance services on the records side of risk — premium audits, field inspections, and subcontractor compliance. Onsite and remote.</p>
     </div>
-    <div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For carriers</div>
+      <a href="/field-services.html#audits">Premium audits</a>
+      <a href="/field-services.html#loss-control">Loss control surveys</a>
+      <a href="/field-services.html#property">Property inspections</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For businesses</div>
+      <a href="/business-services.html#coi">Certificate tracking</a>
+      <a href="/business-services.html#audit-prep">Audit preparation</a>
+      <a href="/coverage.html">Coverage area</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">Firm</div>
+      <a href="/about.html">About</a>
+      <a href="/network.html">Join the network</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="ac-footer-legal">
+    <span>Atlas Crest LLC · Florida</span>
+    <div class="ac-footer-legal-links">
       <a href="/privacy.html">Privacy</a>
-      &nbsp;·&nbsp;
       <a href="/terms.html">Terms</a>
-      &nbsp;·&nbsp;
       <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
-      &nbsp;·&nbsp; &copy; 2026 Atlas Crest LLC
+      <span>© 2026 Atlas Crest LLC</span>
     </div>
   </div>
 </footer>
 
+<script src="/js/site.js"></script>
 </body>
 </html>

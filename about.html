@@ -1,249 +1,263 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About — Atlas Crest LLC</title>
-<meta name="description" content="Atlas Crest LLC is a Florida insurance field services firm — premium audits, loss control, and residential and commercial property inspections for carriers, MGAs, and vendor networks, delivered directly and through a managed independent inspector network. Founded in 2026.">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="description" content="Atlas Crest is a Florida insurance services firm built around premium audit work — audits and inspections for carriers, records and certificate compliance for businesses.">
+<link rel="icon" type="image/png" href="/assets/atlas-crest-shield.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css?v=1">
+<style>
+/* ── About page ─────────────────────────────────────────────────── */
+.about-wrap { max-width: 1280px; margin: 0 auto; }
+
+/* hero */
+.about-hero { padding: 70px var(--pad-x) 60px; border-bottom: 1px solid var(--color-divider); }
+.about-hero .ac-eyebrow { margin-bottom: 22px; }
+.about-hero h1 {
+  font-size: 58px; line-height: 1.02; letter-spacing: -.02em;
+  margin: 0 0 40px; max-width: 22ch;
+}
+.about-hero-grid {
+  display: grid; grid-template-columns: 1.15fr 1fr;
+  gap: 64px; align-items: start;
+}
+.ac-body { font-size: 16.5px; line-height: 1.66; margin: 0 0 18px; }
+.ac-body:last-child { margin-bottom: 0; }
+.about-portrait { aspect-ratio: 4 / 5; }
+.about-portrait-label {
+  font: 600 12px var(--font-heading); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--color-accent-700);
+}
+.about-portrait-cap {
+  font-size: 11.5px; color: var(--color-caption);
+  max-width: 24ch; margin-top: 6px; line-height: 1.45;
+}
+
+/* values band (full-bleed dark) */
+.about-values { padding: 64px var(--pad-x); }
+.about-values .ac-eyebrow { margin-bottom: 30px; }
+.about-values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.about-value { padding: 0 28px; border-right: 1px solid color-mix(in srgb, var(--ac-field-ink) 22%, transparent); }
+.about-value:first-child { padding-left: 0; }
+.about-value:last-child { padding-right: 0; border-right: 0; }
+.about-value-name { font: 600 30px var(--font-heading); margin-bottom: 8px; letter-spacing: -.015em; }
+.about-value p {
+  font-size: 13.5px; line-height: 1.55; margin: 0;
+  color: color-mix(in srgb, var(--ac-field-ink) 78%, transparent);
+}
+
+/* how the firm runs */
+.about-runs {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
+  padding: 64px var(--pad-x); border-bottom: 1px solid var(--color-divider);
+  align-items: start;
+}
+.about-runs h2 { font-size: 36px; line-height: 1.06; margin: 0 0 18px; max-width: 20ch; }
+.about-runs .ac-lead { max-width: 48ch; }
+.about-runs .ac-lead + .ac-lead { margin-top: 14px; }
+.about-practice { padding: 28px 30px; }
+.about-practice-head {
+  font: 600 11px var(--font-heading); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 6px;
+}
+.ac-li {
+  font-size: 13.5px; line-height: 1.5; padding: 11px 0;
+  border-bottom: 1px solid var(--color-divider);
+  display: flex; gap: 12px;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+}
+.ac-li:last-of-type { border-bottom: 0; }
+.ac-plus { color: var(--color-accent); font-family: var(--font-heading); }
+
+/* closing CTA */
+.about-cta {
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px;
+  padding: 56px var(--pad-x); align-items: center;
+  border-bottom: 1px solid var(--color-divider);
+}
+.about-cta h2 { font-size: 32px; line-height: 1.08; margin: 0 0 14px; max-width: 24ch; }
+.about-cta .ac-lead { max-width: 48ch; }
+.about-cta-actions { display: flex; gap: 12px; justify-content: flex-end; }
+.about-cta-actions .btn { padding: 12px 22px; font-size: 14px; }
+
+/* ── responsive ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .about-hero { padding: 30px 20px; }
+  .about-hero .ac-eyebrow { margin-bottom: 14px; }
+  .about-hero h1 { font-size: 36px; line-height: 1.03; margin-bottom: 18px; }
+  .about-hero-grid { grid-template-columns: 1fr; gap: 26px; }
+  .ac-body { font-size: 15.5px; line-height: 1.64; margin-bottom: 14px; }
+
+  .about-values { padding: 28px 20px; }
+  .about-values .ac-eyebrow { margin-bottom: 20px; }
+  .about-values-grid { grid-template-columns: 1fr; gap: 20px; }
+  .about-value { padding: 0; border-right: 0; }
+  .about-value-name { font-size: 24px; margin-bottom: 2px; }
+  .about-value p { font-size: 13px; }
+
+  .about-runs { grid-template-columns: 1fr; gap: 20px; padding: 28px 20px; }
+  .about-runs h2 { font-size: 26px; line-height: 1.1; margin-bottom: 12px; }
+  .about-practice { padding: 20px; }
+
+  .about-cta { grid-template-columns: 1fr; gap: 20px; padding: 28px 20px; }
+  .about-cta h2 { font-size: 26px; }
+  .about-cta-actions { justify-content: flex-start; flex-wrap: wrap; }
+}
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="brand">
-      <img src="/assets/atlas_crest_shield.jpg" alt="Atlas Crest shield">
-      <span class="brand-text">
-        <span class="brand-name">Atlas Crest</span>
-        <span class="brand-tag">Insurance Services</span>
-      </span>
-    </a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
-    <label for="nav-toggle" class="nav-burger"><span></span><span></span><span></span></label>
-    <nav class="primary">
-      <a href="/">Home</a>
-      <a href="/field-services.html">Field Services</a>
-      <a href="/coverage.html">Coverage</a>
-      <a href="/network.html">Join Our Network</a>
-      <a href="/about.html" class="active">About</a>
-      <a href="/contact.html" class="nav-cta">Contact</a>
-    </nav>
-  </div>
+<header class="ac-header">
+  <a href="/" class="ac-brand">
+    <span class="ac-brand-tile"><img src="/assets/atlas-crest-shield.png" alt="Atlas Crest shield"></span>
+    <span>
+      <span class="ac-brand-name" style="display:block">ATLAS CREST</span>
+      <span class="ac-brand-tag" style="display:block">Insurance Services</span>
+    </span>
+  </a>
+  <nav class="ac-nav" aria-label="Primary">
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/network.html">Inspector Network</a>
+    <a href="/about.html" aria-current="page">About</a>
+  </nav>
+  <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  <button class="ac-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="ac-drawer" aria-label="Mobile">
+    <a href="/">Home</a>
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/network.html">Inspector Network</a>
+    <a href="/about.html" aria-current="page">About</a>
+    <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  </nav>
 </header>
 
-<section class="page-hero">
-  <div class="container">
-    <div class="meta">About</div>
-    <h1>Atlas Crest LLC.</h1>
-    <p class="lede">
-      A Florida insurance field services firm. We handle premium audits,
-      risk assessments, and property inspections for carriers, MGAs, and
-      vendor networks &mdash;
-      directly on the Florida Gulf Coast, and through a managed network of
-      vetted independent inspectors beyond it. Founded in 2026, with a
-      growing practice.
-    </p>
-  </div>
-</section>
+<main>
 
-<section>
-  <div class="container">
-    <div class="section-eyebrow">Our story</div>
-    <h2 class="section-title">A firm built around how the work should be done.</h2>
-    <p style="max-width: 68ch;">
-      Insurance is a relationship business &mdash; and like any relationship,
-      it runs on trust. Trust that people will do what they say. Trust that
-      the person on the other side of the file knows their work. Trust that
-      when questions come up, they'll be answered honestly.
-    </p>
-    <p style="max-width: 68ch;">
-      Atlas Crest was founded to be the kind of firm that earns that trust
-      quietly, one file at a time. We took the long view from day one. The
-      reputation we're building now is one we plan to live up to for years.
-    </p>
+  <!-- hero -->
+  <div class="about-wrap">
+    <section class="about-hero">
+      <p class="ac-eyebrow">About Atlas Crest</p>
+      <h1>We have sat on the other side of the desk.</h1>
+      <div class="about-hero-grid">
+        <div>
+          <p class="ac-body">Atlas Crest is a Florida insurance services firm built around premium audit work. We spend our days in payroll records, class codes, and certificates of insurance &mdash; the documents that decide what a policy is worth and what a business ends up paying.</p>
+          <p class="ac-body">That experience runs in one direction and then the other. For carriers, MGAs, and vendor networks, we conduct the audits and inspections that determine exposure. For businesses, we prepare the records those audits examine, and keep the subcontractor file current so an uninsured job never becomes their payroll.</p>
+          <p class="ac-body">Knowing what gets charged is the whole advantage. A file that looks complete and a file that survives an audit are two different files, and we can tell them apart because we have written the findings ourselves.</p>
+        </div>
+        <div class="blueprint ac-placeholder about-portrait">
+          <div>
+            <div class="about-portrait-label">Image placeholder</div>
+            <div class="about-portrait-cap">Duotone portrait or a desk-and-records still, if you would rather stay off camera</div>
+          </div>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
+      </div>
+    </section>
   </div>
-</section>
 
-<section class="alt">
-  <div class="container">
-    <div class="section-eyebrow">What we learned doing it</div>
-    <h2 class="section-title">From the field up.</h2>
-    <p class="section-lede" style="max-width: 68ch;">
-      We started in premium audit &mdash; going through payroll records,
-      applying classifications, and returning files that carriers could
-      rely on without a second pass.
-    </p>
-    <p style="max-width: 68ch;">
-      Doing that work teaches you what actually makes a file good: contact
-      that goes out the day it's assigned, figures that tie to source
-      records, documentation to the client's standard, and findings written
-      so the next reader doesn't need to call. None of that depends on who
-      drove to the site. All of it depends on who sets the standard and who
-      reviews the file.
-    </p>
-    <p style="max-width: 68ch;">
-      That's the firm we're building: the standard and the review stay at
-      our desk, and a managed network of vetted independent inspectors puts
-      more people in more places than we could ever drive to ourselves.
-      Each new territory starts with residential inspection routes and
-      grows into commercial and audit work as the bench proves out.
-    </p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-eyebrow">Our values</div>
-    <h2 class="section-title">What we hold ourselves to.</h2>
-    <div class="values">
-      <div class="value">
-        <h3>Integrity</h3>
-        <p>
-          Our work reflects what actually happened. We don't shade findings
-          to make a file easier, and we don't paper over questions to make a
-          deadline.
-        </p>
-      </div>
-      <div class="value">
-        <h3>Quality</h3>
-        <p>
-          Every file is reviewed thoroughly before it leaves us. We measure
-          ourselves on getting it right the first time.
-        </p>
-      </div>
-      <div class="value">
-        <h3>Transparency</h3>
-        <p>
-          Clients understand what we're doing, why we're doing it, and how
-          it affects them. No surprises, no guesswork.
-        </p>
-      </div>
-      <div class="value">
-        <h3>Service</h3>
-        <p>
-          Questions get answered the same business day. We move work along
-          steadily so no one is waiting on us.
-        </p>
+  <!-- values — full-bleed dark band -->
+  <section class="ac-field-section on-dark">
+    <div class="about-wrap about-values">
+      <p class="ac-eyebrow">Four ideas shape every file we touch</p>
+      <div class="about-values-grid">
+        <div class="about-value">
+          <div class="about-value-name">Integrity</div>
+          <p>We tell the truth about what we find, whether or not it is the answer anyone wanted.</p>
+        </div>
+        <div class="about-value">
+          <div class="about-value-name">Quality</div>
+          <p>We take the time to get it right the first time, because a reopened file costs everyone more.</p>
+        </div>
+        <div class="about-value">
+          <div class="about-value-name">Transparency</div>
+          <p>We explain what we are doing in plain language, including the parts that are not good news.</p>
+        </div>
+        <div class="about-value">
+          <div class="about-value-name">Service</div>
+          <p>We respond quickly and treat every client and insured with respect.</p>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- how the firm runs -->
+  <div class="about-wrap">
+    <section class="about-runs">
+      <div>
+        <h2>How the firm runs</h2>
+        <p class="ac-lead">We run our own back office on software we built for it. Documents are read and filed within minutes of arriving, every open item carries a follow-up date, and nothing closes until the file is complete.</p>
+        <p class="ac-lead">The judgment calls stay with a person. Whether a certificate genuinely covers the work, how a class applies to an operation that does three things at once &mdash; those are decided by someone who has done the audit, not by a rule in a system.</p>
+      </div>
+      <div class="blueprint about-practice">
+        <div class="about-practice-head">What that means in practice</div>
+        <div class="ac-li"><span class="ac-plus">+</span>Inquiries answered promptly, by the person handling the work</div>
+        <div class="ac-li"><span class="ac-plus">+</span>Audit files returned complete, with the basis documented</div>
+        <div class="ac-li"><span class="ac-plus">+</span>Inspection dates committed when we accept the assignment</div>
+        <div class="ac-li"><span class="ac-plus">+</span>Renewals chased before the lapse, not after</div>
+        <div class="ac-li"><span class="ac-plus">+</span>Every judgment call approved by a person</div>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </div>
+    </section>
+
+    <!-- closing CTA -->
+    <section class="about-cta">
+      <div>
+        <h2>Tell us what needs handling.</h2>
+        <p class="ac-lead">An audit assignment, a stack of certificates nobody has looked at, or a territory you need covered.</p>
+      </div>
+      <div class="about-cta-actions">
+        <a class="btn btn-secondary" href="/coverage.html">Coverage</a>
+        <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+      </div>
+    </section>
   </div>
-</section>
 
-<section class="alt">
-  <div class="container">
-    <div class="section-eyebrow">At a glance</div>
-    <h2 class="section-title">The firm in brief.</h2>
+</main>
 
-    <div class="stat-cards">
-      <div class="stat-card">
-        <div class="stat-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="3" y="5" width="18" height="16" rx="2"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
-            <line x1="8" y1="3" x2="8" y2="7"/>
-            <line x1="16" y1="3" x2="16" y2="7"/>
-          </svg>
-        </div>
-        <div class="stat-card-label">Founded</div>
-        <div class="stat-card-value">2026</div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12z"/>
-            <circle cx="12" cy="9" r="2.5"/>
-          </svg>
-        </div>
-        <div class="stat-card-label">Headquartered</div>
-        <div class="stat-card-value">Florida</div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
-            <polyline points="14 3 14 9 20 9"/>
-            <polyline points="9 14 11 16 15 12"/>
-          </svg>
-        </div>
-        <div class="stat-card-label">Today</div>
-        <div class="stat-card-value">Premium Audits &amp; Inspections</div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="3 17 9 11 13 15 21 7"/>
-            <polyline points="15 7 21 7 21 13"/>
-          </svg>
-        </div>
-        <div class="stat-card-label">Coverage</div>
-        <div class="stat-card-value">Gulf Coast Onsite · Remote Nationwide</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-eyebrow">Where we're headed</div>
-    <h2 class="section-title">A modern firm, built the old-fashioned way.</h2>
-    <p style="max-width: 68ch;">
-      We built our own back office on software we wrote for it, because a
-      practice like this lives or dies on details that are easy to drop
-      &mdash; an unanswered request, an unscheduled route, a deadline two
-      weeks out. Systems handle the tracking and the reminders. The judgment
-      stays with a person.
-    </p>
-    <p style="max-width: 68ch;">
-      Our goal is simple: be the firm people trust because we do what we say,
-      and we do it well. Every territory and service line we add will be held
-      to that same standard &mdash; dispatched by us, worked to our
-      checklist, and reviewed at our desk before it ships.
-    </p>
-  </div>
-</section>
-
-<div class="contact-block">
-  <div class="container">
-    <h2>Want to talk?</h2>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="label">General</div>
-        <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
-      </div>
-      <div class="contact-card">
-        <div class="label">Active matters</div>
-        <a href="mailto:hunter@atlascrestllc.com">hunter@atlascrestllc.com</a>
-      </div>
-    </div>
-    <p class="mt-2">
-      <a href="/contact.html" class="btn btn-primary">Contact us</a>
-    </p>
-  </div>
-</div>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
+<footer class="ac-footer">
+  <div class="ac-footer-grid">
     <div>
-      <span class="footer-brand">Atlas Crest LLC</span>
-      &nbsp;·&nbsp; Florida
+      <div class="ac-footer-brand">ATLAS CREST LLC</div>
+      <p class="ac-footer-blurb">Insurance services on the records side of risk — premium audits, field inspections, and subcontractor compliance. Onsite and remote.</p>
     </div>
-    <div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For carriers</div>
+      <a href="/field-services.html#audits">Premium audits</a>
+      <a href="/field-services.html#loss-control">Loss control surveys</a>
+      <a href="/field-services.html#property">Property inspections</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For businesses</div>
+      <a href="/business-services.html#coi">Certificate tracking</a>
+      <a href="/business-services.html#audit-prep">Audit preparation</a>
+      <a href="/coverage.html">Coverage area</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">Firm</div>
+      <a href="/about.html">About</a>
+      <a href="/network.html">Join the network</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="ac-footer-legal">
+    <span>Atlas Crest LLC · Florida</span>
+    <div class="ac-footer-legal-links">
       <a href="/privacy.html">Privacy</a>
-      &nbsp;·&nbsp;
       <a href="/terms.html">Terms</a>
-      &nbsp;·&nbsp;
       <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
-      &nbsp;·&nbsp; &copy; 2026 Atlas Crest LLC
+      <span>© 2026 Atlas Crest LLC</span>
     </div>
   </div>
 </footer>
 
+<script src="/js/site.js"></script>
 </body>
 </html>
