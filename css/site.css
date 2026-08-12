@@ -259,6 +259,11 @@ body.nav-open .ac-drawer { display: flex; }
   display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;
   padding: 44px var(--pad-x) 36px;
 }
+.ac-footer-mark {
+  display: inline-block; background: var(--ac-field);
+  padding: 16px 22px; margin-bottom: 14px;
+}
+.ac-footer-mark img { width: 148px; height: auto; }
 .ac-footer-brand { font: 600 15px var(--font-heading); letter-spacing: .1em; margin-bottom: 8px; }
 .ac-footer-blurb { font-size: 12.5px; line-height: 1.55; color: var(--color-muted); max-width: 34ch; }
 .ac-footer-col { display: flex; flex-direction: column; gap: 9px; font-size: 12.5px; }
