@@ -68,6 +68,25 @@
 .nw-lists .blueprint { padding: 28px 30px; }
 .nw-lists .nw-head { margin-bottom: 6px; }
 
+/* entry-level band */
+.nw-entry {
+  display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px;
+  padding: 60px var(--pad-x);
+  border-bottom: 1px solid var(--color-divider);
+  align-items: start;
+}
+.nw-entry .ac-eyebrow { margin-bottom: 18px; }
+.nw-entry h2 { font-size: 38px; line-height: 1.06; margin: 0 0 18px; max-width: 20ch; }
+.nw-entry .ac-lead { max-width: 50ch; margin-bottom: 22px; }
+.nw-areas { padding: 26px 28px; }
+.nw-areas .nw-head { margin-bottom: 12px; }
+.nw-areas-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 22px; }
+@media (max-width: 900px) {
+  .nw-entry { grid-template-columns: 1fr; gap: 26px; padding: 28px var(--pad-x); }
+  .nw-entry h2 { font-size: 26px; margin-bottom: 14px; }
+  .nw-areas { padding: 22px 20px; }
+}
+
 /* dark four-step band */
 .nw-steps-band { padding: 60px var(--pad-x); }
 .nw-steps-band .ac-eyebrow { margin-bottom: 30px; }
@@ -174,6 +193,7 @@
         <span class="tag tag-accent">Premium audit</span>
         <span class="tag tag-accent">Loss control</span>
         <span class="tag tag-accent">Property / COPE</span>
+        <span class="tag tag-accent">Field photo inspections</span>
         <span class="tag tag-outline">Southeast US</span>
         <span class="tag tag-outline">Gulf states</span>
         <span class="tag tag-outline">Statewide Florida</span>
@@ -202,6 +222,39 @@
       <div class="ac-li"><span class="ac-plus">+</span>A review pass before anything goes to the carrier</div>
       <div class="ac-li"><span class="ac-plus">+</span>No exclusivity — work our assignments alongside your own</div>
       <div class="ac-li"><span class="ac-plus">+</span>Paid on our terms, not the carrier's</div>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </div>
+  </section>
+
+  <!-- entry-level track -->
+  <section class="nw-entry" id="photo-inspectors">
+    <div>
+      <p class="ac-eyebrow">Open now — no experience required</p>
+      <h2>Field photo inspectors, Southwest Florida.</h2>
+      <p class="ac-lead">The entry route into the network. Assignments come to your phone through our field app: drive to the property, photograph it to our shot list, submit before you leave the driveway. We handle the scheduling, the review, and the finished file.</p>
+      <div class="nw-facts">
+        <div class="nw-fact"><span>Pay</span><span>$10 per inspection, offered in clusters near you</span></div>
+        <div class="nw-fact"><span>Engagement</span><span>Independent contractor, 1099 — your own schedule</span></div>
+        <div class="nw-fact"><span>Volume</span><span>Grows as you prove reliable</span></div>
+      </div>
+    </div>
+    <div class="blueprint nw-areas">
+      <div class="nw-head">Areas we are staffing now</div>
+      <div class="nw-areas-tags">
+        <span class="tag tag-outline">Port Charlotte</span>
+        <span class="tag tag-outline">Punta Gorda</span>
+        <span class="tag tag-outline">North Port</span>
+        <span class="tag tag-outline">Arcadia / DeSoto County</span>
+        <span class="tag tag-outline">Fort Myers / Cape Coral</span>
+        <span class="tag tag-outline">Englewood</span>
+        <span class="tag tag-outline">Venice</span>
+        <span class="tag tag-outline">Sarasota</span>
+      </div>
+      <div class="nw-head">What you need</div>
+      <div class="ac-li"><span class="ac-plus">+</span>A clean background check — we arrange it, no cost to you</div>
+      <div class="ac-li"><span class="ac-plus">+</span>A reliable vehicle and a valid driver's license</div>
+      <div class="ac-li"><span class="ac-plus">+</span>A smartphone with a working camera</div>
+      <div class="ac-li"><span class="ac-plus">+</span>A prompt yes or no when an assignment is offered</div>
       <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
     </div>
   </section>
@@ -268,6 +321,7 @@
           <label class="ac-chip"><input type="checkbox" name="lines" value="Loss control">Loss control</label>
           <label class="ac-chip"><input type="checkbox" name="lines" value="Property / COPE">Property / COPE</label>
           <label class="ac-chip"><input type="checkbox" name="lines" value="Virtual audit">Virtual audit</label>
+          <label class="ac-chip"><input type="checkbox" name="lines" value="Field photo inspections (entry level)">Field photo inspections (entry level)</label>
         </div>
       </fieldset>
       <div class="nw-form-row">
