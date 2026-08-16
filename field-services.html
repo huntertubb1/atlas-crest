@@ -224,10 +224,68 @@ section[id] { scroll-margin-top: 20px; }
 <section id="loss-control" class="fs-section">
   <div class="wrap fs-2col">
     <div class="blueprint ac-placeholder fs-figure">
-      <div class="fs-figure-inner">
-        <div class="fs-figure-label">Image placeholder</div>
-        <div class="fs-figure-caption">Duotone photograph &mdash; sprinkler riser, panel, or egress detail from a survey</div>
-      </div>
+      <svg viewBox="0 0 600 400" role="img" aria-label="Blueprint detail drawing of a sprinkler riser with survey callouts" style="width:100%;height:100%;display:block;color:var(--color-accent)" fill="none" stroke="currentColor" stroke-width="1.2">
+        <!-- wall section w/ hatch -->
+        <path d="M90 40 L90 360" stroke-width="1.6"/>
+        <g stroke-width="1" opacity=".6">
+          <path d="M90 60 L78 72 M90 92 L78 104 M90 124 L78 136 M90 156 L78 168 M90 188 L78 200 M90 220 L78 232 M90 252 L78 264 M90 284 L78 296 M90 316 L78 328"/>
+        </g>
+        <!-- floor -->
+        <path d="M60 360 L560 360" stroke-width="1.6"/>
+        <!-- riser pipe (double line) -->
+        <path d="M216 360 L216 96 M232 360 L232 96"/>
+        <!-- top elbow to branch line -->
+        <path d="M216 96 Q216 80 232 80 L520 80 M232 96 Q236 92 240 92" opacity="0"/>
+        <path d="M216 96 L216 80 L520 80" />
+        <path d="M232 96 L232 92 L520 92"/>
+        <!-- pendent heads on branch -->
+        <g stroke-width="1">
+          <path d="M300 92 L300 104 M294 104 L306 104 M298 108 L302 108"/>
+          <path d="M390 92 L390 104 M384 104 L396 104 M388 108 L392 108"/>
+          <path d="M480 92 L480 104 M474 104 L486 104 M478 108 L482 108"/>
+        </g>
+        <!-- OS&Y valve (bowtie + stem) -->
+        <g>
+          <path d="M216 236 L232 252 L216 252 L232 236 Z" fill="none"/>
+          <path d="M224 236 L224 218 M216 218 L232 218"/>
+        </g>
+        <!-- gauges -->
+        <g stroke-width="1">
+          <circle cx="266" cy="150" r="13"/>
+          <path d="M232 150 L253 150 M266 150 L273 143"/>
+          <circle cx="266" cy="196" r="13"/>
+          <path d="M232 196 L253 196 M266 196 L260 188"/>
+        </g>
+        <!-- flow switch -->
+        <rect x="196" y="284" width="16" height="14"/>
+        <path d="M204 284 L204 276 L216 276" stroke-width="1" transform="translate(0 8)"/>
+        <!-- FDC siamese at wall -->
+        <g stroke-width="1">
+          <path d="M90 330 L216 330"/>
+          <circle cx="128" cy="322" r="8"/>
+          <circle cx="128" cy="340" r="8"/>
+        </g>
+        <!-- drain -->
+        <path d="M232 320 L268 320 L268 352 M262 352 L274 352" stroke-width="1"/>
+        <!-- leaders + labels -->
+        <g stroke-width="1" opacity=".9">
+          <path d="M240 244 L330 244"/>
+          <text x="336" y="247" font-family="Barlow Condensed, Arial, sans-serif" font-size="12" letter-spacing="1.5" fill="currentColor" stroke="none">OS&amp;Y VALVE — LOCKED OPEN</text>
+          <path d="M281 150 L330 150"/>
+          <text x="336" y="153" font-family="Barlow Condensed, Arial, sans-serif" font-size="12" letter-spacing="1.5" fill="currentColor" stroke="none">GAUGE — SYSTEM SIDE</text>
+          <path d="M281 196 L330 196"/>
+          <text x="336" y="199" font-family="Barlow Condensed, Arial, sans-serif" font-size="12" letter-spacing="1.5" fill="currentColor" stroke="none">GAUGE — SUPPLY SIDE</text>
+          <path d="M212 291 L188 291 L188 310 L330 310" transform="translate(0 0)"/>
+          <text x="336" y="313" font-family="Barlow Condensed, Arial, sans-serif" font-size="12" letter-spacing="1.5" fill="currentColor" stroke="none">FLOW SWITCH → ALARM PANEL</text>
+          <path d="M136 348 L160 380 L330 380"/>
+          <text x="336" y="383" font-family="Barlow Condensed, Arial, sans-serif" font-size="12" letter-spacing="1.5" fill="currentColor" stroke="none">FDC — CAPS IN PLACE</text>
+          <path d="M440 104 L440 130 L470 130" opacity="0"/>
+          <text x="366" y="60" font-family="Barlow Condensed, Arial, sans-serif" font-size="12" letter-spacing="1.5" fill="currentColor" stroke="none">BRANCH LINE — HEADS CLEAR</text>
+          <path d="M390 66 L390 76" />
+        </g>
+        <!-- title -->
+        <text x="90" y="34" font-family="Barlow Condensed, Arial, sans-serif" font-size="12" letter-spacing="2.2" fill="currentColor" stroke="none">LOSS CONTROL DETAIL — RISER ROOM</text>
+      </svg>
       <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
     </div>
     <div>

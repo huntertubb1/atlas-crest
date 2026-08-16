@@ -293,10 +293,64 @@
       </div>
     </div>
     <div class="blueprint ac-placeholder hero-figure">
-      <div>
-        <div class="ph-kicker">Image placeholder</div>
-        <div class="ph-cap">Duotone photograph — field work: a commercial site, clipboard, or roof survey</div>
-      </div>
+      <svg viewBox="0 0 400 500" role="img" aria-label="Blueprint elevation drawing of a commercial building with survey dimensions" style="width:100%;height:100%;display:block;color:var(--color-accent)" fill="none" stroke="currentColor" stroke-width="1.2">
+        <!-- north arrow -->
+        <g stroke-width="1">
+          <circle cx="48" cy="52" r="14"/>
+          <path d="M48 62 L48 42 M48 42 L44 48 M48 42 L52 48"/>
+          <text x="48" y="84" text-anchor="middle" font-family="Barlow Condensed, Arial, sans-serif" font-size="9" letter-spacing="2" fill="currentColor" stroke="none">N</text>
+        </g>
+        <!-- overall width dimension -->
+        <g stroke-width="1" opacity=".85">
+          <path d="M60 140 L340 140 M60 134 L60 146 M340 134 L340 146 M60 140 L68 137 L68 143 Z M340 140 L332 137 L332 143 Z"/>
+          <text x="200" y="133" text-anchor="middle" font-family="Barlow Condensed, Arial, sans-serif" font-size="11" letter-spacing="1.5" fill="currentColor" stroke="none">84'-0&quot;</text>
+        </g>
+        <!-- height dimension -->
+        <g stroke-width="1" opacity=".85">
+          <path d="M368 180 L368 430 M362 180 L374 180 M362 430 L374 430"/>
+          <text x="381" y="308" text-anchor="middle" font-family="Barlow Condensed, Arial, sans-serif" font-size="11" letter-spacing="1.5" fill="currentColor" stroke="none" transform="rotate(90 381 308)">26'-0&quot;</text>
+        </g>
+        <!-- building shell -->
+        <rect x="60" y="180" width="280" height="250"/>
+        <path d="M60 196 L340 196"/> <!-- parapet line -->
+        <!-- rooftop unit -->
+        <rect x="248" y="158" width="52" height="22"/>
+        <path d="M254 158 L254 180 M294 158 L294 180" opacity=".5"/>
+        <!-- storefront: door + windows -->
+        <rect x="84" y="330" width="44" height="100"/>
+        <circle cx="120" cy="384" r="2.5"/>
+        <rect x="152" y="330" width="70" height="72"/>
+        <path d="M152 366 L222 366 M187 330 L187 402" opacity=".6"/>
+        <rect x="246" y="330" width="70" height="72"/>
+        <path d="M246 366 L316 366 M281 330 L281 402" opacity=".6"/>
+        <!-- upper windows -->
+        <rect x="84" y="228" width="52" height="56"/>
+        <rect x="174" y="228" width="52" height="56"/>
+        <rect x="264" y="228" width="52" height="56"/>
+        <path d="M110 228 L110 284 M200 228 L200 284 M290 228 L290 284" opacity=".6"/>
+        <!-- wall-mounted panel -->
+        <rect x="330" y="348" width="10" height="22"/>
+        <!-- leaders -->
+        <g stroke-width="1" opacity=".9">
+          <path d="M274 152 L274 118 L318 118"/>
+          <text x="322" y="121" font-family="Barlow Condensed, Arial, sans-serif" font-size="10" letter-spacing="1.5" fill="currentColor" stroke="none">RTU-1</text>
+          <path d="M340 356 L360 300 L330 300" transform="translate(6 0)"/>
+          <text x="286" y="296" font-family="Barlow Condensed, Arial, sans-serif" font-size="10" letter-spacing="1.5" fill="currentColor" stroke="none">PANEL</text>
+        </g>
+        <!-- ground line + hatch -->
+        <path d="M36 430 L364 430" stroke-width="1.6"/>
+        <g stroke-width="1" opacity=".7">
+          <path d="M44 442 L56 430 M68 442 L80 430 M92 442 L104 430 M116 442 L128 430 M140 442 L152 430 M164 442 L176 430 M188 442 L200 430 M212 442 L224 430 M236 442 L248 430 M260 442 L272 430 M284 442 L296 430 M308 442 L320 430 M332 442 L344 430"/>
+        </g>
+        <!-- titleblock -->
+        <g stroke-width="1">
+          <rect x="36" y="458" width="328" height="26"/>
+          <path d="M232 458 L232 484 M300 458 L300 484"/>
+          <text x="44" y="475" font-family="Barlow Condensed, Arial, sans-serif" font-size="10" letter-spacing="1.8" fill="currentColor" stroke="none">ATLAS CREST — FIELD SURVEY</text>
+          <text x="240" y="475" font-family="Barlow Condensed, Arial, sans-serif" font-size="10" letter-spacing="1.8" fill="currentColor" stroke="none">A-1</text>
+          <text x="308" y="475" font-family="Barlow Condensed, Arial, sans-serif" font-size="10" letter-spacing="1.5" fill="currentColor" stroke="none">VERIFIED</text>
+        </g>
+      </svg>
       <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
     </div>
   </div>
