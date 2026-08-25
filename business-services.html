@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Business Services — Atlas Crest LLC</title>
-<meta name="description" content="Certificate of insurance tracking and premium audit preparation for businesses. Atlas Crest LLC keeps the subcontractor file current all year, then hands the auditor a record that holds up. Handled remotely, wherever you are.">
+<meta name="description" content="Subcontractor coverage verification and premium audit preparation for Florida businesses. Atlas Crest LLC checks every subcontractor against the state's own workers' compensation records — not just their certificate — then hands the auditor a file that holds up.">
 <link rel="icon" type="image/png" href="/assets/atlas-crest-shield.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +26,33 @@
 }
 .ac-li:last-of-type { border-bottom: 0; }
 .ac-plus { color: var(--color-accent); font-family: var(--font-heading); }
+
+/* #2 is the failure mode that matters most: the certificate is genuinely valid and
+   genuinely useless. It gets the dark field so it reads before the other five. */
+.ac-li.is-key {
+  background: var(--ac-field); color: var(--ac-field-ink);
+  padding: 15px 18px; margin: 5px -18px; border-bottom: 0; font-size: 14px;
+}
+.ac-li.is-key .ac-plus { color: var(--color-accent-400); }
+
+/* rate card — the exposure, stated once, on the dark band */
+.bs-rate { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.bs-rate-rows { border-top: 1px solid color-mix(in srgb, var(--ac-field-ink) 26%, transparent); }
+.bs-rate-row {
+  display: flex; justify-content: space-between; align-items: baseline; padding: 13px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--ac-field-ink) 26%, transparent);
+}
+.bs-rate-row .lbl { font-size: 15px; }
+.bs-rate-row .lbl span { color: color-mix(in srgb, var(--ac-field-ink) 58%, transparent); }
+.bs-rate-row .amt { font: 600 34px var(--font-heading); }
+.bs-rate-mult { font: 600 88px/1 var(--font-heading); margin: 0 0 16px; letter-spacing: -.02em; }
+.bs-rate-line { font-size: 15px; line-height: 1.6; margin: 0 0 20px; }
+.bs-rate-note {
+  font-size: 12px; line-height: 1.5; margin: 0; padding-top: 13px;
+  border-top: 1px solid color-mix(in srgb, var(--ac-field-ink) 26%, transparent);
+  color: color-mix(in srgb, var(--ac-field-ink) 66%, transparent);
+}
+.bs-rate-note.bare { border-top: 0; padding-top: 10px; }
 
 /* hero */
 .bs-hero { border-bottom: 1px solid var(--color-divider); }
@@ -120,6 +147,9 @@
   .bs-band-grid { grid-template-columns: 1fr; gap: 18px; }
   .bs-band-grid > div { padding: 0; border-right: 0; }
   .bs-band-grid .head { font-size: 22px; margin-bottom: 2px; }
+  .bs-rate { grid-template-columns: 1fr; gap: 26px; }
+  .bs-rate-mult { font-size: 60px; }
+  .ac-li.is-key { margin: 5px -14px; padding: 14px; }
 
   .bs-cta .wrap { grid-template-columns: 1fr; gap: 20px; padding: 28px 0; }
   .bs-cta h2 { font-size: 28px; margin: 0 0 12px; }
@@ -185,44 +215,40 @@
     <div class="wrap">
       <div class="bs-copy">
         <p class="ac-eyebrow">Service 01</p>
-        <h2>Certificates, tracked by someone whose job it is.</h2>
-        <p class="ac-lead">Most certificate problems are not refusals. They are lapses nobody was watching — a policy that ended three weeks into a six-week job, a general liability certificate covering a trade the policy excludes.</p>
-        <p class="ac-lead">We take the vendor list, chase every document ourselves, and read each one against the work it is supposed to cover. You get a current status whenever you ask for it.</p>
-        <a class="btn btn-primary blueprint" href="/contact.html">Start a compliance review<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+        <h2>A certificate proves less than you think.</h2>
+        <p class="ac-lead">A certificate of insurance proves one thing: a policy existed on the day it was printed. It says nothing about today &mdash; and nothing about the day the auditor opens your file.</p>
+        <p class="ac-lead">So we don&rsquo;t collect certificates. We check every subcontractor against Florida&rsquo;s Proof of Coverage and Exemption databases &mdash; the state&rsquo;s own record of who is covered and who is not. Public state data. Nothing to chase, and nothing we need from you to start.</p>
+        <a class="btn btn-primary blueprint" href="/contact.html">See it on your own subs &mdash; free<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
       </div>
       <div class="blueprint bs-panel">
-        <div class="bs-panel-head">What we check on every certificate</div>
-        <div class="ac-li"><span class="ac-plus">+</span>Policy term covers the period the work was performed</div>
-        <div class="ac-li"><span class="ac-plus">+</span>Coverage matches the trade, not just the vendor name</div>
-        <div class="ac-li"><span class="ac-plus">+</span>Limits meet what your own contract requires</div>
-        <div class="ac-li"><span class="ac-plus">+</span>Additional insured and waiver of subrogation present where needed</div>
-        <div class="ac-li"><span class="ac-plus">+</span>Exclusions and endorsements read in full</div>
-        <div class="ac-li"><span class="ac-plus">+</span>Cancellations caught and escalated the day we learn of them</div>
+        <div class="bs-panel-head">Six ways a valid-looking certificate fails</div>
+        <div class="ac-li"><span class="ac-plus">+</span>Policy cancelled before its term ended</div>
+        <div class="ac-li is-key"><span class="ac-plus">+</span><span><strong>Dropped from a PEO policy while the policy stays active</strong> &mdash; their certificate still verifies</span></div>
+        <div class="ac-li"><span class="ac-plus">+</span>Governing class code is supervisory or clerical, not the field work</div>
+        <div class="ac-li"><span class="ac-plus">+</span>Coverage gone from the state record entirely</div>
+        <div class="ac-li"><span class="ac-plus">+</span>Officer exemption only &mdash; covers that one person, nobody else they bring</div>
+        <div class="ac-li"><span class="ac-plus">+</span>Exemption lapsed &mdash; Florida exemptions run two years and do not auto-renew</div>
         <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
       </div>
     </div>
   </section>
 
-  <!-- dark band — what you have at any moment -->
+  <!-- dark band — the exposure a missing sub creates at audit -->
   <section class="ac-field-section on-dark bs-band">
     <div class="wrap">
-      <p class="ac-eyebrow">What you have at any moment</p>
-      <div class="bs-band-grid">
+      <p class="ac-eyebrow">What it costs when a sub cannot prove coverage</p>
+      <div class="bs-rate">
         <div>
-          <div class="head">Current status</div>
-          <p>Who is compliant, who is expiring, who has never sent anything.</p>
+          <div class="bs-rate-rows">
+            <div class="bs-rate-row"><div class="lbl">Supervision <span>&middot; class 5606</span></div><div class="amt">$0.85</div></div>
+            <div class="bs-rate-row"><div class="lbl">Carpentry <span>&middot; class 5645</span></div><div class="amt">$7.69</div></div>
+          </div>
+          <p class="bs-rate-note bare">Florida workers&rsquo; compensation rates per $100 of payroll, 2026.</p>
         </div>
         <div>
-          <div class="head">Advance notice</div>
-          <p>Renewals pursued before the expiry date, not after it.</p>
-        </div>
-        <div>
-          <div class="head">A complete file</div>
-          <p>Certificates indexed to the payments they cover, ready to hand over.</p>
-        </div>
-        <div>
-          <div class="head">A person</div>
-          <p>Judgment calls are approved by someone who has worked audits.</p>
+          <div class="bs-rate-mult">That&rsquo;s 9x.</div>
+          <p class="bs-rate-line">At audit, a subcontractor you cannot prove carried coverage is picked up as your own payroll &mdash; and rated at their trade rate, not your supervisory rate. On $75,000 of subcontract labor, $638 becomes $5,767, on work that was finished and paid for a year ago.</p>
+          <p class="bs-rate-note">An illustration of how uninsured-subcontractor payroll is picked up at audit &mdash; not a quote, and not a prediction of any specific audit result.</p>
         </div>
       </div>
     </div>
