@@ -316,18 +316,12 @@
     <form class="blueprint nw-form" action="https://formsubmit.co/office@atlascrestllc.com" method="POST">
       <input type="hidden" name="_subject" value="Inspector network application — atlascrestllc.com">
       <input type="hidden" name="_next" value="https://atlascrestllc.com/applied.html">
-      <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_autoresponse" value="Thanks for applying to the Atlas Crest field network — this is an automatic confirmation that your details reached us. A real person reads every application and you will get a reply.
+      <input type="hidden" name="_autoresponse" value="Thanks for your interest in the Atlas Crest field network. This confirms that your short interest form reached us. We review submissions before sending any next step. If your location and availability fit current or expected demand, we will email you a private application link.
 
-NEXT STEP, IF YOU WANT TO MOVE FASTER: the full application is here, and it works on a phone with no account needed —
-https://docs.google.com/forms/d/e/1FAIpQLSc0T_t3pjqjEBKQgknn_-f_PM_SmCVGxnkN5jMWqJ7z9iJSVQ/viewform
+Do not email or text a Social Security number, date of birth, driver's-license number, banking information, identification image, or background-check document. Atlas Crest requests sensitive onboarding information only after review and through a separate secure process.
 
-It asks for your legal name, date of birth, license and vehicle details. Those are what a background check needs, and nothing can start without them. Complete it only if you are in or near the areas we listed and you are ready to move forward — otherwise just wait for our reply and we will keep your details on file.
-
-Two things we would rather say now than later:
-1. A background check has to clear before a first assignment. That is not same-day.
-2. Volume comes in waves. There are busy stretches and quiet ones, so this fits alongside what you already do rather than replacing a paycheck on day one.
+Assignment volume and income are not guaranteed. Each offer states its fee before you decide whether to accept it.
 
 — Atlas Crest LLC
 office@atlascrestllc.com · (863) 444-6700">
@@ -336,30 +330,30 @@ office@atlascrestllc.com · (863) 444-6700">
       <fieldset class="field" style="border:0;padding:0;margin:0">
         <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Which one fits you</legend>
         <div class="nw-radios">
-          <label class="radio"><input type="radio" name="track" value="Field photo inspections — no experience"><span class="dot"></span>Field photo inspections &mdash; no experience needed</label>
+          <label class="radio"><input type="radio" name="track" value="Field photo inspections — no experience" required><span class="dot"></span>Field photo inspections &mdash; no experience needed</label>
           <label class="radio"><input type="radio" name="track" value="Experienced field professional"><span class="dot"></span>Experienced field professional</label>
         </div>
       </fieldset>
 
       <div class="nw-form-row">
-        <div class="field"><label for="nw-name">Name</label><input class="input" id="nw-name" name="name" type="text" placeholder="Full name" autocomplete="name"></div>
-        <div class="field"><label for="nw-email">Email</label><input class="input" id="nw-email" name="email" type="email" placeholder="you@example.com" autocomplete="email"></div>
+        <div class="field"><label for="nw-name">Name</label><input class="input" id="nw-name" name="name" type="text" placeholder="Full name" autocomplete="name" maxlength="100" required></div>
+        <div class="field"><label for="nw-email">Email</label><input class="input" id="nw-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" maxlength="254" required></div>
       </div>
 
       <div class="nw-form-row">
-        <div class="field"><label for="nw-phone">Cell phone</label><input class="input" id="nw-phone" name="phone" type="tel" placeholder="(000) 000-0000" autocomplete="tel"></div>
-        <div class="field"><label for="nw-zip">Home ZIP code</label><input class="input" id="nw-zip" name="home_zip" type="text" inputmode="numeric" placeholder="e.g. 33948" autocomplete="postal-code"></div>
+        <div class="field"><label for="nw-phone">Cell phone</label><input class="input" id="nw-phone" name="phone" type="tel" placeholder="(000) 000-0000" autocomplete="tel" maxlength="30" required></div>
+        <div class="field"><label for="nw-zip">Home ZIP code</label><input class="input" id="nw-zip" name="home_zip" type="text" inputmode="numeric" placeholder="e.g. 33948" autocomplete="postal-code" pattern="[0-9]{5}(-[0-9]{4})?" maxlength="10" required></div>
       </div>
 
       <fieldset class="field" style="border:0;padding:0;margin:0">
         <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Can that number receive texts?</legend>
         <div class="nw-radios">
-          <label class="radio"><input type="radio" name="text_ok" value="Yes"><span class="dot"></span>Yes</label>
+          <label class="radio"><input type="radio" name="text_ok" value="Yes" required><span class="dot"></span>Yes</label>
           <label class="radio"><input type="radio" name="text_ok" value="No"><span class="dot"></span>No</label>
         </div>
       </fieldset>
 
-      <div class="field"><label for="nw-territory">Counties or cities you can cover</label><input class="input" id="nw-territory" name="territory" type="text" placeholder="e.g. Charlotte, DeSoto, south Sarasota"></div>
+      <div class="field"><label for="nw-territory">Counties or cities you can cover</label><input class="input" id="nw-territory" name="territory" type="text" placeholder="e.g. Charlotte, DeSoto, south Sarasota" maxlength="250" required></div>
 
       <fieldset class="field" style="border:0;padding:0;margin:0">
         <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">When are you generally free? Check all that apply</legend>
@@ -374,7 +368,7 @@ office@atlascrestllc.com · (863) 444-6700">
       <fieldset class="field" style="border:0;padding:0;margin:0">
         <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Do you have a vehicle, a valid license, and a smartphone?</legend>
         <div class="nw-radios">
-          <label class="radio"><input type="radio" name="vehicle_phone" value="Yes, all three"><span class="dot"></span>Yes, all three</label>
+          <label class="radio"><input type="radio" name="vehicle_phone" value="Yes, all three" required><span class="dot"></span>Yes, all three</label>
           <label class="radio"><input type="radio" name="vehicle_phone" value="Not all three"><span class="dot"></span>Not all three</label>
         </div>
       </fieldset>
@@ -404,9 +398,11 @@ office@atlascrestllc.com · (863) 444-6700">
         </div>
       </div>
 
-      <div class="field"><label for="nw-exp">Anything you want us to know</label><textarea class="input" id="nw-exp" name="experience" style="min-height:96px" placeholder="Experienced lines: carriers or vendors you have worked for, and the file types you are strongest in. No experience needed for photo inspections — just tell us what you do now."></textarea></div>
+      <div class="field"><label for="nw-exp">Anything you want us to know</label><textarea class="input" id="nw-exp" name="experience" maxlength="1500" style="min-height:96px" placeholder="Experienced lines: carriers or vendors you have worked for, and the file types you are strongest in. No experience needed for photo inspections — just tell us what you do now."></textarea></div>
 
-      <div class="field"><label for="nw-source">How did you hear about us?</label><input class="input" id="nw-source" name="heard_about" type="text" placeholder="Referral name, LinkedIn, a post, a search"></div>
+      <div class="field"><label for="nw-source">How did you hear about us?</label><input class="input" id="nw-source" name="heard_about" type="text" placeholder="Referral name, LinkedIn, a post, a search" maxlength="250"></div>
+
+      <p style="font-size:12px;line-height:1.5;color:color-mix(in srgb,var(--color-text) 70%,transparent)">This is a short interest form, not onboarding. Do not enter a Social Security number, date of birth, driver's-license number, banking information, or identification document. If we invite you forward, we will send a private next step. See our <a href="/privacy.html">Privacy Policy</a>.</p>
 
       <button class="btn btn-primary blueprint" type="submit">Apply to the network<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></button>
       <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
