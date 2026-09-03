@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas Inspector account request — Atlas Crest LLC</title>
+<meta name="description" content="Initiate deactivation or deletion of an invited Atlas Inspector account.">
+<link rel="icon" type="image/png" href="/assets/atlas-crest-shield.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css?v=1">
+<style>
+.request-hero { padding: 64px var(--pad-x) 44px; border-bottom: 1px solid var(--color-divider); }
+.request-wrap { width: min(100%, 760px); margin: 0 auto; }
+.request-main { padding: 44px var(--pad-x) 72px; }
+.request-main h1 { font-size: 52px; margin-bottom: 12px; }
+.request-main h2 { font-size: 24px; margin: 30px 0 10px; }
+.request-main p, .request-main li { font-size: 15px; line-height: 1.62; }
+.request-form { margin-top: 28px; padding: 28px; display: grid; gap: 18px; }
+.request-form .field { display: grid; gap: 6px; }
+.request-form label { font-size: 13px; font-weight: 600; }
+.request-form .input { width: 100%; }
+.request-confirm { display: flex; gap: 10px; align-items: flex-start; }
+.request-note { color: color-mix(in srgb, var(--color-text) 72%, transparent); }
+@media (max-width: 900px) {
+  .request-hero, .request-main { padding-left: 20px; padding-right: 20px; }
+  .request-main h1 { font-size: 34px; }
+  .request-form { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<header class="ac-header">
+  <a href="/" class="ac-brand">
+    <span class="ac-brand-tile"><img src="/assets/atlas-crest-shield.png" alt="Atlas Crest shield"></span>
+    <span><span class="ac-brand-name" style="display:block">ATLAS CREST</span><span class="ac-brand-tag" style="display:block">Insurance Services</span></span>
+  </a>
+  <nav class="ac-nav" aria-label="Primary">
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  <button class="ac-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="ac-drawer" aria-label="Mobile">
+    <a href="/">Home</a><a href="/field-services.html">Field Services</a><a href="/business-services.html">Business Services</a><a href="/coverage.html">Coverage</a><a href="/about.html">About</a>
+    <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  </nav>
+</header>
+
+<main>
+  <section class="request-hero">
+    <div class="request-wrap">
+      <p class="ac-eyebrow">Atlas Inspector</p>
+      <h1>Account request.</h1>
+      <p>Use this page to initiate deactivation or deletion of an invited Atlas Inspector account.</p>
+    </div>
+  </section>
+  <section class="request-main">
+    <div class="request-wrap">
+      <h2>What happens next.</h2>
+      <ol>
+        <li>Submit the email address used for your Atlas Inspector account.</li>
+        <li>Atlas Crest will verify your identity before changing access or deleting eligible data.</li>
+        <li>We will confirm when access is disabled and explain any assignment, payment, security, or audit records that must be retained.</li>
+      </ol>
+      <p class="request-note">Submitting this request does not erase inspection evidence immediately. Atlas may need to preserve records required by a client, contract, fraud-prevention control, or law. Eligible account data will be deleted or de-identified after verification.</p>
+
+      <form class="blueprint request-form" action="https://formsubmit.co/office@atlascrestllc.com" method="POST">
+        <input type="hidden" name="_subject" value="Atlas Inspector account deletion request">
+        <input type="hidden" name="_next" value="https://atlascrestllc.com/thanks.html">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="request_type" value="Deactivate and delete eligible Atlas Inspector account data">
+        <input type="hidden" name="_autoresponse" value="Atlas Crest received your Atlas Inspector account request. This is a receipt, not confirmation that deletion is complete. We will verify your identity and respond from office@atlascrestllc.com.">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="field">
+          <label for="account-name">Name</label>
+          <input class="input" id="account-name" name="name" autocomplete="name" maxlength="100" required>
+        </div>
+        <div class="field">
+          <label for="account-email">Atlas Inspector account email</label>
+          <input class="input" id="account-email" name="account_email" type="email" autocomplete="email" maxlength="254" required>
+        </div>
+        <label class="request-confirm" for="account-confirm">
+          <input id="account-confirm" name="request_confirmed" type="checkbox" value="Yes" required>
+          <span>I am requesting deactivation of this Atlas Inspector account and deletion or de-identification of data that Atlas Crest is permitted to remove.</span>
+        </label>
+        <button class="btn btn-primary blueprint" type="submit">Submit account request<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></button>
+        <p class="request-note">Our form-relay provider processes this request solely to deliver it to Atlas Crest. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="ac-footer">
+  <div class="ac-footer-legal" style="border-top:1px solid var(--color-divider)">
+    <span>Atlas Crest LLC · Florida</span>
+    <div class="ac-footer-legal-links">
+      <a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a><span>© 2026 Atlas Crest LLC</span>
+    </div>
+  </div>
+</footer>
+<script src="/js/site.js"></script>
+</body>
+</html>
