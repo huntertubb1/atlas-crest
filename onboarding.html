@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Atlas Crest onboarding — Atlas Crest LLC</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+.ob-wrap { max-width: 720px; margin: 0 auto; padding: 48px 20px 96px; }
+.ob-head { margin-bottom: 30px; }
+.ob-head h1 { font-size: 34px; line-height: 1.1; margin: 6px 0 12px; }
+.ob-lede { font-size: 16px; line-height: 1.6;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent); margin: 0; }
+.ob-panel { padding: 24px; margin-bottom: 14px; }
+.ob-panel h2 { font-size: 19px; margin: 0 0 6px; }
+.ob-panel p { font-size: 14.5px; line-height: 1.55; margin: 0 0 14px;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent); }
+.ob-doc { display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  padding: 14px 0; border-top: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent); }
+.ob-doc:first-of-type { border-top: 0; }
+.ob-doc-name { flex: 1 1 200px; font-size: 15px; font-weight: 600; }
+.ob-doc-note { flex: 1 1 100%; font-size: 13px; margin: 0;
+  color: color-mix(in srgb, var(--color-text) 62%, transparent); }
+.ob-state { font-family: ui-monospace, Menlo, monospace; font-size: 11px;
+  letter-spacing: .08em; text-transform: uppercase; padding: 3px 9px; border-radius: 2px;
+  background: color-mix(in srgb, var(--color-text) 8%, transparent); white-space: nowrap; }
+.ob-state.done { background: color-mix(in srgb, #2C6E4C 14%, transparent); color: #1F5738; }
+.ob-terms { padding: 15px 17px; margin: 0 0 16px;
+  border-left: 3px solid var(--color-accent-700);
+  background: color-mix(in srgb, var(--color-accent-700) 5%, transparent); }
+.ob-terms p { font-size: 12.5px; line-height: 1.55; margin: 0 0 8px; }
+.ob-terms p:last-child { margin-bottom: 0; }
+.ob-agreement { max-height: 240px; overflow-y: auto; padding: 16px;
+  border: 1px solid color-mix(in srgb, var(--color-text) 15%, transparent);
+  font-size: 13.5px; line-height: 1.6; margin-bottom: 14px; }
+.ob-agreement h3 { font-size: 14px; margin: 14px 0 6px; }
+.ob-agreement h3:first-child { margin-top: 0; }
+.ob-agreement p { font-size: 13.5px; margin: 0 0 9px; }
+.ob-msg { padding: 12px 15px; font-size: 13.5px; line-height: 1.5; margin: 0 0 14px; }
+.ob-msg.err { border-left: 3px solid #A63A2B;
+  background: color-mix(in srgb, #A63A2B 8%, transparent); }
+.ob-msg.ok { border-left: 3px solid #2C6E4C;
+  background: color-mix(in srgb, #2C6E4C 8%, transparent); }
+.ob-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; }
+.ob-row .field { flex: 1 1 240px; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="ob-wrap">
+
+  <div class="ob-head">
+    <p class="ac-eyebrow">Atlas Crest field network</p>
+    <h1 id="ob-title">Your onboarding</h1>
+    <p class="ob-lede" id="ob-lede">Checking your private link&hellip;</p>
+  </div>
+
+  <p class="ob-msg err" id="ob-error" role="alert" hidden></p>
+  <p class="ob-msg ok" id="ob-status" role="status" hidden></p>
+
+  <div id="ob-body" hidden>
+    <div class="ob-terms">
+      <p><strong>This is a roster, not a job offer.</strong> Finishing these steps puts you on
+        the Atlas Crest field roster. It is not an offer of work, and assignment volume and
+        income are not guaranteed. Every assignment states its fee before you decide whether to
+        accept it, and there is no obligation on either side.</p>
+      <p>Upload documents only on this page. Do not email or text a Social Security number,
+        banking information, or an identification image.</p>
+    </div>
+
+    <section class="blueprint ob-panel">
+      <h2>Your documents</h2>
+      <p>PDF or a clear photo, up to 25 MB each. Uploading again replaces the previous copy.</p>
+
+      <div class="ob-doc">
+        <span class="ob-doc-name">W-9</span>
+        <span class="ob-state" data-state="w9">Not uploaded</span>
+        <input type="file" data-upload="w9" accept="application/pdf,image/jpeg,image/png,image/heic">
+        <p class="ob-doc-note">Required. Your taxpayer information as an independent contractor.</p>
+      </div>
+
+      <div class="ob-doc">
+        <span class="ob-doc-name">Certificate of insurance</span>
+        <span class="ob-state" data-state="insurance_certificate">Not uploaded</span>
+        <input type="file" data-upload="insurance_certificate" accept="application/pdf,image/jpeg,image/png,image/heic">
+        <p class="ob-doc-note">Required. General liability, and errors &amp; omissions if you carry it.</p>
+      </div>
+
+      <div class="ob-doc">
+        <span class="ob-doc-name">Driver's license</span>
+        <span class="ob-state" data-state="identity_document">Not uploaded</span>
+        <input type="file" data-upload="identity_document" accept="application/pdf,image/jpeg,image/png,image/heic">
+        <p class="ob-doc-note">Optional here. Atlas Crest may request identity verification separately.</p>
+      </div>
+
+      <div class="ob-doc">
+        <span class="ob-doc-name">Inspector license or certification</span>
+        <span class="ob-state" data-state="license">Not uploaded</span>
+        <input type="file" data-upload="license" accept="application/pdf,image/jpeg,image/png,image/heic">
+        <p class="ob-doc-note">Only if your state or your lines require one.</p>
+      </div>
+    </section>
+
+    <section class="blueprint ob-panel">
+      <h2>Subcontractor agreement</h2>
+      <p>Read this in full. Typing your legal name records your signature against this exact
+        text, and you can ask us for a copy at any time.</p>
+
+      <div class="ob-agreement" id="ob-agreement-text">
+        <h3>1. Relationship</h3>
+        <p>You are an independent contractor, not an employee of Atlas Crest LLC. You control how
+          and when you perform accepted work, you supply your own vehicle, phone, and equipment,
+          and you are responsible for your own taxes, insurance, and any assistants you engage.</p>
+        <h3>2. No guarantee of work</h3>
+        <p>Being on the Atlas Crest roster is not an offer of work and does not guarantee any
+          volume of assignments or any level of income. Atlas Crest is under no obligation to
+          offer you work, and you are under no obligation to accept any assignment offered. Each
+          assignment states its fee before you decide.</p>
+        <h3>3. Assignment fees</h3>
+        <p>You are paid the fee stated on each assignment you accept and complete to the standard
+          described in it. Fees for additional or revisited work are agreed in writing before that
+          work begins.</p>
+        <h3>4. Confidentiality and privacy</h3>
+        <p>Property information, insured information, photographs, and client materials you
+          receive or create are confidential and belong to Atlas Crest and its clients. You may
+          use them only to complete the assignment. You will not retain, publish, or share them,
+          and you will delete local copies once Atlas Crest confirms upload and review.</p>
+        <h3>5. Conduct on site</h3>
+        <p>You will identify yourself accurately, enter only what the assignment authorizes, and
+          photograph only what the assignment requires. You will not photograph people,
+          documents, plates, or interiors that the assignment does not call for.</p>
+        <h3>6. Accuracy</h3>
+        <p>You will record only what you actually observed and measured. You will not fabricate,
+          reuse, or alter an observation, a photograph, a measurement, or a location.</p>
+        <h3>7. Screening</h3>
+        <p>Assignments are contingent on a background check and identity verification acceptable
+          to Atlas Crest and its clients, and on those remaining current.</p>
+        <h3>8. Ending the arrangement</h3>
+        <p>Either party may end this arrangement at any time, with or without reason. Work you
+          have already completed and delivered is still paid. Your confidentiality obligations
+          continue afterward.</p>
+      </div>
+
+      <div class="ob-row">
+        <div class="field">
+          <label for="ob-sign-name">Type your full legal name to sign</label>
+          <input class="input" id="ob-sign-name" type="text" maxlength="120"
+            autocomplete="name" placeholder="As it appears on your W-9">
+        </div>
+        <button class="btn btn-primary" type="button" id="ob-sign">Sign agreement</button>
+      </div>
+      <p class="ob-doc-note" style="margin-top:10px">
+        <span class="ob-state" data-state="subcontractor_agreement">Not signed</span>
+      </p>
+    </section>
+
+    <section class="blueprint ob-panel">
+      <h2>Field policy</h2>
+      <p>The rules that apply on every assignment: confirm the address before capturing
+        anything, complete every required question and photograph, never fabricate a location,
+        and never delete local evidence until Atlas Crest confirms upload and review.</p>
+      <div class="ob-row">
+        <div class="field">
+          <label for="ob-policy-name">Type your full legal name to acknowledge</label>
+          <input class="input" id="ob-policy-name" type="text" maxlength="120" autocomplete="name">
+        </div>
+        <button class="btn btn-primary" type="button" id="ob-policy">Acknowledge policy</button>
+      </div>
+      <p class="ob-doc-note" style="margin-top:10px">
+        <span class="ob-state" data-state="field_policy">Not acknowledged</span>
+      </p>
+    </section>
+
+    <p class="ob-doc-note">
+      Questions? <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
+      or <a href="tel:+18634446700">(863) 444-6700</a>.
+    </p>
+  </div>
+</div>
+
+<script>
+(function () {
+  // Replace with the Atlas project ref before deploying this page.
+  var ENDPOINT = 'https://sapngofczuiejofxyfky.supabase.co/functions/v1/application-portal';
+  var AGREEMENT_VERSION = 1;
+
+  var error = document.getElementById('ob-error');
+  var status = document.getElementById('ob-status');
+  var body = document.getElementById('ob-body');
+  var lede = document.getElementById('ob-lede');
+
+  // The token travels in the fragment so it is never sent to the web server or written into
+  // its access logs, and it is removed from the address bar once read.
+  var token = (function () {
+    var raw = window.location.hash.replace(/^#/, '') || window.location.search.replace(/^\?/, '');
+    var match = /(?:^|&)token=([A-Za-z0-9_-]+)/.exec(raw);
+    return match ? match[1] : '';
+  })();
+  if (token) history.replaceState({}, '', window.location.pathname);
+
+  function show(element, text) {
+    element.textContent = text;
+    element.hidden = false;
+  }
+  function clearMessages() {
+    error.hidden = true;
+    status.hidden = true;
+  }
+
+  function call(payload) {
+    return fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.assign({ token: token }, payload)),
+    }).then(function (response) {
+      return response.json().catch(function () { return {}; }).then(function (json) {
+        if (!response.ok) throw new Error(json.error || 'That did not work. Please try again.');
+        return json;
+      });
+    });
+  }
+
+  function sha256Hex(buffer) {
+    return crypto.subtle.digest('SHA-256', buffer).then(function (digest) {
+      return Array.prototype.map.call(new Uint8Array(digest), function (byte) {
+        return ('0' + byte.toString(16)).slice(-2);
+      }).join('');
+    });
+  }
+
+  function setState(key, text, done) {
+    var element = document.querySelector('[data-state="' + key + '"]');
+    if (!element) return;
+    element.textContent = text;
+    element.classList.toggle('done', Boolean(done));
+  }
+
+  function render(state) {
+    lede.textContent = 'Welcome, ' + state.legalName
+      + '. Upload your documents and sign below. Your link is good until '
+      + new Date(state.expiresAt).toLocaleDateString() + '.';
+    body.hidden = false;
+    (state.documents || []).forEach(function (document_) {
+      setState(document_.kind, 'Received', true);
+    });
+    (state.agreements || []).forEach(function (agreement) {
+      setState(
+        agreement.agreementKey,
+        agreement.agreementKey === 'field_policy' ? 'Acknowledged' : 'Signed',
+        true,
+      );
+    });
+  }
+
+  function upload(kind, file) {
+    clearMessages();
+    setState(kind, 'Uploading', false);
+    var buffer;
+    return file.arrayBuffer().then(function (read) {
+      buffer = read;
+      return sha256Hex(buffer);
+    }).then(function (digest) {
+      return call({ action: 'upload-url', kind: kind, contentType: file.type })
+        .then(function (prepared) {
+          // Upload straight to storage with the one-time URL Atlas issued for this path.
+          return fetch(ENDPOINT.replace(/\/functions\/v1\/.*$/, '')
+            + '/storage/v1/object/upload/sign/onboarding-documents/' + prepared.path
+            + '?token=' + encodeURIComponent(prepared.token), {
+            method: 'PUT',
+            headers: { 'Content-Type': file.type },
+            body: buffer,
+          }).then(function (response) {
+            if (!response.ok) throw new Error('The upload did not finish. Please try again.');
+            return call({
+              action: 'confirm-upload',
+              kind: kind,
+              path: prepared.path,
+              contentType: file.type,
+              contentSha256: digest,
+              byteSize: buffer.byteLength,
+            });
+          });
+        });
+    }).then(function () {
+      setState(kind, 'Received', true);
+      show(status, 'Saved. Atlas Crest can see it now.');
+    }).catch(function (caught) {
+      setState(kind, 'Not uploaded', false);
+      show(error, caught.message);
+    });
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-upload]'), function (input) {
+    input.addEventListener('change', function () {
+      var file = input.files && input.files[0];
+      if (file) void upload(input.getAttribute('data-upload'), file);
+      input.value = '';
+    });
+  });
+
+  function sign(key, nameInput, button, doneText) {
+    clearMessages();
+    var typedFullName = nameInput.value.trim();
+    if (typedFullName.length < 2) {
+      show(error, 'Type your full legal name first.');
+      return;
+    }
+    button.disabled = true;
+    // The signature is bound to the digest of the text actually shown on this page.
+    var text = document.getElementById('ob-agreement-text').innerText.replace(/\s+/g, ' ').trim();
+    sha256Hex(new TextEncoder().encode(key + '|' + AGREEMENT_VERSION + '|' + text))
+      .then(function (digest) {
+        return call({
+          action: 'sign-agreement',
+          agreementKey: key,
+          agreementVersion: AGREEMENT_VERSION,
+          agreementSha256: digest,
+          typedFullName: typedFullName,
+        });
+      }).then(function () {
+        setState(key, doneText, true);
+        show(status, 'Recorded. Thank you.');
+      }).catch(function (caught) {
+        show(error, caught.message);
+      }).finally(function () {
+        button.disabled = false;
+      });
+  }
+
+  var signButton = document.getElementById('ob-sign');
+  var policyButton = document.getElementById('ob-policy');
+  signButton.addEventListener('click', function () {
+    sign('subcontractor_agreement', document.getElementById('ob-sign-name'), signButton, 'Signed');
+  });
+  policyButton.addEventListener('click', function () {
+    sign('field_policy', document.getElementById('ob-policy-name'), policyButton, 'Acknowledged');
+  });
+
+  if (!token) {
+    lede.textContent = 'This page needs the private link Atlas Crest emailed you.';
+    show(error, 'Open the link from your email. If it has expired, ask us for a new one.');
+    return;
+  }
+
+  call({ action: 'load' }).then(render).catch(function (caught) {
+    lede.textContent = 'We could not open your onboarding.';
+    show(error, caught.message);
+  });
+})();
+</script>
+</body>
+</html>

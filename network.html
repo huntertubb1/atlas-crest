@@ -139,6 +139,13 @@
 .nw-fact > span:first-child { color: var(--color-muted); }
 
 .nw-form { padding: 30px; display: flex; flex-direction: column; gap: 18px; }
+.nw-terms { display: flex; flex-direction: column; gap: 9px; padding: 15px 17px;
+  border-left: 3px solid var(--color-accent-700); background: color-mix(in srgb, var(--color-accent-700) 5%, transparent); }
+.nw-terms p { margin: 0; font-size: 12.5px; line-height: 1.55;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent); }
+.nw-terms strong { color: var(--color-text); }
+.nw-error { margin: 0; padding: 11px 14px; font-size: 13px; line-height: 1.45;
+  border-left: 3px solid #A63A2B; background: color-mix(in srgb, #A63A2B 8%, transparent); color: var(--color-text); }
 .nw-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .nw-radios { display: flex; gap: 20px; padding-top: 4px; flex-wrap: wrap; }
 .nw-form .btn-primary { padding: 13px; font-size: 15px; }
@@ -326,18 +333,9 @@
         <div class="nw-fact"><span>Already inspecting with us</span><a href="https://script.google.com/macros/s/AKfycbzIb9Q72xiZcRi2D7fgt0xkpSIYouRp8sJY44kr2dMqFjpIXuhSYyZ3TDVAdvQWlI7MlQ/exec" rel="noopener nofollow" target="_blank">Inspector login &rarr;</a></div>
       </div>
     </div>
-    <form class="blueprint nw-form" action="https://formsubmit.co/office@atlascrestllc.com" method="POST">
-      <input type="hidden" name="_subject" value="Inspector network application — atlascrestllc.com">
-      <input type="hidden" name="_next" value="https://atlascrestllc.com/applied.html">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_autoresponse" value="Thanks for your interest in the Atlas Crest field network. This confirms that your short interest form reached us. We review submissions before sending any next step. If your location and availability fit current or expected demand, we will email you a private application link.
-
-Do not email or text a Social Security number, date of birth, driver's-license number, banking information, identification image, or background-check document. Atlas Crest requests sensitive onboarding information only after review and through a separate secure process.
-
-Assignment volume and income are not guaranteed. Each offer states its fee before you decide whether to accept it.
-
-— Atlas Crest LLC
-office@atlascrestllc.com · (863) 444-6700">
+    <form class="blueprint nw-form" id="nw-apply"
+      action="https://sapngofczuiejofxyfky.supabase.co/functions/v1/inspector-application-intake"
+      method="POST">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
       <fieldset class="field" style="border:0;padding:0;margin:0">
@@ -355,7 +353,43 @@ office@atlascrestllc.com · (863) 444-6700">
 
       <div class="nw-form-row">
         <div class="field"><label for="nw-phone">Cell phone</label><input class="input" id="nw-phone" name="phone" type="tel" placeholder="(000) 000-0000" autocomplete="tel" maxlength="30" required></div>
-        <div class="field"><label for="nw-zip">Home ZIP code</label><input class="input" id="nw-zip" name="home_zip" type="text" inputmode="numeric" placeholder="e.g. 33948" autocomplete="postal-code" pattern="[0-9]{5}(-[0-9]{4})?" maxlength="10" required></div>
+        <div class="field"><label for="nw-zip">Home ZIP code</label><input class="input" id="nw-zip" name="home_zip" type="text" inputmode="numeric" placeholder="e.g. 33948" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required></div>
+      </div>
+
+      <div class="nw-form-row">
+        <div class="field">
+          <label for="nw-state">State you would work in</label>
+          <select class="input" id="nw-state" name="state" required>
+            <option value="">Choose a state</option>
+            <option value="FL">Florida</option>
+            <option value="AL">Alabama</option><option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option><option value="CA">California</option>
+            <option value="CO">Colorado</option><option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option><option value="GA">Georgia</option>
+            <option value="ID">Idaho</option><option value="IL">Illinois</option>
+            <option value="IN">Indiana</option><option value="IA">Iowa</option>
+            <option value="KS">Kansas</option><option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option><option value="ME">Maine</option>
+            <option value="MD">Maryland</option><option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option><option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option><option value="MO">Missouri</option>
+            <option value="MT">Montana</option><option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option><option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option><option value="NM">New Mexico</option>
+            <option value="NY">New York</option><option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option><option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option><option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option><option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option><option value="TX">Texas</option>
+            <option value="UT">Utah</option><option value="VT">Vermont</option>
+            <option value="VA">Virginia</option><option value="WA">Washington</option>
+            <option value="DC">Washington, DC</option><option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
+            <option value="AK">Alaska</option><option value="HI">Hawaii</option>
+          </select>
+        </div>
+        <div class="field"><label for="nw-metro">Nearest metro area</label><input class="input" id="nw-metro" name="metro" type="text" placeholder="e.g. Fort Myers, Tampa, Houston" maxlength="120"></div>
       </div>
 
       <fieldset class="field" style="border:0;padding:0;margin:0">
@@ -415,7 +449,12 @@ office@atlascrestllc.com · (863) 444-6700">
 
       <div class="field"><label for="nw-source">How did you hear about us?</label><input class="input" id="nw-source" name="heard_about" type="text" placeholder="Referral name, LinkedIn, a post, a search" maxlength="250"></div>
 
-      <p style="font-size:12px;line-height:1.5;color:color-mix(in srgb,var(--color-text) 70%,transparent)">This is a short interest form, not onboarding. Do not enter a Social Security number, date of birth, driver's-license number, banking information, or identification document. If we invite you forward, we will send a private next step. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+      <div class="nw-terms">
+        <p><strong>This is a roster, not a job offer.</strong> Applying puts you on the Atlas Crest field roster. It is not an offer of work, and assignment volume and income are not guaranteed. Every assignment states its fee before you decide whether to accept it, and there is no obligation on either side.</p>
+        <p>We are opening Florida statewide first, then selected metros elsewhere. If you are outside an area we cover, we keep your application on the waitlist rather than turning you away, and contact you if that changes.</p>
+        <p>This is a short interest form, not onboarding. Do not enter a Social Security number, date of birth, driver's-license number, banking information, or identification document. If we invite you forward, we will send a private next step through a separate secure process. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+      </div>
+      <p class="nw-error" id="nw-error" role="alert" hidden></p>
 
       <button class="btn btn-primary blueprint" type="submit">Apply to the network<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></button>
       <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
@@ -465,5 +504,32 @@ office@atlascrestllc.com · (863) 444-6700">
 </footer>
 
 <script src="/js/site.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('nw-apply');
+  var error = document.getElementById('nw-error');
+  if (!form || !window.fetch) return;
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var button = form.querySelector('button[type="submit"]');
+    error.hidden = true;
+    if (button) { button.disabled = true; button.textContent = 'Sending your application...'; }
+    fetch(form.action, {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: new FormData(form),
+    }).then(function (response) {
+      return response.json().catch(function () { return {}; }).then(function (body) {
+        if (!response.ok) throw new Error(body.error || 'We could not send that application.');
+        window.location.href = body.waitlisted ? '/applied.html?waitlisted=1' : '/applied.html';
+      });
+    }).catch(function (caught) {
+      error.textContent = caught.message || 'We could not reach Atlas. Please try again shortly.';
+      error.hidden = false;
+      if (button) { button.disabled = false; button.textContent = 'Apply to the network'; }
+    });
+  });
+})();
+</script>
 </body>
 </html>
