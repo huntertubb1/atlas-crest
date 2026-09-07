@@ -158,7 +158,7 @@
 
     <section class="blueprint ob-panel">
       <h2>Field policy</h2>
-      <p>The rules that apply on every assignment: confirm the address before capturing
+      <p id="ob-policy-text">The rules that apply on every assignment: confirm the address before capturing
         anything, complete every required question and photograph, never fabricate a location,
         and never delete local evidence until Atlas Crest confirms upload and review.</p>
       <div class="ob-row">
@@ -326,7 +326,7 @@
     });
   });
 
-  function sign(key, nameInput, button, doneText) {
+  function sign(key, textId, nameInput, button, doneText) {
     clearMessages();
     var typedFullName = nameInput.value.trim();
     if (typedFullName.length < 2) {
@@ -334,8 +334,9 @@
       return;
     }
     button.disabled = true;
-    // The signature is bound to the digest of the text actually shown on this page.
-    var text = document.getElementById('ob-agreement-text').innerText.replace(/\s+/g, ' ').trim();
+    // The signature is bound to the digest of the text actually shown on this page, and Atlas
+    // refuses any digest that is not the published version's, so what was signed is reproducible.
+    var text = document.getElementById(textId).innerText.replace(/\s+/g, ' ').trim();
     sha256Hex(new TextEncoder().encode(key + '|' + AGREEMENT_VERSION + '|' + text))
       .then(function (digest) {
         return call({
@@ -358,10 +359,10 @@
   var signButton = document.getElementById('ob-sign');
   var policyButton = document.getElementById('ob-policy');
   signButton.addEventListener('click', function () {
-    sign('subcontractor_agreement', document.getElementById('ob-sign-name'), signButton, 'Signed');
+    sign('subcontractor_agreement', 'ob-agreement-text', document.getElementById('ob-sign-name'), signButton, 'Signed');
   });
   policyButton.addEventListener('click', function () {
-    sign('field_policy', document.getElementById('ob-policy-name'), policyButton, 'Acknowledged');
+    sign('field_policy', 'ob-policy-text', document.getElementById('ob-policy-name'), policyButton, 'Acknowledged');
   });
 
   if (linkError) {
