@@ -260,9 +260,13 @@
   }
 
   function render(state) {
+    // An emailed link expires; an Atlas account does not, so expiresAt is null on the account
+    // path and must not be rendered as a date (new Date(null) is 12/31/1969).
     lede.textContent = 'Welcome, ' + state.legalName
-      + '. Upload your documents and sign below. Your link is good until '
-      + new Date(state.expiresAt).toLocaleDateString() + '.';
+      + '. Upload your documents and sign below. '
+      + (state.expiresAt
+        ? 'Your link is good until ' + new Date(state.expiresAt).toLocaleDateString() + '.'
+        : 'You are signed in to your Atlas account.');
     body.hidden = false;
     (state.documents || []).forEach(function (document_) {
       setState(document_.kind, 'Received', true);
