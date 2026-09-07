@@ -191,14 +191,30 @@
   var body = document.getElementById('ob-body');
   var lede = document.getElementById('ob-lede');
 
-  // The token travels in the fragment so it is never sent to the web server or written into
-  // its access logs, and it is removed from the address bar once read.
-  var token = (function () {
-    var raw = window.location.hash.replace(/^#/, '') || window.location.search.replace(/^\?/, '');
-    var match = /(?:^|&)token=([A-Za-z0-9_-]+)/.exec(raw);
-    return match ? match[1] : '';
-  })();
-  if (token) history.replaceState({}, '', window.location.pathname);
+  // Two ways in, and both credentials travel in the fragment so they are never sent to the web
+  // server or written into its access logs, and both are removed from the address bar once read.
+  //
+  //   #token=...         the emailed one-time link, for anyone part-way through onboarding
+  //   #access_token=...  a signed-in Atlas account, which is what outlives onboarding
+  //
+  // The account session is the access token itself rather than the Supabase SDK: the page needs
+  // one bearer string, not a 100KB client, and a short-lived token that simply expires is a
+  // better fit for a credential sitting in a browser than one that silently refreshes forever.
+  var raw = window.location.hash.replace(/^#/, '') || window.location.search.replace(/^\?/, '');
+  var token = (/(?:^|&)token=([A-Za-z0-9_-]+)/.exec(raw) || [])[1] || '';
+  var session = (/(?:^|&)access_token=([^&]+)/.exec(raw) || [])[1] || '';
+  var linkError = (/(?:^|&)error_description=([^&]+)/.exec(raw) || [])[1] || '';
+  if (session) session = decodeURIComponent(session);
+  if (linkError) linkError = decodeURIComponent(linkError.replace(/\+/g, ' '));
+
+  // Survive a reload within the same tab. sessionStorage, never localStorage: this is a
+  // credential, and it should die with the tab rather than sit on the machine.
+  try {
+    if (session) window.sessionStorage.setItem('atlas-onboarding-session', session);
+    else if (!token) session = window.sessionStorage.getItem('atlas-onboarding-session') || '';
+  } catch (ignored) { /* private browsing blocks storage; the link still works without it */ }
+
+  if (token || session || linkError) history.replaceState({}, '', window.location.pathname);
 
   function show(element, text) {
     element.textContent = text;
@@ -210,10 +226,16 @@
   }
 
   function call(payload) {
+    // The function resolves the application from whichever credential is present. A session
+    // must not also send a token, or the token path wins and the account is ignored.
+    var headers = { 'Content-Type': 'application/json' };
+    var sent = payload;
+    if (session && !token) headers.Authorization = 'Bearer ' + session;
+    else sent = Object.assign({ token: token }, payload);
     return fetch(ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(Object.assign({ token: token }, payload)),
+      headers: headers,
+      body: JSON.stringify(sent),
     }).then(function (response) {
       return response.json().catch(function () { return {}; }).then(function (json) {
         if (!response.ok) throw new Error(json.error || 'That did not work. Please try again.');
@@ -338,13 +360,24 @@
     sign('field_policy', document.getElementById('ob-policy-name'), policyButton, 'Acknowledged');
   });
 
-  if (!token) {
+  if (linkError) {
+    lede.textContent = 'That sign-in link did not work.';
+    show(error, linkError + ' Sign-in links are single use and expire. Ask us for a new one.');
+    return;
+  }
+
+  if (!token && !session) {
     lede.textContent = 'This page needs the private link Atlas Crest emailed you.';
     show(error, 'Open the link from your email. If it has expired, ask us for a new one.');
     return;
   }
 
   call({ action: 'load' }).then(render).catch(function (caught) {
+    // An expired session is the common case and should not read as a failure. Clear it so a
+    // reload does not retry the same dead credential.
+    if (session && !token) {
+      try { window.sessionStorage.removeItem('atlas-onboarding-session'); } catch (ignored) {}
+    }
     lede.textContent = 'We could not open your onboarding.';
     show(error, caught.message);
   });
