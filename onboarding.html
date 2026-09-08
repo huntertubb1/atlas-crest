@@ -78,7 +78,22 @@
     </section>
 
     <section class="blueprint ob-panel">
-      <h2>Your documents</h2>
+      <h2>Complete and return your full packet</h2>
+      <p><a href="/documents/atlas-inspector-onboarding-packet-2026-09-01.pdf" download>Download the complete fillable onboarding packet (28-page PDF)</a>.</p>
+      <ol>
+        <li>Save the PDF to your phone or computer, then open the saved file in a PDF app that supports filling and signing. If your viewer cannot save your entries, use another PDF app or print, sign and scan.</li>
+        <li>Read the whole packet. Complete the application, contractor signature and dates, confidentiality acknowledgment, screening authorization, payment setup and return checklist. Leave Company signature fields for Atlas.</li>
+        <li>Save your completed copy, reopen it to check that your entries and signatures stayed saved, and upload it below. Atlas will review and countersign the Company sections.</li>
+        <li>Upload your W-9, current driver’s license and auto-insurance evidence in their separate slots below, even if the W-9 is also in your packet.</li>
+      </ol>
+      <p>The short agreement and field-policy acknowledgment below are additional portal records; they do not replace the full signed packet. Uploading does not mean you are approved. Ask Atlas for your countersigned copy.</p>
+      <div class="ob-doc">
+        <span class="ob-doc-name">Completed onboarding packet</span>
+        <span class="ob-state" data-state="onboarding_packet">Not uploaded</span>
+        <input type="file" data-upload="onboarding_packet" accept="application/pdf">
+        <p class="ob-doc-note">Return the complete saved PDF with your required signatures and dates. Use this secure upload for the packet; do not email completed tax, banking or identity information.</p>
+      </div>
+      <h2>Supporting documents</h2>
       <p>PDF or a clear photo, up to 25 MB each. Uploading again replaces the previous copy.</p>
 
       <div class="ob-doc">
@@ -276,7 +291,9 @@
         : 'You are signed in to your Atlas account.');
     body.hidden = false;
     (state.documents || []).forEach(function (document_) {
-      setState(document_.kind, 'Received', true);
+      var accepted = document_.reviewStatus === 'accepted';
+      var rejected = document_.reviewStatus === 'rejected';
+      setState(document_.kind, accepted ? 'Accepted by Atlas' : rejected ? 'Needs correction: ' + (document_.reviewNote || 'Contact Atlas') : 'Received — awaiting Atlas review', accepted);
     });
     (state.agreements || []).forEach(function (agreement) {
       setState(
@@ -317,8 +334,8 @@
           });
         });
     }).then(function () {
-      setState(kind, 'Received', true);
-      show(status, 'Saved. Atlas Crest can see it now.');
+      setState(kind, 'Received — awaiting Atlas review', false);
+      show(status, 'Saved. Atlas Crest can review it now. This is not approval for work.');
     }).catch(function (caught) {
       setState(kind, 'Not uploaded', false);
       show(error, caught.message);
