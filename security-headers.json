@@ -1,0 +1,14 @@
+{
+  "hosts": [
+    "atlascrestllc.com",
+    "www.atlascrestllc.com"
+  ],
+  "headers": {
+    "Content-Security-Policy": "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://sapngofczuiejofxyfky.supabase.co; form-action 'self' https://formsubmit.co https://sapngofczuiejofxyfky.supabase.co; frame-src 'none'; upgrade-insecure-requests; frame-ancestors 'none'",
+    "Strict-Transport-Security": "max-age=31536000",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "no-referrer",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+  }
+}
