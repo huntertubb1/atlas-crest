@@ -46,6 +46,21 @@
   background: color-mix(in srgb, #2C6E4C 8%, transparent); }
 .ob-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; }
 .ob-row .field { flex: 1 1 240px; }
+.ob-progress { border: 2px solid color-mix(in srgb, var(--color-accent-700) 25%, transparent); }
+.ob-progress-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.ob-progress-count { font-weight: 700; color: var(--color-accent-700); white-space: nowrap; }
+.ob-progress-bar { height: 9px; overflow: hidden; border-radius: 999px;
+  background: color-mix(in srgb, var(--color-text) 10%, transparent); margin: 14px 0 18px; }
+.ob-progress-bar span { display: block; height: 100%; width: 0; background: var(--color-accent-700);
+  transition: width .2s ease; }
+.ob-steps { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
+.ob-step { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.ob-step::before { content: ''; width: 18px; height: 18px; flex: 0 0 18px; border-radius: 50%;
+  border: 2px solid color-mix(in srgb, var(--color-text) 25%, transparent); }
+.ob-step.done::before { content: '✓'; display: grid; place-items: center; color: #fff;
+  border-color: #2C6E4C; background: #2C6E4C; font-size: 12px; font-weight: 700; }
+.ob-next { display: inline-flex; margin-top: 18px; }
+.ob-help { margin-top: 12px !important; }
 [hidden] { display: none !important; }
 </style>
 </head>
@@ -71,6 +86,21 @@
         banking information, or an identification image.</p>
     </div>
 
+    <section class="blueprint ob-panel ob-progress" aria-labelledby="ob-progress-title">
+      <div class="ob-progress-head">
+        <h2 id="ob-progress-title">Finish in three short stages</h2>
+        <span class="ob-progress-count" id="ob-progress-count" aria-live="polite">0 of 6 complete</span>
+      </div>
+      <div class="ob-progress-bar" aria-hidden="true"><span id="ob-progress-bar"></span></div>
+      <ol class="ob-steps">
+        <li class="ob-step" data-progress-step="signatures">Sign the two quick acknowledgments</li>
+        <li class="ob-step" data-progress-step="packet">Complete and return the onboarding packet</li>
+        <li class="ob-step" data-progress-step="documents">Upload W-9, license and auto-insurance evidence</li>
+      </ol>
+      <a class="btn btn-primary ob-next" id="ob-next" href="#ob-signatures">Start with the quick signatures</a>
+      <p class="ob-doc-note ob-help">You can complete one stage now and return from the same email link later. Your progress is saved after each successful step.</p>
+    </section>
+
     <section class="blueprint ob-panel">
       <h2>Understand the work and pass practice</h2>
       <p><a href="/documents/atlas-field-expectations-and-practice.pdf">Download your work and practice guide (PDF)</a>. Read it alongside the complete onboarding packet supplied by Atlas.</p>
@@ -78,7 +108,7 @@
       <p>Practice stays on your phone; it does not automatically upload to the office. Do not reset it before review. Your own login, completed practice review, certification, and all other required checks must be confirmed before paid work.</p>
     </section>
 
-    <section class="blueprint ob-panel">
+    <section class="blueprint ob-panel" id="ob-packet">
       <h2>Complete and return your full packet</h2>
       <p><a href="/documents/atlas-inspector-onboarding-packet-2026-09-01.pdf" download>Download the complete fillable onboarding packet (28-page PDF)</a>.</p>
       <ol>
@@ -115,7 +145,7 @@
         <span class="ob-doc-name">Driver's license</span>
         <span class="ob-state" data-state="identity_document">Not uploaded</span>
         <input type="file" data-upload="identity_document" accept="application/pdf,image/jpeg,image/png,image/heic">
-        <p class="ob-doc-note">Optional here. Atlas Crest may request identity verification separately.</p>
+        <p class="ob-doc-note">Required for Atlas to complete identity review.</p>
       </div>
 
       <div class="ob-doc">
@@ -126,7 +156,7 @@
       </div>
     </section>
 
-    <section class="blueprint ob-panel">
+    <section class="blueprint ob-panel" id="ob-signatures">
       <h2>Subcontractor agreement</h2>
       <p>Read this in full. Typing your legal name records your signature against this exact
         text, and you can ask us for a copy at any time.</p>
