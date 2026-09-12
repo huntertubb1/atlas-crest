@@ -180,7 +180,7 @@
       starting: 'Your saved packet is opening. Refresh status shortly.',
       signing: 'Your packet is in progress. Continue where you left off.',
       awaiting_owner: 'Your signing is complete. Waiting for Atlas to countersign.',
-      completed: 'Both signatures are complete. Saving your documents for Atlas review.',
+      completed: onlineSigning.reviewRequired ? 'Your signatures are complete. Atlas needs to review an existing upload before filing this packet. Please contact Atlas.' : 'Both signatures are complete. Saving your documents for Atlas review.',
       filed: 'Your completed documents are saved for Atlas review. You can get your signed copy below.',
       declined: 'This packet was declined. Contact Atlas before starting another packet.',
       expired: 'This packet has expired. Contact Atlas for a replacement.',
