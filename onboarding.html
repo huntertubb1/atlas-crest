@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://sapngofczuiejofxyfky.supabase.co; form-action 'self' https://formsubmit.co https://sapngofczuiejofxyfky.supabase.co; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' https://static.signwell.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://sapngofczuiejofxyfky.supabase.co; form-action 'self' https://formsubmit.co https://sapngofczuiejofxyfky.supabase.co; frame-src https://www.signwell.com; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Your Atlas Crest onboarding — Atlas Crest LLC</title>
 <meta name="robots" content="noindex, nofollow">
@@ -82,7 +82,7 @@
         the Atlas Crest field roster. It is not an offer of work, and assignment volume and
         income are not guaranteed. Every assignment states its fee before you decide whether to
         accept it, and there is no obligation on either side.</p>
-      <p>Upload documents only on this page. Do not email or text a Social Security number,
+      <p>Use this private page and its secure signing window for your documents. Do not email or text a Social Security number,
         banking information, or an identification image.</p>
     </div>
 
@@ -106,6 +106,25 @@
       <p><a href="/documents/atlas-field-expectations-and-practice.pdf">Download your work and practice guide (PDF)</a>. Read it alongside the complete onboarding packet supplied by Atlas.</p>
       <p>After Atlas verifies installation on your phone, choose <strong>Start full exterior training</strong> in the app. Complete the photos, questions, measurements, and sketch, then review the saved practice with Atlas and correct any missing items.</p>
       <p>Practice stays on your phone; it does not automatically upload to the office. Do not reset it before review. Your own login, completed practice review, certification, and all other required checks must be confirmed before paid work.</p>
+    </section>
+
+    <section class="blueprint ob-panel" id="ob-online-signing" hidden aria-labelledby="ob-online-title">
+      <h2 id="ob-online-title">Fill out and sign your packet online</h2>
+      <p>Complete your application, contractor agreement, confidentiality and screening forms, payment acknowledgment and W-9 in the secure signing window. Upload your current driver's license and auto-insurance evidence there. Your entries stay with the same packet when you return.</p>
+      <p id="ob-online-state" role="status">Your packet is ready to start.</p>
+      <div id="ob-tax-confirmation"><label><input type="checkbox" id="ob-us-tax"> I am a U.S. person for tax purposes and can complete the W-9 in this packet.</label>
+        <p class="ob-doc-note">If you need an international tax form, are awaiting a taxpayer number, or need to change a W-9 certification, contact Atlas before starting. Follow the IRS instructions included in your packet.</p></div>
+      <div class="ob-row">
+        <button class="btn btn-primary" type="button" id="ob-open-signing">Fill out and sign online</button>
+        <button class="btn" type="button" id="ob-refresh-signing">Refresh status</button>
+        <button class="btn" type="button" id="ob-download-signed" hidden>Get completed signed copy</button>
+      </div>
+      <p class="ob-doc-note ob-help">SignWell opens securely from this page. PDF, JPG or PNG uploads may be up to 5 MB each. Atlas countersigns and reviews your documents before approving further onboarding steps. Bank account details belong in your separate secure Found setup.</p>
+      <div id="ob-signing-window" hidden style="height:80vh;min-height:480px;margin-top:18px"></div>
+      <div class="ob-doc"><span class="ob-doc-name">Inspector license or certification, if required</span>
+        <span class="ob-state" data-state="license">Not uploaded</span>
+        <input type="file" data-upload="license" accept="application/pdf,image/jpeg,image/png,image/heic">
+        <p class="ob-doc-note">Upload here only if required for your state or inspection work.</p></div>
     </section>
 
     <section class="blueprint ob-panel" id="ob-packet">

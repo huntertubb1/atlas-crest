@@ -9,6 +9,9 @@
   var status = document.getElementById('ob-status');
   var body = document.getElementById('ob-body');
   var lede = document.getElementById('ob-lede');
+  var onlineSigning = null;
+  var signingSdk = null;
+  var signingEmbed = null;
 
   // Two ways in, and both credentials travel in the fragment so they are never sent to the web
   // server or written into its access logs, and both are removed from the address bar once read.
@@ -85,10 +88,10 @@
   }
 
   function setState(key, text, done) {
-    var element = document.querySelector('[data-state="' + key + '"]');
-    if (!element) return;
-    element.textContent = text;
-    element.classList.toggle('done', Boolean(done));
+    document.querySelectorAll('[data-state="' + key + '"]').forEach(function (element) {
+      element.textContent = text;
+      element.classList.toggle('done', Boolean(done));
+    });
     updateProgress();
   }
 
@@ -123,8 +126,9 @@
       next.href = '#ob-signatures';
       next.textContent = 'Continue with the quick signatures';
     } else if (!packetDone) {
-      next.href = '#ob-packet';
-      next.textContent = 'Continue with the onboarding packet';
+      next.href = onlineSigning && onlineSigning.available ? '#ob-online-signing' : '#ob-packet';
+      next.textContent = onlineSigning && ['awaiting_owner', 'completed'].includes(onlineSigning.state)
+        ? 'View signing status — waiting for Atlas' : 'Continue with the onboarding packet';
     } else if (!documentsDone) {
       next.href = '#ob-packet';
       next.textContent = 'Continue with supporting documents';
@@ -136,6 +140,8 @@
   }
 
   function render(state) {
+    onlineSigning = state.signing || { available: false };
+    renderSigning(onlineSigning);
     // An emailed link expires; an Atlas account does not, so expiresAt is null on the account
     // path and must not be rendered as a date (new Date(null) is 12/31/1969).
     lede.textContent = 'Welcome, ' + state.legalName
@@ -155,8 +161,102 @@
         agreement.agreementKey === 'field_policy' ? 'Acknowledged' : 'Signed',
         true,
       );
+      var signedButton = document.getElementById(agreement.agreementKey === 'field_policy' ? 'ob-policy' : 'ob-sign');
+      if (signedButton) { signedButton.disabled = true; signedButton.textContent = agreement.agreementKey === 'field_policy' ? 'Acknowledged' : 'Signed'; }
     });
     updateProgress();
+  }
+
+  function renderSigning(signing) {
+    var panel = document.getElementById('ob-online-signing');
+    if (!panel) return;
+    panel.hidden = !signing.available;
+    document.getElementById('ob-packet').hidden = Boolean(signing.available);
+    if (!signing.available) return;
+    var labels = {
+      not_started: 'Your final packet is ready to start.',
+      creating: 'Your packet is being prepared. Refresh status shortly.',
+      ready: 'Your packet is ready. Continue to fill out and sign.',
+      starting: 'Your saved packet is opening. Refresh status shortly.',
+      signing: 'Your packet is in progress. Continue where you left off.',
+      awaiting_owner: 'Your signing is complete. Waiting for Atlas to countersign.',
+      completed: 'Both signatures are complete. Saving your documents for Atlas review.',
+      filed: 'Your completed documents are saved for Atlas review. You can get your signed copy below.',
+      declined: 'This packet was declined. Contact Atlas before starting another packet.',
+      expired: 'This packet has expired. Contact Atlas for a replacement.',
+      needs_attention: 'Atlas needs to check this packet. Your saved progress has been kept.',
+      unavailable: 'Signing is temporarily unavailable. Refresh status or contact Atlas for help.'
+    };
+    document.getElementById('ob-online-state').textContent = labels[signing.state] || labels.unavailable;
+    document.getElementById('ob-tax-confirmation').hidden = signing.state !== 'not_started';
+    var open = document.getElementById('ob-open-signing');
+    open.hidden = !['not_started', 'ready', 'signing'].includes(signing.state);
+    open.textContent = signing.state === 'not_started' ? 'Fill out and sign online' : 'Continue filling and signing';
+    document.getElementById('ob-download-signed').hidden = signing.state !== 'filed';
+    document.querySelector('[data-progress-step="packet"]').textContent = 'Fill out and sign your packet online';
+    document.querySelector('[data-progress-step="documents"]').textContent = 'Documents saved after Atlas countersigns';
+  }
+
+  function loadSigningSdk() {
+    if (window.SignWellEmbed) return Promise.resolve();
+    if (!signingSdk) signingSdk = new Promise(function (resolve, reject) {
+      var script = document.createElement('script');
+      script.src = 'https://static.signwell.com/assets/embedded.js';
+      script.onload = function () { resolve(); };
+      script.onerror = function () { script.remove(); signingSdk = null; reject(new Error('The signing window could not load. Please try again.')); };
+      document.head.appendChild(script);
+    });
+    return signingSdk;
+  }
+  function refreshSigning() {
+    return call({ action: 'signing-refresh' }).then(function () { return call({ action: 'load' }); }).then(render);
+  }
+  var openSigning = document.getElementById('ob-open-signing');
+  if (openSigning) {
+    openSigning.addEventListener('click', function () {
+      clearMessages();
+      var first = onlineSigning.state === 'not_started';
+      if (first && !document.getElementById('ob-us-tax').checked) {
+        show(error, 'Confirm that you can complete the W-9 in this packet, or contact Atlas for the correct tax form.'); return;
+      }
+      openSigning.disabled = true;
+      call({ action: first ? 'signing-start' : 'signing-resume', confirmUsTax: first && document.getElementById('ob-us-tax').checked })
+        .then(function (result) {
+          onlineSigning = result; renderSigning(result); updateProgress();
+          if (!result.signingUrl) return;
+          var url = new URL(result.signingUrl);
+          if (url.origin !== 'https://www.signwell.com' || url.username || url.password) throw new Error('Atlas could not verify the signing link.');
+          return loadSigningSdk().then(function () {
+            var host = document.getElementById('ob-signing-window'); host.hidden = false;
+            host.replaceChildren();
+            signingEmbed = new window.SignWellEmbed({ url: url.href, containerId: 'ob-signing-window', allowRedirect: false,
+              events: {
+                completed: function () {
+                  host.hidden = true;
+                  show(status, 'Checking your saved signing status…');
+                  // The callback is only a refresh hint. Only the server can verify signatures
+                  // and file the completed PDF; never mark document gates from this event.
+                  refreshSigning().then(function () { status.hidden = true; }).catch(function (e) { show(error, e.message); });
+                },
+                closed: function () { host.hidden = true; refreshSigning().catch(function (e) { show(error, e.message); }); },
+                error: function () { show(error, 'The signing window stopped. Your saved progress is kept; use Continue to reopen it.'); }
+              }
+            });
+            signingEmbed.open(); host.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        }).catch(function (e) { show(error, e.message); })
+        .finally(function () { openSigning.disabled = false; });
+    });
+    document.getElementById('ob-refresh-signing').addEventListener('click', function () {
+      clearMessages(); refreshSigning().catch(function (e) { show(error, e.message); });
+    });
+    document.getElementById('ob-download-signed').addEventListener('click', function () {
+      call({ action: 'signing-download' }).then(function (result) {
+        var url = new URL(result.downloadUrl);
+        if (url.origin !== new URL(ENDPOINT).origin || !url.pathname.startsWith('/storage/v1/object/sign/onboarding-signed-private/')) throw new Error('Could not verify the completed copy.');
+        var link = document.createElement('a'); link.href = url.href; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.click();
+      }).catch(function (e) { show(error, e.message); });
+    });
   }
 
   function uploadContentType(file) {
