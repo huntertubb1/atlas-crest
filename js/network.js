@@ -9,6 +9,31 @@
     button.textContent = label;
   }
 
+  function showError(message) {
+    error.textContent = message;
+    error.hidden = false;
+    if (typeof error.scrollIntoView === 'function') {
+      error.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  }
+
+  function normalizeZip() {
+    var zip = form.querySelector('#nw-zip');
+    if (!zip) return true;
+    var digits = String(zip.value || '').replace(/\D/g, '');
+    if (digits.length < 5) {
+      showError('Enter a five-digit ZIP code.');
+      zip.focus();
+      return false;
+    }
+    zip.value = digits.slice(0, 5);
+    return true;
+  }
+
+  function hasAvailability() {
+    return Boolean(form.querySelector('input[name="availability"]:checked'));
+  }
+
   function submitWithBrowser(form, button) {
     setButton(button, true, 'Trying a compatible submission method...');
     // A normal HTML form post does not depend on cross-origin fetch/CORS. The intake
@@ -21,6 +46,22 @@
     event.preventDefault();
     var button = form.querySelector('button[type="submit"]');
     error.hidden = true;
+
+    if (!normalizeZip()) {
+      setButton(button, false, 'Apply to the network');
+      return;
+    }
+
+    if (!hasAvailability()) {
+      showError('Choose at least one time when you are generally available.');
+      var availability = document.getElementById('nw-availability');
+      if (availability && typeof availability.scrollIntoView === 'function') {
+        availability.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
+      setButton(button, false, 'Apply to the network');
+      return;
+    }
+
     setButton(button, true, 'Sending your application...');
 
     var controller = window.AbortController ? new AbortController() : null;
@@ -43,8 +84,7 @@
         submitWithBrowser(form, button);
         return;
       }
-      error.textContent = caught.message || 'We could not reach Atlas. Please try again shortly.';
-      error.hidden = false;
+      showError(caught.message || 'We could not reach Atlas. Please try again shortly.');
       setButton(button, false, 'Apply to the network');
     }).then(function () {
       if (timeout) window.clearTimeout(timeout);

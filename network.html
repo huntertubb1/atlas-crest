@@ -152,6 +152,15 @@
 .nw-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .nw-radios { display: flex; gap: 20px; padding-top: 4px; flex-wrap: wrap; }
 .nw-form .btn-primary { padding: 13px; font-size: 15px; }
+/* Keep the honeypot out of sight without display:none, which some browsers autofill. */
+.nw-honey {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
 /* ── responsive ─────────────────────────────────────────────────── */
 @media (max-width: 900px) {
@@ -341,8 +350,11 @@
     </div>
     <form class="blueprint nw-form" id="nw-apply"
       action="https://sapngofczuiejofxyfky.supabase.co/functions/v1/inspector-application-intake"
-      method="POST">
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      method="POST"
+      style="position:relative">
+      <label class="nw-honey" aria-hidden="true">Leave blank
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+      </label>
 
       <fieldset class="field" style="border:0;padding:0;margin:0">
         <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Which one fits you</legend>
@@ -359,7 +371,7 @@
 
       <div class="nw-form-row">
         <div class="field"><label for="nw-phone">Cell phone</label><input class="input" id="nw-phone" name="phone" type="tel" placeholder="(000) 000-0000" autocomplete="tel" maxlength="30" required></div>
-        <div class="field"><label for="nw-zip">Home ZIP code</label><input class="input" id="nw-zip" name="home_zip" type="text" inputmode="numeric" placeholder="e.g. 33948" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required></div>
+        <div class="field"><label for="nw-zip">Home ZIP code</label><input class="input" id="nw-zip" name="home_zip" type="text" inputmode="numeric" placeholder="e.g. 33948" autocomplete="postal-code" pattern="[0-9]{5}(-[0-9]{4})?" maxlength="10" title="Enter a 5-digit ZIP code" required></div>
       </div>
 
       <div class="nw-form-row">
@@ -408,8 +420,8 @@
 
       <div class="field"><label for="nw-territory">Counties or cities you can cover</label><input class="input" id="nw-territory" name="territory" type="text" placeholder="e.g. Charlotte, DeSoto, south Sarasota" maxlength="250" required></div>
 
-      <fieldset class="field" style="border:0;padding:0;margin:0">
-        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">When are you generally free? Check all that apply</legend>
+      <fieldset class="field" id="nw-availability" style="border:0;padding:0;margin:0">
+        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">When are you generally free? Check at least one</legend>
         <div class="ac-chips">
           <label class="ac-chip"><input type="checkbox" name="availability" value="Weekday mornings">Weekday mornings</label>
           <label class="ac-chip"><input type="checkbox" name="availability" value="Weekday afternoons">Weekday afternoons</label>
