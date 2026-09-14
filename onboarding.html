@@ -89,14 +89,14 @@
     <section class="blueprint ob-panel ob-progress" aria-labelledby="ob-progress-title">
       <div class="ob-progress-head">
         <h2 id="ob-progress-title">Finish in a few short stages</h2>
-        <span class="ob-progress-count" id="ob-progress-count" aria-live="polite">0 of 7 complete</span>
+        <span class="ob-progress-count" id="ob-progress-count" aria-live="polite">0 of 5 complete</span>
       </div>
       <div class="ob-progress-bar" aria-hidden="true"><span id="ob-progress-bar"></span></div>
       <ol class="ob-steps">
         <li class="ob-step" data-progress-step="coverage">Choose the ZIP codes you can cover</li>
         <li class="ob-step" data-progress-step="signatures">Sign the two quick acknowledgments</li>
         <li class="ob-step" data-progress-step="packet">Complete and return the onboarding packet</li>
-        <li class="ob-step" data-progress-step="documents">Upload W-9, license and auto-insurance evidence</li>
+        <li class="ob-step" data-progress-step="documents">Upload your W-9</li>
       </ol>
       <a class="btn btn-primary ob-next" id="ob-next" href="#ob-coverage">Start with the ZIP codes you can cover</a>
       <p class="ob-doc-note ob-help">You can complete one stage now and return from the same email link later. Your progress is saved after each successful step.</p>
@@ -123,7 +123,7 @@
 
     <section class="blueprint ob-panel" id="ob-online-signing" hidden aria-labelledby="ob-online-title">
       <h2 id="ob-online-title">Fill out and sign your packet online</h2>
-      <p>Complete your application, contractor agreement, confidentiality and screening forms, payment acknowledgment and W-9 in the secure signing window. Upload your current driver's license and auto-insurance evidence there. Your entries stay with the same packet when you return.</p>
+      <p>Complete your application, contractor agreement, confidentiality and screening forms, payment acknowledgment and W-9 in the secure signing window. Your entries stay with the same packet when you return. Driver's license and auto insurance are optional — Atlas coverage applies for this work.</p>
       <p id="ob-online-state" role="status">Your packet is ready to start.</p>
       <div id="ob-tax-confirmation"><label><input type="checkbox" id="ob-us-tax"> I am a U.S. person for tax purposes and can complete the W-9 in this packet.</label>
         <p class="ob-doc-note">If you need an international tax form, are awaiting a taxpayer number, or need to change a W-9 certification, contact Atlas before starting. Follow the IRS instructions included in your packet.</p></div>
@@ -147,7 +147,7 @@
         <li>Save the PDF to your phone or computer, then open the saved file in a PDF app that supports filling and signing. If your viewer cannot save your entries, use another PDF app or print, sign and scan.</li>
         <li>Read the whole packet. Complete the application, contractor signature and dates, confidentiality acknowledgment, screening authorization, payment setup and return checklist. Leave Company signature fields for Atlas.</li>
         <li>Save your completed copy, reopen it to check that your entries and signatures stayed saved, and upload it below. Atlas will review and countersign the Company sections.</li>
-        <li>Upload your W-9, current driver’s license and auto-insurance evidence in their separate slots below, even if the W-9 is also in your packet.</li>
+        <li>Upload your W-9 in its slot below, even if the W-9 is also in your packet. Driver's license and auto insurance are optional.</li>
       </ol>
       <p>The short agreement and field-policy acknowledgment below are additional portal records; they do not replace the full signed packet. Uploading does not mean you are approved. Ask Atlas for your countersigned copy.</p>
       <div class="ob-doc">
@@ -167,17 +167,17 @@
       </div>
 
       <div class="ob-doc">
-        <span class="ob-doc-name">Auto insurance and any assignment-required coverage</span>
+        <span class="ob-doc-name">Auto insurance (optional)</span>
         <span class="ob-state" data-state="insurance_certificate">Not uploaded</span>
         <input type="file" data-upload="insurance_certificate" accept="application/pdf,image/jpeg,image/png,image/heic">
-        <p class="ob-doc-note">Residential photo inspectors: upload current auto-insurance evidence. Additional coverage is required only when Atlas specifies it for your assignment. Atlas reviews the coverage and expiration before clearing you; an upload alone is not approval. If another required policy must be provided, ask Atlas how to include both before replacing this file.</p>
+        <p class="ob-doc-note">Optional. Atlas carries coverage for this inspection work. Upload only if Atlas asks for it on a specific assignment.</p>
       </div>
 
       <div class="ob-doc">
-        <span class="ob-doc-name">Driver's license</span>
+        <span class="ob-doc-name">Driver's license (optional)</span>
         <span class="ob-state" data-state="identity_document">Not uploaded</span>
         <input type="file" data-upload="identity_document" accept="application/pdf,image/jpeg,image/png,image/heic">
-        <p class="ob-doc-note">Required for Atlas to complete identity review.</p>
+        <p class="ob-doc-note">Optional. Keep your own license current for driving to jobs. Atlas does not require this upload to clear you.</p>
       </div>
 
       <div class="ob-doc">

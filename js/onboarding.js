@@ -103,8 +103,7 @@
 
   function updateProgress() {
     var required = [
-      'service_zips', 'subcontractor_agreement', 'field_policy', 'onboarding_packet',
-      'w9', 'identity_document', 'insurance_certificate',
+      'service_zips', 'subcontractor_agreement', 'field_policy', 'onboarding_packet', 'w9',
     ];
     var completed = required.filter(stateDone).length;
     var count = document.getElementById('ob-progress-count');
@@ -118,8 +117,7 @@
     var coverageDone = stateDone('service_zips');
     var signaturesDone = stateDone('subcontractor_agreement') && stateDone('field_policy');
     var packetDone = stateDone('onboarding_packet');
-    var documentsDone = stateDone('w9') && stateDone('identity_document')
-      && stateDone('insurance_certificate');
+    var documentsDone = stateDone('w9');
     var coverageStep = document.querySelector('[data-progress-step="coverage"]');
     if (coverageStep) coverageStep.classList.toggle('done', coverageDone);
     document.querySelector('[data-progress-step="signatures"]').classList.toggle('done', signaturesDone);
