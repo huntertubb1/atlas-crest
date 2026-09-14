@@ -88,17 +88,30 @@
 
     <section class="blueprint ob-panel ob-progress" aria-labelledby="ob-progress-title">
       <div class="ob-progress-head">
-        <h2 id="ob-progress-title">Finish in three short stages</h2>
-        <span class="ob-progress-count" id="ob-progress-count" aria-live="polite">0 of 6 complete</span>
+        <h2 id="ob-progress-title">Finish in a few short stages</h2>
+        <span class="ob-progress-count" id="ob-progress-count" aria-live="polite">0 of 7 complete</span>
       </div>
       <div class="ob-progress-bar" aria-hidden="true"><span id="ob-progress-bar"></span></div>
       <ol class="ob-steps">
+        <li class="ob-step" data-progress-step="coverage">Choose the ZIP codes you can cover</li>
         <li class="ob-step" data-progress-step="signatures">Sign the two quick acknowledgments</li>
         <li class="ob-step" data-progress-step="packet">Complete and return the onboarding packet</li>
         <li class="ob-step" data-progress-step="documents">Upload W-9, license and auto-insurance evidence</li>
       </ol>
-      <a class="btn btn-primary ob-next" id="ob-next" href="#ob-signatures">Start with the quick signatures</a>
+      <a class="btn btn-primary ob-next" id="ob-next" href="#ob-coverage">Start with the ZIP codes you can cover</a>
       <p class="ob-doc-note ob-help">You can complete one stage now and return from the same email link later. Your progress is saved after each successful step.</p>
+    </section>
+
+    <section class="blueprint ob-panel" id="ob-coverage">
+      <h2>ZIP codes you can cover</h2>
+      <p>List every ZIP code you will take inspections in. Nearby suburbs belong with the main city — for example Brandon, Clearwater, and St. Petersburg all sit with Tampa Bay. Atlas uses this list to match work. It is not a login and not a job offer.</p>
+      <label for="ob-zips">Coverage ZIP codes</label>
+      <textarea class="input" id="ob-zips" rows="3" maxlength="500" placeholder="33601, 33511, 33701"></textarea>
+      <p class="ob-doc-note">Use five-digit ZIP codes, separated by commas or spaces. Include your home ZIP if you work there.</p>
+      <div class="ob-row">
+        <button class="btn btn-primary" type="button" id="ob-save-zips">Save ZIP codes</button>
+        <span class="ob-state" data-state="service_zips">Not saved</span>
+      </div>
     </section>
 
     <section class="blueprint ob-panel">

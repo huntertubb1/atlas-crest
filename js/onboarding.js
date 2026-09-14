@@ -12,6 +12,7 @@
   var onlineSigning = null;
   var signingSdk = null;
   var signingEmbed = null;
+  var savedZips = [];
 
   // Two ways in, and both credentials travel in the fragment so they are never sent to the web
   // server or written into its access logs, and both are removed from the address bar once read.
@@ -102,7 +103,7 @@
 
   function updateProgress() {
     var required = [
-      'subcontractor_agreement', 'field_policy', 'onboarding_packet',
+      'service_zips', 'subcontractor_agreement', 'field_policy', 'onboarding_packet',
       'w9', 'identity_document', 'insurance_certificate',
     ];
     var completed = required.filter(stateDone).length;
@@ -114,15 +115,21 @@
     count.textContent = completed + ' of ' + required.length + ' complete';
     bar.style.width = Math.round((completed / required.length) * 100) + '%';
 
+    var coverageDone = stateDone('service_zips');
     var signaturesDone = stateDone('subcontractor_agreement') && stateDone('field_policy');
     var packetDone = stateDone('onboarding_packet');
     var documentsDone = stateDone('w9') && stateDone('identity_document')
       && stateDone('insurance_certificate');
+    var coverageStep = document.querySelector('[data-progress-step="coverage"]');
+    if (coverageStep) coverageStep.classList.toggle('done', coverageDone);
     document.querySelector('[data-progress-step="signatures"]').classList.toggle('done', signaturesDone);
     document.querySelector('[data-progress-step="packet"]').classList.toggle('done', packetDone);
     document.querySelector('[data-progress-step="documents"]').classList.toggle('done', documentsDone);
 
-    if (!signaturesDone) {
+    if (!coverageDone) {
+      next.href = '#ob-coverage';
+      next.textContent = 'Start with the ZIP codes you can cover';
+    } else if (!signaturesDone) {
       next.href = '#ob-signatures';
       next.textContent = 'Continue with the quick signatures';
     } else if (!packetDone) {
@@ -145,11 +152,17 @@
     // An emailed link expires; an Atlas account does not, so expiresAt is null on the account
     // path and must not be rendered as a date (new Date(null) is 12/31/1969).
     lede.textContent = 'Welcome, ' + state.legalName
-      + '. Upload your documents and sign below. '
+      + '. Choose the ZIP codes you can cover, then fill and sign on this page. '
       + (state.expiresAt
         ? 'Your link is good until ' + new Date(state.expiresAt).toLocaleDateString() + '.'
         : 'You are signed in to your Atlas account.');
     body.hidden = false;
+    savedZips = Array.isArray(state.serviceZips) ? state.serviceZips : [];
+    var zipField = document.getElementById('ob-zips');
+    if (zipField && !zipField.value.trim()) {
+      zipField.value = savedZips.length ? savedZips.join(', ') : (state.homeZip || '');
+    }
+    if (savedZips.length) setState('service_zips', savedZips.length + ' ZIP codes saved', true);
     (state.documents || []).forEach(function (document_) {
       var accepted = document_.reviewStatus === 'accepted';
       var rejected = document_.reviewStatus === 'rejected';
@@ -256,6 +269,23 @@
         if (url.origin !== new URL(ENDPOINT).origin || !url.pathname.startsWith('/storage/v1/object/sign/onboarding-signed-private/')) throw new Error('Could not verify the completed copy.');
         var link = document.createElement('a'); link.href = url.href; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.click();
       }).catch(function (e) { show(error, e.message); });
+    });
+  }
+
+  var saveZips = document.getElementById('ob-save-zips');
+  if (saveZips) {
+    saveZips.addEventListener('click', function () {
+      clearMessages();
+      saveZips.disabled = true;
+      call({ action: 'save-service-zips', serviceZips: document.getElementById('ob-zips').value })
+        .then(function (result) {
+          savedZips = result.serviceZips || [];
+          document.getElementById('ob-zips').value = savedZips.join(', ');
+          setState('service_zips', savedZips.length + ' ZIP codes saved', true);
+          show(status, 'Saved. Atlas will match inspections to these ZIP codes after you are approved.');
+        })
+        .catch(function (caught) { show(error, caught.message); })
+        .finally(function () { saveZips.disabled = false; });
     });
   }
 
