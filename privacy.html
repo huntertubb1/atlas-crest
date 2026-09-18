@@ -62,7 +62,7 @@ li { margin-bottom: 6px; font-size: 14.5px; line-height: 1.55; }
       How Atlas Crest LLC collects, uses, and protects the information
       shared with us in the course of our work.
     </p>
-    <p style="opacity: 0.75; font-size: 0.95rem;">Effective September 3, 2026.</p>
+    <p style="opacity: 0.75; font-size: 0.95rem;">Effective September 18, 2026.</p>
   </div>
 </section>
 
@@ -75,7 +75,8 @@ li { margin-bottom: 6px; font-size: 14.5px; line-height: 1.55; }
       insurance field services firm &mdash; premium audits, risk assessments
       and loss-control surveys, and property inspections. This policy
       explains what information we collect, how we use it, and the choices
-      you have.
+      you have. It covers this website, the Atlas Inspector app, and the
+      field-network application and onboarding process.
     </p>
 
     <h2>Information we collect.</h2>
@@ -99,7 +100,14 @@ li { margin-bottom: 6px; font-size: 14.5px; line-height: 1.55; }
           app-generated device identifier, push-notification token, sign-in and
           multifactor-authentication events, sync status, errors, and audit history</li>
       <li>Information you submit through our website contact form, which is
-          delivered to our inbox by a third-party form-relay service</li>
+          delivered to our inbox by a third-party form-relay service (FormSubmit)</li>
+      <li>Field-network interest forms, including name, email, phone, home ZIP,
+          territory, availability, qualifications, and how you heard about us</li>
+      <li>Onboarding documents from invited applicants, including signed
+          agreements, the completed onboarding packet, W-9 and tax information,
+          and any supporting documents you upload through your private onboarding
+          link or the secure signing window. These are stored in private,
+          access-controlled storage and treated as confidential</li>
     </ul>
 
     <h2>How we use information.</h2>
@@ -114,6 +122,8 @@ li { margin-bottom: 6px; font-size: 14.5px; line-height: 1.55; }
       <li>Maintaining our internal records of work performed</li>
       <li>Assigning work, confirming inspector eligibility, protecting accounts,
           recovering field drafts, reviewing quality, and maintaining an audit trail</li>
+      <li>Reviewing field-network applications, verifying eligibility, completing
+          onboarding, and setting up payment for accepted independent contractors</li>
       <li>Calculating assignment pay, company revenue, and operational performance</li>
     </ul>
 
@@ -136,8 +146,48 @@ li { margin-bottom: 6px; font-size: 14.5px; line-height: 1.55; }
       consistent with this policy.
     </p>
     <p>
+      Field-network applications and onboarding documents are confidential.
+      They are visible only to the people at Atlas Crest who need them to
+      review eligibility, complete onboarding, and set up payment — plus the
+      service providers described above, such as our secure signing provider
+      (SignWell) for packets completed in the signing window. We do not share
+      applicant information with carriers, clients, or any third party for
+      marketing, and any background or screening check happens only with
+      your written authorization.
+    </p>
+    <p>
       We may disclose information when required by law, court order, or
       legitimate regulatory request.
+    </p>
+
+    <h2 id="cookies">Cookies and local storage.</h2>
+    <p>
+      This website sets no advertising or tracking cookies and runs no
+      analytics or cross-site trackers. Because there is nothing to opt out
+      of, there is no cookie banner. The only things stored in your browser
+      are strictly necessary for the page you are using:
+    </p>
+    <ul>
+      <li><strong>Onboarding session.</strong> If you open a private onboarding
+          link, a short-lived access token is kept in session storage so the
+          page can load your file. It is removed when you close the tab and is
+          never used for tracking.</li>
+      <li><strong>Fonts.</strong> Pages load the Barlow typeface from Google
+          Fonts, which may receive your IP address as part of serving the
+          files. See Google's privacy policy for details.</li>
+      <li><strong>Secure signing window.</strong> The onboarding page can load
+          SignWell so you can fill out and sign your packet. SignWell's own
+          privacy policy applies to that window.</li>
+      <li><strong>Form delivery.</strong> Interest forms and onboarding uploads
+          are sent directly to our secure database (Supabase); website contact
+          messages pass through our form-relay provider (FormSubmit) solely to
+          deliver them to us. None of these providers is authorized by us to
+          use your information for their own advertising.</li>
+    </ul>
+    <p>
+      You can clear stored data at any time through your browser settings.
+      Clearing the onboarding session simply signs that page out; your saved
+      progress stays on our servers and your email link still works.
     </p>
 
     <h2>Atlas Inspector app.</h2>
@@ -182,12 +232,15 @@ li { margin-bottom: 6px; font-size: 14.5px; line-height: 1.55; }
 
     <h2>Data security.</h2>
     <p>
-      We treat audit records as confidential. Documents and communications
-      are stored on access-controlled systems and shared only with the
-      audit's chain of engagement. We use role-based access, multifactor
+      We treat audit records and applicant records as confidential. Documents
+      and communications are stored on access-controlled systems and shared
+      only with the audit's chain of engagement — or, for applicant files,
+      only with the people at Atlas Crest who need them for eligibility,
+      onboarding, and payment decisions. We use role-based access, multifactor
       authentication for protected functions, private file storage, encrypted
-      local app storage, and operational audit records. No system can be
-      guaranteed completely secure.
+      local app storage, and operational audit records. The site itself is
+      served over HTTPS with strict transport security and content-security
+      protections. No system can be guaranteed completely secure.
     </p>
 
     <h2>Retention and account requests.</h2>
@@ -269,6 +322,7 @@ li { margin-bottom: 6px; font-size: 14.5px; line-height: 1.55; }
     <div class="ac-footer-legal-links">
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
+      <a href="/privacy.html#cookies">Cookies</a>
       <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
       <span>© 2026 Atlas Crest LLC</span>
     </div>
