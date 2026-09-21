@@ -1,0 +1,12 @@
+{
+  "about": "Inspector badges checked by /verify. status must be \"active\" to verify; any other value shows \"not active\". Keep former inspectors here with status \"inactive\" so their old badges fail loudly instead of \"not found\". photo: headshot file in this folder, a 600x720 portrait JPEG named after the badge (e.g. \"AC-1001.jpg\"); initials show if it is missing.",
+  "badges": [
+    {
+      "badge": "AC-1001",
+      "name": "Hunter Tubb",
+      "role": "Owner · Field Inspector",
+      "status": "active",
+      "photo": "AC-1001.jpg"
+    }
+  ]
+}
