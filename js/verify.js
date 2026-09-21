@@ -76,25 +76,32 @@
     fill(el, "role", String(person.role || "Field Inspector"));
     fill(el, "badge", id);
 
+    /* Headshot when the roster has one, so the insured can match the face at the door.
+       Initials only if there is no photo or it fails to load. */
     var photoBox = el.querySelector('[data-slot="photo"]');
-    var mono = document.createElement("span");
-    mono.textContent = initials(name);
-    photoBox.appendChild(mono);
+    function useInitials() {
+      while (photoBox.firstChild) photoBox.removeChild(photoBox.firstChild);
+      photoBox.classList.remove("has-photo");
+      var mono = document.createElement("span");
+      mono.textContent = initials(name);
+      photoBox.appendChild(mono);
+      note("Make sure this name matches the name on the badge. You can ask to see a photo ID.");
+    }
 
     var photo = String(person.photo || "");
     if (/^[A-Za-z0-9._-]+\.(jpe?g|png|webp)$/i.test(photo)) {
       var img = document.createElement("img");
       img.alt = "Photo of " + name;
-      img.addEventListener("load", function () {
-        while (photoBox.firstChild) photoBox.removeChild(photoBox.firstChild);
-        photoBox.appendChild(img);
-        note("Make sure the photo and name match the person in front of you. You can also ask to see a photo ID.");
-      });
+      img.addEventListener("error", useInitials);
       img.src = PHOTO_DIR + photo;
+      photoBox.appendChild(img);
+      photoBox.classList.add("has-photo");
+      note("Make sure the photo and name match the person in front of you. You can also ask to see a photo ID.");
+    } else {
+      useInitials();
     }
 
     startClock(el.querySelector('[data-slot="clock"]'));
-    note("Make sure this name matches the name on the badge. You can ask to see a photo ID.");
     show("active", name + " · Active inspector");
   }
 

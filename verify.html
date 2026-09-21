@@ -47,12 +47,13 @@
 
 .vf-person { display: flex; gap: 18px; align-items: center; }
 .vf-photo {
-  width: 92px; height: 110px; flex: none; overflow: hidden;
+  width: 120px; height: 144px; flex: none; overflow: hidden;
   background: var(--ac-field); color: var(--ac-field-ink);
   display: grid; place-items: center;
   font: 600 36px/1 var(--font-heading); letter-spacing: .04em;
 }
 .vf-photo img { width: 100%; height: 100%; object-fit: cover; }
+.vf-photo.has-photo { background: var(--color-surface); }
 .vf-name { font-size: 34px; line-height: 1.02; }
 .vf-role { font-size: 15px; color: color-mix(in srgb, var(--color-text) 78%, transparent); margin-top: 6px; }
 .vf-org {
@@ -138,7 +139,8 @@
   .vf-card { padding: 20px; gap: 14px; }
   .vf-name { font-size: 30px; }
   .vf-title { font-size: 26px; }
-  .vf-photo { width: 80px; height: 96px; font-size: 32px; }
+  .vf-person { gap: 16px; }
+  .vf-photo { width: 104px; height: 125px; font-size: 32px; }
   .vf-call { width: 100%; }
   .vf-section, .vf-q { padding: 36px 20px; }
   .vf-section h2, .vf-q h2 { font-size: 28px; line-height: 1.08; }
@@ -340,7 +342,7 @@
     <h2>How to tell it's really us.</h2>
     <div class="vf-safe">
       <div><span class="vf-safe-no">01</span><h3>Check the address bar.</h3><p>This page is on <strong>atlascrestllc.com</strong>. If a badge's QR code takes you anywhere else, the badge isn't ours.</p></div>
-      <div><span class="vf-safe-no">02</span><h3>Match the person.</h3><p>The name on this page should match the inspector's badge and photo ID. You can ask to see a photo ID.</p></div>
+      <div><span class="vf-safe-no">02</span><h3>Match the person.</h3><p>The photo and name on this page should match the person in front of you. You can also ask to see a photo ID.</p></div>
       <div><span class="vf-safe-no">03</span><h3>Call if you're unsure.</h3><p>Call <a href="tel:+18634446700">(863) 444-6700</a> before letting anyone onto the property. If you ever feel unsafe, call 911.</p></div>
     </div>
   </div>

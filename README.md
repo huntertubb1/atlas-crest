@@ -25,8 +25,9 @@ show the person at the door whether it is active, not active, or not one of ours
 plain-language explanation of the inspection. Anyone can also type the badge number at
 `atlascrestllc.com/verify`. The roster is public (so is this repo): list only what belongs on a badge.
 
-- **Add an inspector:** add an entry with the next badge number and `"status": "active"`. Optional
-  headshot: put `AC-1002.jpg` (portrait, about 600x720) in `assets/inspectors/` and set `"photo"`.
+- **Add an inspector:** add an entry with the next badge number and `"status": "active"`, plus a
+  headshot: `AC-1002.jpg`, a 600x720 portrait JPEG, in `assets/inspectors/` with `"photo": "AC-1002.jpg"`.
+  The page shows it so the insured can match the face at the door (initials only if it is missing).
 - **Deactivate:** set `"status": "inactive"` and keep the entry. Deleting it turns the old badge into
   "not found", which is less clear to the insured. The page re-reads the roster on every scan, so the
   change is live as soon as GitHub Pages redeploys.
