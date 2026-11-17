@@ -37,11 +37,16 @@ plain-language explanation of the inspection. Anyone can also type the badge num
 
 ## Careers and applications
 
-`careers.html` lists the open roles; `apply.html` has two forms. The field form (`#nw-apply`, wired by
-`js/network.js`) posts to the Supabase edge function `inspector-application-intake` and maps to its
-payload: `track` (no experience / experienced), `lines` (Loss control, Property / COPE, Premium audit,
-Virtual audit), plus contact, ZIP, territory, availability. Premium audit applicants choose "experienced"
-and check Premium audit. The function has no resume upload or office-assistant track yet, so the remote
-office assistant form posts through formsubmit.co to office@ (with an optional resume attachment).
-When the intake function gains an office track and file upload, point the office form at it.
+`careers.html` lists the open roles; `apply.html` has two forms, both posting multipart to the Supabase
+edge function `inspector-application-intake` via `js/network.js`.
+
+- Field form (`#nw-apply`): `track`, `lines`, contact, ZIP, territory, availability, plus optional
+  `work_lines`, `experience_types`, `carriers_other`, `licenses`, `tools`, `coverage_counties`,
+  `radius_miles`, and a `resume` file (PDF, .docx, JPEG, PNG, 10 MB).
+- Office assistant form (`#office-apply`): `applying_for=office_assistant`, `country`, `english_comfort`,
+  `city`, `availability`, `experience`, `resume`.
+
+Older deployed versions of the function ignore the extra fields and the resume, and reject the office role.
+For that case the office form falls back to formsubmit.co (resume sent as `attachment`), so the site can go
+live before the function. Matches atlas-platform PR #831.
 `network.html` is the explainer for the field network and links to `/apply.html`.
