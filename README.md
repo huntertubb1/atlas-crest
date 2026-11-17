@@ -34,3 +34,19 @@ plain-language explanation of the inspection. Anyone can also type the badge num
 - **Badge QR code:** encode the URL above with error correction Q and print it at least 2 cm (0.8 in)
   wide. The brand stationery kit's `gen-badge-qr.jxa.js` (macOS) writes a print SVG + PNG and
   decodes the result to prove it scans.
+
+## Careers and applications
+
+`careers.html` lists the open roles; `apply.html` has two forms, both posting multipart to the Supabase
+edge function `inspector-application-intake` via `js/network.js`.
+
+- Field form (`#nw-apply`): `track`, `lines`, contact, ZIP, territory, availability, plus optional
+  `work_lines`, `experience_types`, `carriers_other`, `licenses`, `tools`, `coverage_counties`,
+  `radius_miles`, and a `resume` file (PDF, .docx, JPEG, PNG, 10 MB).
+- Office assistant form (`#office-apply`): `applying_for=office_assistant`, `country`, `english_comfort`,
+  `city`, `availability`, `experience`, `resume`.
+
+Older deployed versions of the function ignore the extra fields and the resume, and reject the office role.
+For that case the office form falls back to formsubmit.co (resume sent as `attachment`), so the site can go
+live before the function. Matches atlas-platform PR #831.
+`network.html` is the explainer for the field network and links to `/apply.html`.

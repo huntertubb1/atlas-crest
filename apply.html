@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://sapngofczuiejofxyfky.supabase.co; form-action 'self' https://formsubmit.co https://sapngofczuiejofxyfky.supabase.co; frame-src 'none'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply — Atlas Crest LLC</title>
+<meta name="description" content="Apply to work with Atlas Crest: field inspector, loss-control surveyor, premium auditor, or remote office assistant.">
+<link rel="canonical" href="https://atlascrestllc.com/apply.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Atlas Crest LLC">
+<meta property="og:title" content="Apply — Atlas Crest LLC">
+<meta property="og:description" content="Apply to work with Atlas Crest: field inspector, loss-control surveyor, premium auditor, or remote office assistant.">
+<meta property="og:url" content="https://atlascrestllc.com/apply.html">
+<meta property="og:image" content="https://atlascrestllc.com/assets/og-share-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atlas Crest LLC">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/atlas-crest-shield.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css?v=1">
+<style>
+/* ── Inspector Network page ─────────────────────────────────────── */
+.nw-wrap { max-width: 1280px; margin: 0 auto; }
+
+/* small-caps panel heads inside framed blocks */
+.nw-head {
+  font: 600 11px var(--font-heading);
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+
+/* list rows */
+.ac-li {
+  font-size: 13.5px; line-height: 1.5; padding: 11px 0;
+  border-bottom: 1px solid var(--color-divider);
+  display: flex; gap: 12px;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+}
+.ac-li:last-child { border-bottom: 0; }
+.ac-plus { color: var(--color-accent); font-family: var(--font-heading); }
+
+/* tags (squared, per system) */
+.tag {
+  display: inline-flex; align-items: center;
+  font-size: 11px; letter-spacing: .02em; padding: 3px 10px;
+  border-radius: 0;
+}
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* hero */
+.nw-hero {
+  display: grid; grid-template-columns: 1.25fr 1fr; gap: 64px;
+  padding: 66px var(--pad-x) 58px; align-items: end;
+  border-bottom: 1px solid var(--color-divider);
+}
+.nw-hero h1 {
+  font-size: 56px; line-height: 1.03; letter-spacing: -.02em;
+  margin: 0 0 22px; max-width: 18ch;
+}
+.nw-hero .ac-eyebrow { margin-bottom: 20px; }
+.nw-seeking {
+  padding: 24px 26px;
+  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+}
+.nw-seeking .nw-head { margin-bottom: 10px; }
+.nw-seeking-tags { display: flex; gap: 7px; flex-wrap: wrap; }
+
+/* facing framed lists */
+.nw-lists {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
+  padding: 60px var(--pad-x);
+  border-bottom: 1px solid var(--color-divider);
+  align-items: start;
+}
+.nw-lists .blueprint { padding: 28px 30px; }
+.nw-lists .nw-head { margin-bottom: 6px; }
+.nw-note {
+  font-size: 13px; line-height: 1.5; margin: 14px 0 0;
+  color: var(--color-muted);
+}
+.nw-note a { color: var(--color-accent); }
+
+/* entry-level band */
+.nw-entry {
+  display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px;
+  padding: 60px var(--pad-x);
+  border-bottom: 1px solid var(--color-divider);
+  align-items: start;
+}
+.nw-entry .ac-eyebrow { margin-bottom: 18px; }
+.nw-entry h2 { font-size: 38px; line-height: 1.06; margin: 0 0 18px; max-width: 20ch; }
+.nw-entry .ac-lead { max-width: 50ch; margin-bottom: 22px; }
+.nw-areas { padding: 26px 28px; }
+.nw-areas .nw-head { margin-bottom: 12px; }
+.nw-areas-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 22px; }
+@media (max-width: 900px) {
+  .nw-entry { grid-template-columns: 1fr; gap: 26px; padding: 28px var(--pad-x); }
+  .nw-entry h2 { font-size: 26px; margin-bottom: 14px; }
+  .nw-areas { padding: 22px 20px; }
+}
+
+/* dark four-step band */
+.nw-steps-band { padding: 60px var(--pad-x); }
+.nw-steps-band .ac-eyebrow { margin-bottom: 30px; }
+.nw-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.nw-step { padding: 0 28px; border-right: 1px solid color-mix(in srgb, var(--ac-field-ink) 22%, transparent); }
+.nw-step:first-child { padding-left: 0; }
+.nw-step:last-child { padding-right: 0; border-right: 0; }
+.nw-step-num {
+  font: 600 12px var(--font-heading);
+  letter-spacing: .12em; color: var(--color-accent-400);
+  margin-bottom: 8px;
+}
+.nw-step-title { font: 600 24px var(--font-heading); margin-bottom: 6px; }
+.nw-step p {
+  font-size: 13px; line-height: 1.5; margin: 0;
+  color: color-mix(in srgb, var(--ac-field-ink) 76%, transparent);
+}
+
+/* apply section */
+.nw-apply {
+  display: grid; grid-template-columns: 1fr 1.05fr; gap: 64px;
+  padding: 64px var(--pad-x);
+  border-bottom: 1px solid var(--color-divider);
+}
+.nw-apply .ac-eyebrow { margin-bottom: 20px; }
+.nw-apply h2 { font-size: 38px; line-height: 1.06; margin: 0 0 20px; max-width: 18ch; }
+.nw-apply .ac-lead { max-width: 44ch; margin-bottom: 26px; }
+.nw-facts { display: grid; border-top: 1px solid var(--color-divider); }
+.nw-fact {
+  display: flex; justify-content: space-between; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid var(--color-divider);
+  font-size: 13.5px;
+}
+.nw-fact > span:first-child { color: var(--color-muted); }
+
+.nw-form { padding: 30px; display: flex; flex-direction: column; gap: 18px; }
+.nw-terms { display: flex; flex-direction: column; gap: 9px; padding: 15px 17px;
+  border-left: 3px solid var(--color-accent-700); background: color-mix(in srgb, var(--color-accent-700) 5%, transparent); }
+.nw-terms p { margin: 0; font-size: 12.5px; line-height: 1.55;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent); }
+.nw-terms strong { color: var(--color-text); }
+.nw-error { margin: 0; padding: 11px 14px; font-size: 13px; line-height: 1.45;
+  border-left: 3px solid #A63A2B; background: color-mix(in srgb, #A63A2B 8%, transparent); color: var(--color-text); }
+.nw-form-help { margin: -4px 0 0; font-size: 12.5px; line-height: 1.55; color: var(--color-muted); }
+.nw-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.nw-radios { display: flex; gap: 20px; padding-top: 4px; flex-wrap: wrap; }
+.nw-form .btn-primary { padding: 13px; font-size: 15px; }
+/* Keep the honeypot out of sight without display:none, which some browsers autofill. */
+.nw-honey {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ── responsive ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nw-hero { grid-template-columns: 1fr; gap: 24px; padding: 30px var(--pad-x); align-items: start; }
+  .nw-hero h1 { font-size: 36px; margin-bottom: 16px; }
+  .nw-hero .ac-eyebrow { margin-bottom: 14px; }
+  .nw-lists { grid-template-columns: 1fr; gap: 26px; padding: 26px var(--pad-x); }
+  .nw-steps-band { padding: 28px var(--pad-x); }
+  .nw-steps-band .ac-eyebrow { margin-bottom: 16px; }
+  .nw-steps { grid-template-columns: 1fr; gap: 16px; }
+  .nw-step { display: flex; gap: 12px; padding: 0; border-right: 0; }
+  .nw-step-num { padding-top: 5px; margin-bottom: 0; }
+  .nw-step-title { font-size: 20px; margin-bottom: 2px; }
+  .nw-step p { font-size: 12.5px; }
+  .nw-apply { grid-template-columns: 1fr; gap: 32px; padding: 28px var(--pad-x); }
+  .nw-apply h2 { font-size: 26px; margin-bottom: 16px; }
+  .nw-form { padding: 22px 20px; gap: 14px; }
+  .nw-form-row { grid-template-columns: 1fr; gap: 14px; }
+}
+.nw-more{border:1px solid var(--color-divider);padding:12px 14px}
+.nw-more summary{cursor:pointer;font-size:13.5px;font-weight:500}
+.nw-more[open] summary{margin-bottom:14px}
+.nw-more fieldset{margin-bottom:14px !important}
+</style>
+</head>
+<body>
+<header class="ac-header">
+  <a href="/" class="ac-brand">
+    <span class="ac-brand-tile"><img src="/assets/atlas-crest-shield.png" alt="Atlas Crest shield"></span>
+    <span>
+      <span class="ac-brand-name" style="display:block">ATLAS CREST</span>
+      <span class="ac-brand-tag" style="display:block">Insurance Services</span>
+    </span>
+  </a>
+  <nav class="ac-nav" aria-label="Primary">
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/about.html">About</a>
+    <a href="/careers.html">Careers</a>
+  </nav>
+  <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  <button class="ac-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="ac-drawer" aria-label="Mobile">
+    <a href="/">Home</a>
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/about.html">About</a>
+    <a href="/careers.html">Careers</a>
+    <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  </nav>
+</header>
+<main>
+<div class="nw-wrap">
+  <section class="nw-hero" style="padding-bottom:34px">
+    <div>
+      <p class="ac-eyebrow">Apply</p>
+      <h1>Apply to work with Atlas Crest.</h1>
+      <p class="ac-lead" style="max-width:54ch">Two ways in. Pick the one that fits, fill in the short form, and we will reply by email. We read every application ourselves.</p>
+    </div>
+    <div class="blueprint nw-seeking">
+      <div class="nw-head">Jump to a form</div>
+      <div class="nw-seeking-tags">
+        <a class="tag tag-accent" href="#field">Field inspector, surveyor, or auditor</a>
+        <a class="tag tag-outline" href="#office">Office assistant (remote)</a>
+      </div>
+      <p class="nw-note">Not sure? Read the <a href="/careers.html">role descriptions</a> first.</p>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </div>
+  </section>
+
+  <section class="nw-apply" id="field">
+    <div>
+      <p class="ac-eyebrow">Field work</p>
+      <h2 id="field-h">Field inspector, loss-control surveyor, or premium auditor</h2>
+      <p class="ac-lead">Commercial loss-control surveys, property inspections, and premium audits for insurance carriers, plus field photo inspections for people new to the work. We review applications against where we have assignments. If you are outside an active area we may hold your application for a later opening.</p>
+      <div class="nw-facts">
+        <div class="nw-fact"><span>Engagement</span><span>Independent contractor, 1099</span></div>
+        <div class="nw-fact"><span>Pay</span><span>Fee per assignment, shown before you accept</span></div>
+        <div class="nw-fact"><span>Before paid work</span><span>Onboarding, background check, practice file</span></div>
+        <div class="nw-fact"><span>Already with us</span><a href="https://office.atlascrestllc.com/office/" rel="noopener nofollow" target="_blank">Inspector login &rarr;</a></div>
+      </div>
+    </div>
+    <form class="blueprint nw-form" id="nw-apply" aria-labelledby="field-h" enctype="multipart/form-data"
+      action="https://sapngofczuiejofxyfky.supabase.co/functions/v1/inspector-application-intake"
+      method="POST"
+      style="position:relative">
+      <label class="nw-honey" aria-hidden="true">Leave blank
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+      </label>
+
+      <fieldset class="field" style="border:0;padding:0;margin:0">
+        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">What are you applying for</legend>
+        <div class="nw-radios">
+          <label class="radio"><input type="radio" name="track" value="Field photo inspections — no experience" required><span class="dot"></span>Field photo inspector &mdash; no experience needed</label>
+          <label class="radio"><input type="radio" name="track" value="Experienced field professional"><span class="dot"></span>Experienced inspector, loss-control surveyor, or premium auditor</label>
+        </div>
+      </fieldset>
+
+      <div class="nw-form-row">
+        <div class="field"><label for="nw-name">Name</label><input class="input" id="nw-name" name="name" type="text" placeholder="Full name" autocomplete="name" maxlength="100" required></div>
+        <div class="field"><label for="nw-email">Email</label><input class="input" id="nw-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" maxlength="254" required></div>
+      </div>
+
+      <div class="nw-form-row">
+        <div class="field"><label for="nw-phone">Cell phone</label><input class="input" id="nw-phone" name="phone" type="tel" placeholder="(000) 000-0000" autocomplete="tel" maxlength="30" required></div>
+        <div class="field"><label for="nw-zip">Home ZIP code</label><input class="input" id="nw-zip" name="home_zip" type="text" inputmode="numeric" placeholder="e.g. 33948" autocomplete="postal-code" pattern="[0-9]{5}(-[0-9]{4})?" maxlength="10" title="Enter a 5-digit ZIP code" required></div>
+      </div>
+
+      <div class="nw-form-row">
+        <div class="field">
+          <label for="nw-state">State you would work in</label>
+          <select class="input" id="nw-state" name="state" required>
+            <option value="">Choose a state</option>
+            <option value="FL">Florida</option>
+            <option value="AL">Alabama</option><option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option><option value="CA">California</option>
+            <option value="CO">Colorado</option><option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option><option value="GA">Georgia</option>
+            <option value="ID">Idaho</option><option value="IL">Illinois</option>
+            <option value="IN">Indiana</option><option value="IA">Iowa</option>
+            <option value="KS">Kansas</option><option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option><option value="ME">Maine</option>
+            <option value="MD">Maryland</option><option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option><option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option><option value="MO">Missouri</option>
+            <option value="MT">Montana</option><option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option><option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option><option value="NM">New Mexico</option>
+            <option value="NY">New York</option><option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option><option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option><option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option><option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option><option value="TX">Texas</option>
+            <option value="UT">Utah</option><option value="VT">Vermont</option>
+            <option value="VA">Virginia</option><option value="WA">Washington</option>
+            <option value="DC">Washington, DC</option><option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
+            <option value="AK">Alaska</option><option value="HI">Hawaii</option>
+          </select>
+        </div>
+        <div class="field"><label for="nw-metro">Nearest metro area</label><input class="input" id="nw-metro" name="metro" type="text" placeholder="e.g. Fort Myers, Tampa, Houston" maxlength="120"></div>
+      </div>
+
+      <fieldset class="field" style="border:0;padding:0;margin:0">
+        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">May Atlas ask you by text about a next step? This is not consent to automated messages.</legend>
+        <div class="nw-radios">
+          <label class="radio"><input type="radio" name="text_ok" value="Yes - ask me first" required><span class="dot"></span>Yes, ask me first</label>
+          <label class="radio"><input type="radio" name="text_ok" value="Email only"><span class="dot"></span>Email only</label>
+        </div>
+      </fieldset>
+
+      <div class="field"><label for="nw-territory">Counties or cities you can cover</label><input class="input" id="nw-territory" name="territory" type="text" placeholder="e.g. Charlotte, DeSoto, south Sarasota" maxlength="250" required></div>
+
+      <fieldset class="field" id="nw-availability" style="border:0;padding:0;margin:0">
+        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">When are you generally free? Check at least one</legend>
+        <div class="ac-chips">
+          <label class="ac-chip"><input type="checkbox" name="availability" value="Weekday mornings">Weekday mornings</label>
+          <label class="ac-chip"><input type="checkbox" name="availability" value="Weekday afternoons">Weekday afternoons</label>
+          <label class="ac-chip"><input type="checkbox" name="availability" value="Weekends only">Weekends only</label>
+          <label class="ac-chip"><input type="checkbox" name="availability" value="Flexible / full days">Flexible &mdash; full days</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="field" style="border:0;padding:0;margin:0">
+        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Do you have a vehicle, a valid license, and a smartphone?</legend>
+        <div class="nw-radios">
+          <label class="radio"><input type="radio" name="vehicle_phone" value="Yes, all three" required><span class="dot"></span>Yes, all three</label>
+          <label class="radio"><input type="radio" name="vehicle_phone" value="Not all three"><span class="dot"></span>Not all three</label>
+        </div>
+      </fieldset>
+
+      <p class="ac-eyebrow" style="margin:6px 0 0">Experienced applicants only. Skip this part if you are new to inspections.</p>
+
+      <fieldset class="field" style="border:0;padding:0;margin:0">
+        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Lines you work</legend>
+        <div class="ac-chips">
+          <label class="ac-chip"><input type="checkbox" name="lines" value="Loss control">Loss control</label>
+          <label class="ac-chip"><input type="checkbox" name="lines" value="Property / COPE">Property / COPE</label>
+          <label class="ac-chip"><input type="checkbox" name="lines" value="Premium audit">Premium audit</label>
+          <label class="ac-chip"><input type="checkbox" name="lines" value="Virtual audit">Virtual audit</label>
+        </div>
+      </fieldset>
+
+      <div class="nw-form-row">
+        <div class="field"><label for="nw-years">Years in the field</label><input class="input" id="nw-years" name="years_in_field" type="text" inputmode="numeric" placeholder="e.g. 6"></div>
+        <div class="field">
+          <label for="nw-eo">E&amp;O coverage</label>
+          <select class="input" id="nw-eo" name="eo_coverage">
+            <option value="">&mdash;</option>
+            <option value="Current">Current</option>
+            <option value="Lapsed">Lapsed</option>
+            <option value="None yet">None yet</option>
+          </select>
+        </div>
+      </div>
+
+      <details class="nw-more">
+        <summary>More about you (optional, helps us match you to work)</summary>
+      <fieldset class="field" style="border:0;padding:0;margin:0">
+        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Kinds of work you want</legend>
+        <div class="ac-chips">
+          <label class="ac-chip"><input type="checkbox" name="work_lines" value="commercial_loss_control">Commercial loss control</label>
+          <label class="ac-chip"><input type="checkbox" name="work_lines" value="premium_audit">Premium audit</label>
+          <label class="ac-chip"><input type="checkbox" name="work_lines" value="residential_inspection">Field photo inspections</label>
+        </div>
+      </fieldset>
+      <fieldset class="field" style="border:0;padding:0;margin:0">
+        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Work you have done</legend>
+        <div class="ac-chips">
+          <label class="ac-chip"><input type="checkbox" name="experience_types" value="commercial_loss_control">Commercial loss control</label>
+          <label class="ac-chip"><input type="checkbox" name="experience_types" value="premium_audit_field">Premium audit, in person</label>
+          <label class="ac-chip"><input type="checkbox" name="experience_types" value="premium_audit_virtual">Premium audit, virtual</label>
+          <label class="ac-chip"><input type="checkbox" name="experience_types" value="residential_exterior">Residential exterior</label>
+          <label class="ac-chip"><input type="checkbox" name="experience_types" value="residential_interior">Residential interior</label>
+          <label class="ac-chip"><input type="checkbox" name="experience_types" value="four_point_wind_mitigation">4-point / wind mitigation</label>
+          <label class="ac-chip"><input type="checkbox" name="experience_types" value="claims_adjusting">Claims adjusting</label>
+          <label class="ac-chip"><input type="checkbox" name="experience_types" value="home_inspection">Home inspection</label>
+          <label class="ac-chip"><input type="checkbox" name="experience_types" value="construction_trades">Construction trades</label>
+          <label class="ac-chip"><input type="checkbox" name="experience_types" value="appraisal_real_estate">Appraisal / real estate</label>
+        </div>
+      </fieldset>
+      <fieldset class="field" style="border:0;padding:0;margin:0">
+        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Licenses and designations</legend>
+        <div class="ac-chips">
+          <label class="ac-chip"><input type="checkbox" name="licenses" value="fl_6_20_adjuster">FL 6-20 adjuster</label>
+          <label class="ac-chip"><input type="checkbox" name="licenses" value="fl_3_20_adjuster">FL 3-20 adjuster</label>
+          <label class="ac-chip"><input type="checkbox" name="licenses" value="fl_home_inspector">FL home inspector</label>
+          <label class="ac-chip"><input type="checkbox" name="licenses" value="fl_contractor">FL contractor</label>
+          <label class="ac-chip"><input type="checkbox" name="licenses" value="wind_mitigation">Wind mitigation</label>
+          <label class="ac-chip"><input type="checkbox" name="licenses" value="cpcu">CPCU</label>
+          <label class="ac-chip"><input type="checkbox" name="licenses" value="ains">AINS</label>
+          <label class="ac-chip"><input type="checkbox" name="licenses" value="premium_auditor_apa_cpia">Premium auditor (APA / CPIA)</label>
+          <label class="ac-chip"><input type="checkbox" name="licenses" value="faa_part_107">FAA Part 107</label>
+        </div>
+      </fieldset>
+      <fieldset class="field" style="border:0;padding:0;margin:0">
+        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Tools you have</legend>
+        <div class="ac-chips">
+          <label class="ac-chip"><input type="checkbox" name="tools" value="smartphone">Smartphone</label>
+          <label class="ac-chip"><input type="checkbox" name="tools" value="reliable_vehicle">Reliable vehicle</label>
+          <label class="ac-chip"><input type="checkbox" name="tools" value="tape_measure">Tape measure</label>
+          <label class="ac-chip"><input type="checkbox" name="tools" value="measuring_wheel">Measuring wheel</label>
+          <label class="ac-chip"><input type="checkbox" name="tools" value="laser_measure">Laser measure</label>
+          <label class="ac-chip"><input type="checkbox" name="tools" value="ladder">Ladder</label>
+          <label class="ac-chip"><input type="checkbox" name="tools" value="drone">Drone</label>
+          <label class="ac-chip"><input type="checkbox" name="tools" value="dedicated_camera">Dedicated camera</label>
+          <label class="ac-chip"><input type="checkbox" name="tools" value="laptop">Laptop</label>
+          <label class="ac-chip"><input type="checkbox" name="tools" value="printer_scanner">Printer / scanner</label>
+        </div>
+      </fieldset>
+      <div class="field"><label for="nw-carriers">Carriers or inspection companies you have worked for</label><input class="input" id="nw-carriers" name="carriers_other" type="text" maxlength="250"></div>
+      <div class="nw-form-row">
+        <div class="field"><label for="nw-counties">Counties you will cover</label><input class="input" id="nw-counties" name="coverage_counties" type="text" maxlength="400" placeholder="e.g. Lee, Charlotte, Collier"></div>
+        <div class="field"><label for="nw-radius">How far will you drive (miles)</label><input class="input" id="nw-radius" name="radius_miles" type="number" inputmode="numeric" min="1" max="300" placeholder="e.g. 60"></div>
+      </div>
+      </details>
+
+      <div class="field"><label for="nw-resume">Resume (optional)</label><input class="input" id="nw-resume" name="resume" type="file" accept=".pdf,.docx,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"><p class="nw-form-help" id="nw-resume-help" style="margin:4px 0 0">PDF, .docx, JPEG, or PNG, up to 10 MB. Save Word files as PDF or .docx; older .doc files are not accepted.</p></div>
+
+      <div class="field"><label for="nw-exp">Anything you want us to know</label><textarea class="input" id="nw-exp" name="experience" maxlength="1500" style="min-height:96px" placeholder="Experienced: the lines and file types you are strongest in,. New to inspections: tell us what you do now."></textarea></div>
+
+      <div class="field"><label for="nw-source">How did you hear about us?</label><input class="input" id="nw-source" name="heard_about" type="text" placeholder="Referral name, LinkedIn, a post, a search" maxlength="250"></div>
+
+      <div class="nw-terms">
+        <p><strong>This is a short interest form, not an offer of work.</strong> Field inspectors work as independent contractors (1099) and choose which assignments to accept. Each assignment states its fee before you decide, and volume and income are not guaranteed.</p>
+        <p>Do not enter a Social Security number, date of birth, driver's-license number, banking information, or an identification document. If we invite you forward, we send a private next step through a separate secure process.</p>
+        <p>By submitting, you agree to our <a href="/terms.html">Terms</a> and acknowledge our <a href="/privacy.html">Privacy Policy</a>.</p>
+      </div>
+      <p class="nw-error" id="nw-error" role="alert" hidden></p>
+      <p class="nw-form-help">If the form still does not go through, email <a href="mailto:office@atlascrestllc.com?subject=Field%20network%20application%20form%20problem">office@atlascrestllc.com</a> and say the application page failed. Do not email identification, banking, tax, license, insurance, or background-check documents.</p>
+
+      <button class="btn btn-primary blueprint" type="submit">Send my application<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></button>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </form>
+  </section>
+
+  <section class="nw-apply" id="office">
+    <div>
+      <p class="ac-eyebrow">Office</p>
+      <h2 id="office-h">Office assistant (remote)</h2>
+      <p class="ac-lead">Help the owner run the office: scheduling insureds, calling and emailing, keeping case files organized, and checking work before it goes to the carrier. Remote, working in Eastern time. We confirm hours and pay with you before anyone starts.</p>
+      <div class="nw-facts">
+        <div class="nw-fact"><span>Where</span><span>Remote</span></div>
+        <div class="nw-fact"><span>Needs</span><span>Clear phone and written English, reliable internet, a computer</span></div>
+        <div class="nw-fact"><span>Resume</span><span>Optional, attach below (PDF, .docx, JPEG, PNG; 10 MB max)</span></div>
+      </div>
+    </div>
+    <form class="blueprint nw-form" id="office-apply" aria-labelledby="office-h"
+      action="https://sapngofczuiejofxyfky.supabase.co/functions/v1/inspector-application-intake" method="POST" enctype="multipart/form-data"
+      data-fallback="https://formsubmit.co/office@atlascrestllc.com" style="position:relative">
+      <input type="hidden" name="applying_for" value="office_assistant">
+      <input type="hidden" name="role" value="Office assistant (remote)">
+      <label class="nw-honey" aria-hidden="true">Leave blank
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+      </label>
+      <div class="nw-form-row">
+        <div class="field"><label for="of-name">Name</label><input class="input" id="of-name" name="name" type="text" autocomplete="name" maxlength="100" required></div>
+        <div class="field"><label for="of-email">Email</label><input class="input" id="of-email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+      </div>
+      <div class="nw-form-row">
+        <div class="field"><label for="of-phone">Phone, with country code</label><input class="input" id="of-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="+1 555 555 0100" required></div>
+        <div class="field"><label for="of-country">Country you live in</label><input class="input" id="of-country" name="country" type="text" autocomplete="country-name" maxlength="60" required></div>
+      </div>
+      <div class="nw-form-row">
+        <div class="field"><label for="of-city">City</label><input class="input" id="of-city" name="city" type="text" autocomplete="address-level2" maxlength="120"></div>
+        <div class="field"><label for="of-english">How comfortable are you on English phone calls?</label>
+          <select class="input" id="of-english" name="english_comfort" required>
+            <option value="">Choose one</option>
+            <option value="native">Native speaker</option><option value="fluent">Fluent</option>
+            <option value="conversational">Conversational</option><option value="limited">Limited</option>
+          </select>
+        </div>
+      </div>
+      <fieldset class="field" style="border:0;padding:0;margin:0">
+        <legend style="padding:0;font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">When can you work (Eastern time)? Check any that apply</legend>
+        <div class="ac-chips">
+          <label class="ac-chip"><input type="checkbox" name="availability" value="Weekday mornings">Weekday mornings</label>
+          <label class="ac-chip"><input type="checkbox" name="availability" value="Weekday afternoons">Weekday afternoons</label>
+          <label class="ac-chip"><input type="checkbox" name="availability" value="Weekends only">Weekends</label>
+          <label class="ac-chip"><input type="checkbox" name="availability" value="Flexible / full days">Flexible, full days</label>
+        </div>
+      </fieldset>
+      <div class="nw-form-row">
+        <div class="field"><label for="of-hours">Hours per week you can work</label>
+          <select class="input" id="of-hours" name="hours_per_week" required>
+            <option value="">Choose one</option>
+            <option>Under 15</option><option>15 to 25</option><option>25 to 40</option><option>40 or more</option>
+          </select>
+        </div>
+        <div class="field"><label for="of-start">Earliest start date</label><input class="input" id="of-start" name="start_date" type="text" maxlength="60" placeholder="e.g. December 1"></div>
+      </div>
+      <div class="field"><label for="of-exp">Relevant experience</label><textarea class="input" id="of-exp" name="experience" maxlength="1500" required style="min-height:110px" placeholder="Scheduling, phone work, insurance, claims, or admin jobs you have done. A few sentences is fine."></textarea></div>
+      <div class="field"><label for="of-resume">Resume (optional)</label><input class="input" id="of-resume" name="resume" type="file" accept=".pdf,.docx,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"><p class="nw-form-help" style="margin:4px 0 0">PDF, .docx, JPEG, or PNG, up to 10 MB. Save Word files as PDF or .docx.</p></div>
+      <div class="field"><label for="of-source">How did you hear about us?</label><input class="input" id="of-source" name="heard_about" type="text" maxlength="250"></div>
+      <div class="nw-terms">
+        <p><strong>This is not an offer of work.</strong> We review every application and reply by email.</p>
+        <p>Do not enter a Social Security number, date of birth, driver's-license number, or banking information. Your resume is used only to review your application. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+      </div>
+      <p class="nw-error" id="of-error" role="alert" hidden></p>
+      <p class="nw-form-help">If the form does not go through, email <a href="mailto:office@atlascrestllc.com?subject=Office%20assistant%20application">office@atlascrestllc.com</a>.</p>
+      <button class="btn btn-primary blueprint" type="submit">Send my application<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></button>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </form>
+  </section>
+</div>
+</main>
+<footer class="ac-footer">
+  <div class="ac-footer-grid">
+    <div>
+      <div class="ac-footer-mark blueprint"><img src="/assets/atlas-crest-lockup.png" alt="Atlas Crest LLC"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+      <div class="ac-footer-brand">ATLAS CREST LLC</div>
+      <p class="ac-footer-blurb">Insurance services on the records side of risk — premium audits, field inspections, and subcontractor compliance. Onsite and remote.</p>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For carriers</div>
+      <a href="/field-services.html#audits">Premium audits</a>
+      <a href="/field-services.html#loss-control">Loss control surveys</a>
+      <a href="/field-services.html#property">Property inspections</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For businesses</div>
+      <a href="/business-services.html#coi">Certificate tracking</a>
+      <a href="/business-services.html#audit-prep">Audit preparation</a>
+      <a href="/coverage.html">Coverage area</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">Firm</div>
+      <a href="/about.html">About</a>
+      <a href="/careers.html">Careers</a>
+      <a href="/contact.html">Contact</a>
+      <a href="https://www.linkedin.com/company/atlas-crest-llc/" rel="noopener" target="_blank">LinkedIn</a>
+      <a href="https://office.atlascrestllc.com/office/" rel="noopener nofollow" target="_blank">Inspector login</a>
+    </div>
+  </div>
+  <div class="ac-footer-legal">
+    <span>Atlas Crest LLC · Florida</span>
+    <div class="ac-footer-legal-links">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/privacy.html#cookies">Cookies</a>
+      <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
+      <span>© 2026 Atlas Crest LLC</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/site.js"></script>
+<script src="/js/network.js?v=20261117"></script>
+</body>
+</html>
