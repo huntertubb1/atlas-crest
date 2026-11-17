@@ -48,7 +48,7 @@
     error.hidden = true;
 
     if (!normalizeZip()) {
-      setButton(button, false, 'Apply to the network');
+      setButton(button, false, 'Send my application');
       return;
     }
 
@@ -58,7 +58,7 @@
       if (availability && typeof availability.scrollIntoView === 'function') {
         availability.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       }
-      setButton(button, false, 'Apply to the network');
+      setButton(button, false, 'Send my application');
       return;
     }
 
@@ -85,7 +85,7 @@
         return;
       }
       showError(caught.message || 'We could not reach Atlas. Please try again shortly.');
-      setButton(button, false, 'Apply to the network');
+      setButton(button, false, 'Send my application');
     }).then(function () {
       if (timeout) window.clearTimeout(timeout);
     });

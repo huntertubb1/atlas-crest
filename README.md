@@ -34,3 +34,14 @@ plain-language explanation of the inspection. Anyone can also type the badge num
 - **Badge QR code:** encode the URL above with error correction Q and print it at least 2 cm (0.8 in)
   wide. The brand stationery kit's `gen-badge-qr.jxa.js` (macOS) writes a print SVG + PNG and
   decodes the result to prove it scans.
+
+## Careers and applications
+
+`careers.html` lists the open roles; `apply.html` has two forms. The field form (`#nw-apply`, wired by
+`js/network.js`) posts to the Supabase edge function `inspector-application-intake` and maps to its
+payload: `track` (no experience / experienced), `lines` (Loss control, Property / COPE, Premium audit,
+Virtual audit), plus contact, ZIP, territory, availability. Premium audit applicants choose "experienced"
+and check Premium audit. The function has no resume upload or office-assistant track yet, so the remote
+office assistant form posts through formsubmit.co to office@ (with an optional resume attachment).
+When the intake function gains an office track and file upload, point the office form at it.
+`network.html` is the explainer for the field network and links to `/apply.html`.

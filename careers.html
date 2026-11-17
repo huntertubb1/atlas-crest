@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://sapngofczuiejofxyfky.supabase.co; form-action 'self' https://formsubmit.co https://sapngofczuiejofxyfky.supabase.co; frame-src 'none'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Careers — Atlas Crest LLC</title>
+<meta name="description" content="Careers at Atlas Crest: field inspectors, loss-control surveyors, premium auditors, and a remote office assistant.">
+<link rel="canonical" href="https://atlascrestllc.com/careers.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Atlas Crest LLC">
+<meta property="og:title" content="Careers — Atlas Crest LLC">
+<meta property="og:description" content="Careers at Atlas Crest: field inspectors, loss-control surveyors, premium auditors, and a remote office assistant.">
+<meta property="og:url" content="https://atlascrestllc.com/careers.html">
+<meta property="og:image" content="https://atlascrestllc.com/assets/og-share-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atlas Crest LLC">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/atlas-crest-shield.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css?v=1">
+<style>
+/* ── Inspector Network page ─────────────────────────────────────── */
+.nw-wrap { max-width: 1280px; margin: 0 auto; }
+
+/* small-caps panel heads inside framed blocks */
+.nw-head {
+  font: 600 11px var(--font-heading);
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+
+/* list rows */
+.ac-li {
+  font-size: 13.5px; line-height: 1.5; padding: 11px 0;
+  border-bottom: 1px solid var(--color-divider);
+  display: flex; gap: 12px;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+}
+.ac-li:last-child { border-bottom: 0; }
+.ac-plus { color: var(--color-accent); font-family: var(--font-heading); }
+
+/* tags (squared, per system) */
+.tag {
+  display: inline-flex; align-items: center;
+  font-size: 11px; letter-spacing: .02em; padding: 3px 10px;
+  border-radius: 0;
+}
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* hero */
+.nw-hero {
+  display: grid; grid-template-columns: 1.25fr 1fr; gap: 64px;
+  padding: 66px var(--pad-x) 58px; align-items: end;
+  border-bottom: 1px solid var(--color-divider);
+}
+.nw-hero h1 {
+  font-size: 56px; line-height: 1.03; letter-spacing: -.02em;
+  margin: 0 0 22px; max-width: 18ch;
+}
+.nw-hero .ac-eyebrow { margin-bottom: 20px; }
+.nw-seeking {
+  padding: 24px 26px;
+  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+}
+.nw-seeking .nw-head { margin-bottom: 10px; }
+.nw-seeking-tags { display: flex; gap: 7px; flex-wrap: wrap; }
+
+/* facing framed lists */
+.nw-lists {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
+  padding: 60px var(--pad-x);
+  border-bottom: 1px solid var(--color-divider);
+  align-items: start;
+}
+.nw-lists .blueprint { padding: 28px 30px; }
+.nw-lists .nw-head { margin-bottom: 6px; }
+.nw-note {
+  font-size: 13px; line-height: 1.5; margin: 14px 0 0;
+  color: var(--color-muted);
+}
+.nw-note a { color: var(--color-accent); }
+
+/* entry-level band */
+.nw-entry {
+  display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px;
+  padding: 60px var(--pad-x);
+  border-bottom: 1px solid var(--color-divider);
+  align-items: start;
+}
+.nw-entry .ac-eyebrow { margin-bottom: 18px; }
+.nw-entry h2 { font-size: 38px; line-height: 1.06; margin: 0 0 18px; max-width: 20ch; }
+.nw-entry .ac-lead { max-width: 50ch; margin-bottom: 22px; }
+.nw-areas { padding: 26px 28px; }
+.nw-areas .nw-head { margin-bottom: 12px; }
+.nw-areas-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 22px; }
+@media (max-width: 900px) {
+  .nw-entry { grid-template-columns: 1fr; gap: 26px; padding: 28px var(--pad-x); }
+  .nw-entry h2 { font-size: 26px; margin-bottom: 14px; }
+  .nw-areas { padding: 22px 20px; }
+}
+
+/* dark four-step band */
+.nw-steps-band { padding: 60px var(--pad-x); }
+.nw-steps-band .ac-eyebrow { margin-bottom: 30px; }
+.nw-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.nw-step { padding: 0 28px; border-right: 1px solid color-mix(in srgb, var(--ac-field-ink) 22%, transparent); }
+.nw-step:first-child { padding-left: 0; }
+.nw-step:last-child { padding-right: 0; border-right: 0; }
+.nw-step-num {
+  font: 600 12px var(--font-heading);
+  letter-spacing: .12em; color: var(--color-accent-400);
+  margin-bottom: 8px;
+}
+.nw-step-title { font: 600 24px var(--font-heading); margin-bottom: 6px; }
+.nw-step p {
+  font-size: 13px; line-height: 1.5; margin: 0;
+  color: color-mix(in srgb, var(--ac-field-ink) 76%, transparent);
+}
+
+/* apply section */
+.nw-apply {
+  display: grid; grid-template-columns: 1fr 1.05fr; gap: 64px;
+  padding: 64px var(--pad-x);
+  border-bottom: 1px solid var(--color-divider);
+}
+.nw-apply .ac-eyebrow { margin-bottom: 20px; }
+.nw-apply h2 { font-size: 38px; line-height: 1.06; margin: 0 0 20px; max-width: 18ch; }
+.nw-apply .ac-lead { max-width: 44ch; margin-bottom: 26px; }
+.nw-facts { display: grid; border-top: 1px solid var(--color-divider); }
+.nw-fact {
+  display: flex; justify-content: space-between; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid var(--color-divider);
+  font-size: 13.5px;
+}
+.nw-fact > span:first-child { color: var(--color-muted); }
+
+.nw-form { padding: 30px; display: flex; flex-direction: column; gap: 18px; }
+.nw-terms { display: flex; flex-direction: column; gap: 9px; padding: 15px 17px;
+  border-left: 3px solid var(--color-accent-700); background: color-mix(in srgb, var(--color-accent-700) 5%, transparent); }
+.nw-terms p { margin: 0; font-size: 12.5px; line-height: 1.55;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent); }
+.nw-terms strong { color: var(--color-text); }
+.nw-error { margin: 0; padding: 11px 14px; font-size: 13px; line-height: 1.45;
+  border-left: 3px solid #A63A2B; background: color-mix(in srgb, #A63A2B 8%, transparent); color: var(--color-text); }
+.nw-form-help { margin: -4px 0 0; font-size: 12.5px; line-height: 1.55; color: var(--color-muted); }
+.nw-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.nw-radios { display: flex; gap: 20px; padding-top: 4px; flex-wrap: wrap; }
+.nw-form .btn-primary { padding: 13px; font-size: 15px; }
+/* Keep the honeypot out of sight without display:none, which some browsers autofill. */
+.nw-honey {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ── responsive ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nw-hero { grid-template-columns: 1fr; gap: 24px; padding: 30px var(--pad-x); align-items: start; }
+  .nw-hero h1 { font-size: 36px; margin-bottom: 16px; }
+  .nw-hero .ac-eyebrow { margin-bottom: 14px; }
+  .nw-lists { grid-template-columns: 1fr; gap: 26px; padding: 26px var(--pad-x); }
+  .nw-steps-band { padding: 28px var(--pad-x); }
+  .nw-steps-band .ac-eyebrow { margin-bottom: 16px; }
+  .nw-steps { grid-template-columns: 1fr; gap: 16px; }
+  .nw-step { display: flex; gap: 12px; padding: 0; border-right: 0; }
+  .nw-step-num { padding-top: 5px; margin-bottom: 0; }
+  .nw-step-title { font-size: 20px; margin-bottom: 2px; }
+  .nw-step p { font-size: 12.5px; }
+  .nw-apply { grid-template-columns: 1fr; gap: 32px; padding: 28px var(--pad-x); }
+  .nw-apply h2 { font-size: 26px; margin-bottom: 16px; }
+  .nw-form { padding: 22px 20px; gap: 14px; }
+  .nw-form-row { grid-template-columns: 1fr; gap: 14px; }
+}
+.cr-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;margin:18px 0 0}
+.cr-actions .btn{padding:12px 18px}
+.nw-lists h2{margin:0 0 12px}
+</style>
+</head>
+<body>
+<header class="ac-header">
+  <a href="/" class="ac-brand">
+    <span class="ac-brand-tile"><img src="/assets/atlas-crest-shield.png" alt="Atlas Crest shield"></span>
+    <span>
+      <span class="ac-brand-name" style="display:block">ATLAS CREST</span>
+      <span class="ac-brand-tag" style="display:block">Insurance Services</span>
+    </span>
+  </a>
+  <nav class="ac-nav" aria-label="Primary">
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/about.html">About</a>
+    <a href="/careers.html">Careers</a>
+  </nav>
+  <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  <button class="ac-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="ac-drawer" aria-label="Mobile">
+    <a href="/">Home</a>
+    <a href="/field-services.html">Field Services</a>
+    <a href="/business-services.html">Business Services</a>
+    <a href="/coverage.html">Coverage</a>
+    <a href="/about.html">About</a>
+    <a href="/careers.html">Careers</a>
+    <a class="btn btn-primary blueprint" href="/contact.html">Contact us<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+  </nav>
+</header>
+<main>
+<div class="nw-wrap">
+  <section class="nw-hero" style="padding-bottom:40px">
+    <div>
+      <p class="ac-eyebrow">Careers</p>
+      <h1>Work with Atlas Crest.</h1>
+      <p class="ac-lead" style="max-width:54ch">We do commercial loss-control surveys, property inspections, and premium audits for insurance carriers in Florida. We are adding inspectors and auditors in the field and a remote assistant in the office.</p>
+      <div class="cr-actions"><a class="btn btn-primary blueprint" href="/apply.html">Apply now<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a></div>
+    </div>
+    <div class="blueprint nw-seeking">
+      <div class="nw-head">Open roles</div>
+      <div class="nw-seeking-tags">
+        <a class="tag tag-accent" href="#field">Field inspector / loss-control surveyor</a>
+        <a class="tag tag-accent" href="#audit">Premium auditor</a>
+        <a class="tag tag-accent" href="#office">Office assistant (remote)</a>
+      </div>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </div>
+  </section>
+
+  <section class="nw-lists" id="field">
+    <div>
+      <p class="ac-eyebrow">Field</p>
+      <h2>Field inspector and loss-control surveyor</h2>
+      <p class="ac-lead">Visit a business or property, answer the carrier's questions, take clear photos, record measurements, and submit the file for our review before it goes to the carrier. You choose which assignments to accept.</p>
+      <div class="cr-actions"><a class="btn btn-primary blueprint" href="/apply.html#field">Apply for field work<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a>
+         <a class="btn blueprint" href="/network.html">How the network works<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a></div>
+    </div>
+    <div class="blueprint">
+      <div class="nw-head">What this is</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Independent contractor (1099), not employment</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Fee per assignment, shown before you accept</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Florida first; applications from other states are held for later</div>
+      <div class="ac-li"><span class="ac-plus">+</span>You need a vehicle, a smartphone, and a tape measure. Experience is welcome but not required for photo inspections.</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Background check, onboarding, and a reviewed practice file before paid work</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Work volume comes in waves and is not guaranteed</div>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </div>
+  </section>
+
+  <section class="nw-lists" id="audit">
+    <div>
+      <p class="ac-eyebrow">Audit</p>
+      <h2>Premium auditor</h2>
+      <p class="ac-lead">Verify payroll, subcontractor costs, and classifications for premium audits, in person or by phone and email. Experience with workers' compensation or general liability audits is expected.</p>
+      <div class="cr-actions"><a class="btn btn-primary blueprint" href="/apply.html#field">Apply as an auditor<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a></div>
+    </div>
+    <div class="blueprint">
+      <div class="nw-head">What this is</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Independent contractor (1099)</div>
+      <div class="ac-li"><span class="ac-plus">+</span>On the application, choose "experienced" and check Premium audit or Virtual audit</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Tell us the carriers or audit firms you have worked with</div>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </div>
+  </section>
+
+  <section class="nw-lists" id="office">
+    <div>
+      <p class="ac-eyebrow">Office</p>
+      <h2>Office assistant (remote)</h2>
+      <p class="ac-lead">Work with the owner on scheduling insureds, phone and email follow-up, organizing case files, and checking files before they go out. Remote, Eastern time.</p>
+      <div class="cr-actions"><a class="btn btn-primary blueprint" href="/apply.html#office">Apply for the office role<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></a></div>
+    </div>
+    <div class="blueprint">
+      <div class="nw-head">What this is</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Remote, with a computer and reliable internet</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Clear phone manner and clear writing</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Hours and pay confirmed with you before you start</div>
+      <div class="ac-li"><span class="ac-plus">+</span>Resume can be attached on the application</div>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </div>
+  </section>
+
+  <section class="blueprint" style="padding:24px;margin:24px 0">
+    <h2>How hiring works</h2>
+    <p>1. You apply. 2. We review and reply by email, usually with a short call. 3. If it is a fit, we send a private onboarding link. We never ask for a Social Security number, ID, or bank details on this website or by email or text. Questions: <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>.</p>
+  </section>
+</div>
+</main>
+<footer class="ac-footer">
+  <div class="ac-footer-grid">
+    <div>
+      <div class="ac-footer-mark blueprint"><img src="/assets/atlas-crest-lockup.png" alt="Atlas Crest LLC"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+      <div class="ac-footer-brand">ATLAS CREST LLC</div>
+      <p class="ac-footer-blurb">Insurance services on the records side of risk — premium audits, field inspections, and subcontractor compliance. Onsite and remote.</p>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For carriers</div>
+      <a href="/field-services.html#audits">Premium audits</a>
+      <a href="/field-services.html#loss-control">Loss control surveys</a>
+      <a href="/field-services.html#property">Property inspections</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">For businesses</div>
+      <a href="/business-services.html#coi">Certificate tracking</a>
+      <a href="/business-services.html#audit-prep">Audit preparation</a>
+      <a href="/coverage.html">Coverage area</a>
+    </div>
+    <div class="ac-footer-col">
+      <div class="ac-footer-head">Firm</div>
+      <a href="/about.html">About</a>
+      <a href="/careers.html">Careers</a>
+      <a href="/contact.html">Contact</a>
+      <a href="https://www.linkedin.com/company/atlas-crest-llc/" rel="noopener" target="_blank">LinkedIn</a>
+      <a href="https://office.atlascrestllc.com/office/" rel="noopener nofollow" target="_blank">Inspector login</a>
+    </div>
+  </div>
+  <div class="ac-footer-legal">
+    <span>Atlas Crest LLC · Florida</span>
+    <div class="ac-footer-legal-links">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/privacy.html#cookies">Cookies</a>
+      <a href="mailto:office@atlascrestllc.com">office@atlascrestllc.com</a>
+      <span>© 2026 Atlas Crest LLC</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/site.js"></script>
+</body>
+</html>
